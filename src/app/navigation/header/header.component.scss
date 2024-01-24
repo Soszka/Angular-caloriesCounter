@@ -1,0 +1,49 @@
+@import '../../../styles/settings.scss';
+
+
+.container {
+  background: linear-gradient(to right, rgb(85, 0, 0),rgb(0, 0, 0));
+}
+
+h1 {
+  text-align: center;
+  word-spacing: 5px;
+  font-family: monospace;
+  font-size: 46px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding-top: 30px;
+  
+  span {
+    color: rgb(145, 3, 3);
+  }
+}
+
+.nav {
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $text-color;
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 10px 50px 0;
+    padding: 15px 40px;
+    font-size: 28px;
+    background: linear-gradient(to bottom right, rgb(75, 0, 0), rgb(133, 1, 1));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.25s;
+    &:hover {
+      background: linear-gradient(to bottom right, rgb(161, 161, 161), rgb(77, 77, 77));
+      color: $text-secondary-color;
+      font-weight: bold;
+    }
+  }
+
+  .active {
+    color: $text-secondary-color;
+    background: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+}
