@@ -1,0 +1,31 @@
+@import '../../styles/settings.scss';
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+
+  .image {
+    width: 30%;
+    text-align: center;
+
+    img {
+      width: 350px;
+      height: 400px;
+    }
+  }
+
+  .description {
+    margin-top: 10px;
+    width: 65%;
+    text-align: center;
+  }
+
+  .btn {
+    @include button(rgb(126, 13, 13), rgb(34, 0, 0), rgb(151, 0, 0), $text-color);
+    font-size: 32px;
+    &:hover {
+      border: 3px solid rgb(119, 0, 0); 
+    }
+  }
+}

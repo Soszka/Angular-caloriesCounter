@@ -26,18 +26,22 @@ h1 {
     text-decoration: none;
     color: $text-color;
     display: inline-block;
+    width: 270px;
     text-transform: uppercase;
     margin: 10px 50px 0;
-    padding: 15px 40px;
+    padding: 15px;
     font-size: 28px;
-    background: linear-gradient(to top, rgb(146, 0, 0), rgb(66, 0, 0));
+    background: linear-gradient(to top, rgb(119, 0, 0), rgb(34, 0, 0));
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transition: all 0.25s;
+    border: 3px solid rgb(145, 3, 3);
+    border-bottom: none;
+    
     &:hover {
-      background: linear-gradient(to top, rgb(185, 184, 184), rgb(65, 64, 64));
-      color: $text-secondary-color;
-      font-weight: bold;
+      background: linear-gradient(to top, rgb(235, 2, 2), rgb(71, 0, 0));
+      border: 3px solid rgb(206, 1, 1);
+      border-bottom: none;
     }
   }
 
@@ -47,5 +51,12 @@ h1 {
     font-weight: bold;
     border: 3px solid rgb(145, 3, 3);
     border-bottom: none;
+
+    &:hover {
+      color: $text-secondary-color;
+      background: rgb(0, 0, 0);
+      border: 3px solid rgb(145, 3, 3);
+      border-bottom: none;
+    }
   }
 }
