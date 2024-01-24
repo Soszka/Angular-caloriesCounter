@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
+
+// COLORS 
+
+$dark-color: rgb(0, 0, 0);
+$text-color: rgb(255, 255, 255);
+$text-secondary-color: rgb(5, 157, 228);
+$third-color: rgb(1, 190, 134);
+
+
+// FONTS 
+
+$content-font: 'Lato', sans-serif;
+$header-font: 'Roboto', sans-serif;
+$content-font-size: 20px;
+$header-font-size: 52px;
+
+
+// MIXINS
+
+@mixin button($color-one, $color-two, $color-three, $color-four) {
+  color: $color-one;
+  text-decoration: none;
+  border: 3px solid $color-one;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: $content-font-size * 1.5;
+  margin: 0;
+  transition: all 0.25s;
+  &:hover {
+    background: linear-gradient(to bottom right, $color-two $color-three);
+    border: 3px solid $color-two;
+    box-shadow: 0px 0px 20px $color-two;
+    color: $color-four;
+  }
+}
+
+@mixin tiny-screens () {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin small-screens () {
+  @media only screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin medium-screens () {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large-screens () {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin extra-large-screens () {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mega-large-screens () {
+  @media only screen and (max-width: 1400px) {
+    @content;
+  }
+}
+

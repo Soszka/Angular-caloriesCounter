@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'Angular-caloriesCounter' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Angular-caloriesCounter');
+    expect(app.title).toEqual('Licznik Kalorii');
   });
 
   it('should render title', () => {
