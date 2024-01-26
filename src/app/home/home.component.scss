@@ -22,7 +22,7 @@
   }
 
   .btn {
-    @include button(rgb(126, 13, 13), rgb(34, 0, 0), rgb(151, 0, 0), $text-color);
+    @include button($text-secondary-color, rgb(34, 0, 0), rgb(151, 0, 0), $text-color);
     font-size: 32px;
     &:hover {
       border: 3px solid rgb(119, 0, 0); 
