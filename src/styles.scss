@@ -1,15 +1,21 @@
 @import '../src/styles/settings.scss';
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
   color: $text-color;
-  font-size: $content-font-size;
   font-family: $content-font;
+  font-size: $content-font-size;
   line-height: 1.6;
   background: $dark-color;
 }
