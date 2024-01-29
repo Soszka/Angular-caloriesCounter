@@ -90,7 +90,7 @@ mat-button-toggle-group {
     position: relative;
 
     &::placeholder {
-      color: $text-secondary-color;
+      color: white;
     }
   
     &:focus {
@@ -100,7 +100,7 @@ mat-button-toggle-group {
       }
   
       &::placeholder {
-        color: rgb(211, 0, 0);
+        color: black;
       }
     }
   }
@@ -154,7 +154,7 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   .cancel {
-    @include button($text-secondary-color, rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
+    @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
     font-size: $content-font-size * 1.6;
   }
 

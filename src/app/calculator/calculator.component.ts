@@ -26,14 +26,18 @@ export class CalculatorComponent {
   faArrowsUpDown = faArrowsUpDown;
   faPersonRunning = faPersonRunning;
   faDumbbell = faDumbbell;
-  form: FormGroup;
+  form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {}
+  
+  ngOnInit() {
     this.form = this.fb.group({
-      gender: ['male', Validators.required],
+      gender: ['', Validators.required],
       age: ['', Validators.required],
       weight: ['', Validators.required],
-      height: ['', Validators.required]
+      height: ['', Validators.required],
+      activityLevel: ['', Validators.required],
+      dietGoal: ['', Validators.required]
     });
   }
 }

@@ -1,0 +1,66 @@
+<div class="calcultor-result">
+  <app-title 
+    [sectionTitle]="sectionName" 
+    [sectionDescription]="sectionDescription">
+  </app-title>
+  <div class="result">
+    <div class="result-data">
+      <div class="data-item">
+        <h2>Twój wskaźnik BMR to :</h2>
+        <div class="calories-amount">
+          <fa-icon [icon]="faAppleWhole"></fa-icon>
+          <h2>2000 kalorii dziennie</h2>
+        </div>
+      </div>
+      <div class="data-item">
+        <h2>Twoje zapotrzebowanie kaloryczne to :</h2>
+        <div class="calories-amount">
+          <fa-icon [icon]="faPersonRunning"></fa-icon>
+          <h2>3000 kalorii dziennie</h2>
+        </div>
+      </div>
+      <div class="data-item">
+        <h2>Jeśli chcesz zwiększyć wagę powinieneś spożywać około:</h2>
+        <div class="calories-amount">
+          <fa-icon [icon]="faDumbbell"></fa-icon>
+          <h2>3500 kalorii dziennie</h2>
+        </div>
+      </div>
+    </div>
+    <div class="result-diagrams">
+      <h3>Rozkład makroskładników</h3>
+      <div class="diagram carbohydrates">
+        <div class="diagram-circle">
+          <h4>50%</h4>
+        </div>
+        <div class="diagram-description">
+          <h3>WĘGLOWODANY</h3>
+          <p>1741 kcal = 435g</p>
+        </div>
+      </div>
+      <div class="diagram protein">
+        <div class="diagram-circle">
+          <h4>25%</h4>
+        </div>
+        <div class="diagram-description">
+          <h3>BIAŁKO</h3>
+          <p>1741 kcal = 435g</p>
+        </div>
+      </div>
+      <div class="diagram fats">
+        <div class="diagram-circle">
+          <h4>25%</h4>
+        </div>
+        <div class="diagram-description">
+          <h3>TŁUSZCZE</h3>
+          <p>1741 kcal = 435g</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons-container">
+    <button class="recalculate">Przelicz ponownie</button>
+    <button class="save">Zapisz rezultat</button>
+  </div>
+</div>
+

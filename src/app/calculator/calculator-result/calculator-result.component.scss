@@ -1,0 +1,148 @@
+@import '../../../styles/settings.scss';
+
+.result {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-data {
+  
+  .data-item {
+    border-bottom: 3px dashed $text-secondary-color;
+    padding: 20px;
+    
+    h2 {
+      margin-bottom: 20px;
+      max-width: 600px;
+    }
+    
+    .calories-amount {
+      display: flex;
+      margin-bottom: 15px;
+  
+      fa-icon {
+        font-size: 56px;
+        margin-right: 35px;
+        margin-top: 3px;
+      }
+  
+      h2 {
+        margin: 0;
+        font-size: 40px;
+        background: linear-gradient(to bottom right, rgb(196, 1, 1), rgb(80, 0, 0));
+        padding: 15px 30px;
+        border-radius: 15px;
+      }
+    }
+  }
+}
+
+
+// DIAGRAMS
+
+.result-diagrams {
+
+  text-align: center;
+  width: 40%;
+
+  h3 {
+    font-size: 32px;
+    margin: 45px 0 20px;
+  }
+
+  .diagram {
+    display: flex;
+    justify-content: space-around;
+
+    .diagram-circle h4 {
+      padding: 40px;
+      border: 12px solid transparent;
+      border-radius: 50%;
+      font-size: 32px;
+      margin: 30px 10px 30px 0px;
+    }
+
+    &.carbohydrates .diagram-circle h4 {
+      background: radial-gradient(#000000, #000000) padding-box,
+      linear-gradient(to left, rgb(0, 146, 24) 50%, rgb(214, 214, 214) 50%) border-box;
+    }
+    
+    &.protein .diagram-circle h4 {
+      background: linear-gradient(#000000, #000000) padding-box,
+        linear-gradient(to left, rgb(7, 23, 163) 25%, rgb(214, 214, 214) 25%, rgb(214, 214, 214) 100%) border-box;
+    }
+    
+    &.fats .diagram-circle h4 {
+      background: linear-gradient(#000000, #000000) padding-box,
+        linear-gradient(to left, rgb(231, 235, 0) 25%, rgb(214, 214, 214) 25%, rgb(214, 214, 214) 100%) border-box;
+    }
+
+    .diagram-description {
+      text-align: center;
+      width: 60%;
+
+      h3 {
+        display: inline-block;
+        font-size: 28px;
+        margin-bottom: 0;
+      }
+
+      h3::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px; 
+        background-color: rgb(0, 146, 24); 
+        margin-top: 5px;
+      }
+
+      p {
+        color: rgb(0, 146, 24); 
+        font-size: 24px;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    }
+
+    &.protein .diagram-description h3::after {
+      background-color: rgb(7, 23, 163); 
+    }
+
+    &.fats .diagram-description h3::after {
+      background-color: rgb(231, 235, 0); 
+    }
+    
+    &.protein .diagram-description p {
+      color: rgb(7, 23, 163); 
+    }
+
+    &.fats .diagram-description p {
+      color: rgb(231, 235, 0); 
+    }  
+  }
+}
+
+
+
+// BUTTONS
+
+
+.buttons-container {
+  margin-top: 60px;
+  text-align: center;
+
+  button {
+    margin: 0 30px 30px;
+    width: 350px;
+  }
+
+  .recalculate {
+    @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
+    font-size: $content-font-size * 1.6;
+  }
+
+  .save {
+    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
+    font-size: $content-font-size * 1.6;
+  }
+}

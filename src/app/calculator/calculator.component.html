@@ -4,10 +4,9 @@
 </app-title>
 <form [formGroup]="form">
   <mat-button-toggle-group formControlName="gender">
-    <mat-button-toggle value="male">
+    <mat-button-toggle value="male" checked>
       <fa-icon [icon]="faMars"></fa-icon><span>Mężczyzna</span>
     </mat-button-toggle>
-    
     <mat-button-toggle value="female">
       <fa-icon [icon]="faVenus"></fa-icon><span>Kobieta</span>
     </mat-button-toggle>
@@ -15,15 +14,15 @@
   
   <div class="body-data">
     <div class="data-option">
-      <input type="number" id="age" placeholder="Wiek">
+      <input type="number" id="age" placeholder="Wiek ( lat )">
       <fa-icon [icon]="faCalendarDays"></fa-icon>
     </div>
     <div class="data-option">
-      <input type="number" id="weight" placeholder="Waga">
+      <input type="number" id="weight" placeholder="Waga ( kg )">
       <fa-icon [icon]="faWeightHanging"></fa-icon>
     </div>
     <div class="data-option">
-      <input type="number" id="height" placeholder="Wzrost">
+      <input type="number" id="height" placeholder="Wzrost ( cm )">
       <fa-icon [icon]="faArrowsUpDown"></fa-icon>
     </div>
   </div>
@@ -31,12 +30,12 @@
   <div class="exercise-data">
     <select id="activity-level" name="activity-level" required>
       <option value="" disabled selected hidden>Wybierz poziom aktywności</option>
+      <option value="ver-lowlow">Bardzo niska aktywność (minimalny wysiłek fizyczny)</option>
       <option value="low">Niska aktywność (1-2 treningi/tydzień)</option>
       <option value="medium">Średnia aktywność (3-4 treningi/tydzień)</option>
       <option value="high">Wysoka aktywność (5-6 treningi/tydzień)</option>
       <option value="very-high">Bardzo wysoka aktywność ( codzienne treningi )</option>
     </select>
-
     <select id="diet-goal" name="diet-goal" required>
       <option value="" disabled selected hidden>Wybierz cel diety</option>
       <option value="lose-weight">Chcę schudnąć</option>
@@ -49,5 +48,4 @@
     <button class="cancel">Wróć</button>
     <button class="submit">Wynik</button>
   </div>
-  
 </form>
