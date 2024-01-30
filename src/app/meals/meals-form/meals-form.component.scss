@@ -1,0 +1,42 @@
+@import '../../../styles/settings.scss';
+
+.form-selects {
+  display: flex;
+  margin: 60px 0 30px;
+  justify-content: space-between;
+
+  select {
+    border: none;
+    border-bottom: 5px solid $text-secondary-color;
+    width: 30%;
+    height: 60px;
+    margin-bottom: 40px;
+    background: inherit;
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    --webkit-appearance: none;
+    outline: none;
+    position: relative;
+  }
+
+  option {
+    background: black;
+    color: $text-secondary-color;
+    outline: none;
+  }
+}
+
+.buttons-container {
+  text-align: center;
+
+  button {
+    width: 200px;
+  }
+
+  .filter {
+    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
+    font-size: $content-font-size * 1.75;
+    letter-spacing: 1px;
+  }
+}

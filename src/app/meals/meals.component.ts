@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './meals.component.scss'
 })
 export class MealsComponent {
-
+  sectionName = "ŻYWNOŚĆ";
+  sectionDescription = "Przefiltruj wybrane posiłki i dodaj je do swojej listy";
 }
