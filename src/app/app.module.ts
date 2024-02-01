@@ -11,6 +11,16 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { TitleComponent } from './title/title.component';
+import { CalculatorResultComponent } from './calculator/calculator-result/calculator-result.component';
+import { MealsComponent } from './meals/meals.component';
+import { MealsFormComponent } from './meals/meals-form/meals-form.component';
+import { CaloriesComponent } from './meals/calories/calories.component';
+import { CaloriesDiagramComponent } from './meals/calories/calories-diagram/calories-diagram.component';
+import { CaloriesTableComponent } from './meals/calories/calories-table/calories-table.component';
+import { MealsEditComponent } from './meals/meals-edit/meals-edit.component';
+import { MealsTableComponent } from './meals/meals-table/meals-table.component';
+import { FooterComponent } from './footer/footer.component';
+import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 
 
 @NgModule({
@@ -19,7 +29,17 @@ import { TitleComponent } from './title/title.component';
     HeaderComponent,
     HomeComponent,
     CalculatorComponent,
-    TitleComponent
+    TitleComponent,
+    CalculatorResultComponent,
+    MealsComponent,
+    MealsFormComponent,
+    CaloriesComponent,
+    CaloriesDiagramComponent,
+    CaloriesTableComponent,
+    MealsEditComponent,
+    MealsTableComponent,
+    FooterComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
