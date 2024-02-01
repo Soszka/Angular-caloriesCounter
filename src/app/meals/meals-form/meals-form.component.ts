@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { faFire, faUtensils, faCubesStacked } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-meals-form',
@@ -8,6 +10,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class MealsFormComponent implements OnInit {
   form!: FormGroup;
+  faFire = faFire;
+  faUtensils = faUtensils;
+  faCubesStacked = faCubesStacked;
 
   constructor(private fb: FormBuilder) {}
 

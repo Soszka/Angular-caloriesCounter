@@ -1,0 +1,88 @@
+@import '../../styles/settings.scss';
+
+.mat-elevation-z8 {
+ margin-top: 60px;
+}
+
+table {
+  color: $text-secondary-color;
+  text-align: center;
+
+  th {
+    background: linear-gradient(to top, rgb(192, 1, 1), rgb(66, 0, 0));
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  tr.mat-row {
+    background-color: black;
+  }
+
+  .mat-mdc-row.mdc-data-table__row.cdk-row {
+    background-color: black;
+    color: white;
+    border-bottom: 2px solid;
+    font-size: 22px;
+    border-spacing: 1px;
+  }
+
+  .mat-mdc-row.mdc-data-table__row.cdk-row:hover {
+    background: linear-gradient(to top, rgb(7, 0, 0), rgb(63, 0, 0));
+  }
+
+  
+  .mat-mdc-cell.mdc-data-table__cell.cdk-cell{
+    border-bottom: 2px solid $text-secondary-color;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .btn-add {
+    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
+    font-size: $content-font-size * 0.9;
+  }
+
+  .btn-edit {
+    @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
+    font-size: $content-font-size * 0.9;
+  }
+}
+
+::ng-deep .mat-mdc-paginator-outer-container {
+  background: linear-gradient(to top, rgb(109, 0, 0), rgb(26, 0, 0));
+  color: white;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-select-value {
+  color: white;
+}
+
+::ng-deep .mat-mdc-select-arrow svg {
+  color: white;
+} 
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__leading,
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__trailing {
+  border: 3px solid white;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__leading {
+  border-right: none;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-left: none;
+}
+
+::ng-deep .mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon {
+  fill: rgb(255, 255, 255) !important;
+  opacity: 0.6;
+}
+
+::ng-deep .mat-mdc-icon-button .mat-mdc-paginator-icon {
+  fill: rgb(255, 255, 255) !important;
+}
+
+

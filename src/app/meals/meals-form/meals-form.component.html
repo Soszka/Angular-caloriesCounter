@@ -1,25 +1,34 @@
 <div class="meals-form">
   <form [formGroup]="form">
     <div class="form-selects">
-      <select id="calories-amount" name="calories-amount" required>
-        <option value="" disabled selected hidden>Kalorie</option>
-        <option value="small">poniżej 500kcal</option>
-        <option value="medium">500kcal - 1000kcal</option>
-        <option value="large">powyżej 1000kcal</option>
-      </select>
-      <select id="kind" name="kind" required>
-        <option value="" disabled selected hidden>Rodzaj</option>
-        <option value="snacks">Przekąski</option>
-        <option value="dinners">Obiady</option>
-        <option value="breakfasts">Śniadania</option>
-        <option value="dinners">Kolacje</option>
-        <option value="fruits-vegetables">Owoce/Warzywa</option>
-      </select>
-      <select id="taste" name="taste" required>
-        <option value="" disabled selected hidden>Smak</option>
-        <option value="sweet">Na słodko</option>
-        <option value="salty">Na słono</option>
-      </select>
+      <div class="select">
+        <fa-icon [icon]="faFire"></fa-icon>
+        <select id="calories-amount" name="calories-amount" required>
+          <option value="" disabled selected hidden>Kalorie</option>
+          <option value="small">poniżej 500kcal</option>
+          <option value="medium">500kcal - 1000kcal</option>
+          <option value="large">powyżej 1000kcal</option>
+        </select>
+      </div>
+      <div class="select">
+        <fa-icon [icon]="faUtensils"></fa-icon>
+        <select id="kind" name="kind" required>
+          <option value="" disabled selected hidden>Rodzaj</option>
+          <option value="snacks">Przekąski</option>
+          <option value="dinners">Obiady</option>
+          <option value="breakfasts">Śniadania</option>
+          <option value="dinners">Kolacje</option>
+          <option value="fruits-vegetables">Owoce/Warzywa</option>
+        </select>
+      </div>
+      <div class="select">
+        <fa-icon [icon]="faCubesStacked"></fa-icon>
+        <select id="taste" name="taste" required>
+          <option value="" disabled selected hidden>Smak</option>
+          <option value="sweet">Na słodko</option>
+          <option value="salty">Na słono</option>
+        </select>
+      </div>
     </div>
     <div class="buttons-container">
       <button class="filter">Filtruj</button>
