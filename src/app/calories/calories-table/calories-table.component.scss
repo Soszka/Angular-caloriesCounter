@@ -1,0 +1,46 @@
+@import '../../../styles/settings.scss';
+
+.mat-elevation-z8 {
+  margin-top: 60px;
+}
+
+table {
+  color: $text-secondary-color;
+  text-align: center;
+
+  th {
+    background: linear-gradient(to top, rgb(192, 1, 1), rgb(66, 0, 0));
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  tr.mat-row {
+    background-color: black;
+  }
+
+  .mat-mdc-row.mdc-data-table__row.cdk-row {
+    background-color: black;
+    color: white;
+    border-bottom: 2px solid;
+    font-size: 22px;
+    border-spacing: 1px;
+  }
+
+  .mat-mdc-row.mdc-data-table__row.cdk-row:hover {
+    background: linear-gradient(to top, rgb(66, 0, 0),rgb(27, 0, 0));
+  }
+
+  
+  .mat-mdc-cell.mdc-data-table__cell.cdk-cell{
+    border-bottom: 2px solid $text-secondary-color;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .btn-remove {
+    @include button(rgb(216, 0, 0), rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
+    font-size: $content-font-size * 0.9;
+  }
+}
