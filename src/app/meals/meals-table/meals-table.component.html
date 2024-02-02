@@ -1,1 +1,46 @@
-<p>meals-table works!</p>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Nazwa</th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="calories">
+      <th mat-header-cell *matHeaderCellDef>Kalorie</th>
+      <td mat-cell *matCellDef="let element"> {{element.calories}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="carbohydrates">
+      <th mat-header-cell *matHeaderCellDef>Węglowodany</th>
+      <td mat-cell *matCellDef="let element"> {{element.carbohydrates}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="protein">
+      <th mat-header-cell *matHeaderCellDef>Białko</th>
+      <td mat-cell *matCellDef="let element"> {{element.protein}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fats">
+      <th mat-header-cell *matHeaderCellDef>Tłuszcze</th>
+      <td mat-cell *matCellDef="let element"> {{element.fats}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Edycja</th>
+      <td mat-cell *matCellDef="let element"><button class="btn-edit">Edytuj</button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="add">
+      <th mat-header-cell *matHeaderCellDef>Dodawanie</th>
+      <td mat-cell *matCellDef="let element"><button class="btn-add">Dodaj</button></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

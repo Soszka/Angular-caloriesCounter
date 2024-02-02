@@ -1,0 +1,99 @@
+@import '../../../styles/settings.scss';
+
+.meals-edit {
+  max-width: 1000px;
+  margin: 10px auto;
+}
+
+.row {
+  display: flex;
+  margin: 70px auto 100px;
+  justify-content: space-between;
+
+  .data-option {
+    text-align: center;
+    display: flex;
+    position: relative;
+  }
+
+  label {
+    position: absolute;
+    top: -50%;
+    left: 70px;
+    color: $text-secondary-color;
+    font-family: cursive;
+  }
+
+  fa-icon {
+    font-size: 42px;
+    margin: 0px 30px 0 0;
+    color: $text-secondary-color;
+  }
+
+  input {
+    border: none;
+    border-bottom: 5px solid $text-secondary-color;
+    width: 100%;
+    height: 60px;
+    background: inherit;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    --webkit-appearance: none;
+    outline: none;
+    position: relative;
+    color: white;
+
+    &::placeholder {
+      color: white;
+    }
+  
+    &:focus {
+      border-bottom-color: rgb(211, 0, 0);
+      + fa-icon {
+        color: rgb(211, 0, 0); 
+      }
+  
+      &::placeholder {
+        color: black;
+      }
+    }
+  }
+}
+
+.buttons-container {
+  text-align: center;
+
+  button {
+    margin: 0 30px 30px;
+    width: 400px;
+  }
+
+  .cancel {
+    @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
+    font-size: $content-font-size * 1.6;
+  }
+
+  .save {
+    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
+    font-size: $content-font-size * 1.6;
+  }
+}
+
+
+.row:nth-child(1) .data-option,
+.row:nth-child(2) .data-option {
+  width: 48%;
+}
+
+.row:nth-child(3) .data-option,
+.row:nth-child(4) .data-option,
+.row:nth-child(5) .data-option {
+  width: 30%;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
