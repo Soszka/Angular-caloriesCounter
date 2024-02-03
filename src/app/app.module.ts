@@ -24,6 +24,8 @@ import { MealsTableComponent } from './meals/meals-table/meals-table.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 
+import { MealsService } from './meals/meals.service';
+
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { SidenavComponent } from './navigation/sidenav/sidenav.component';
     AppRoutingModule,
     RouterModule
   ],
+  providers: [MealsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

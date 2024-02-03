@@ -7,33 +7,33 @@
     <div class="data-option">
       <label for="name">Nazwa</label>
       <fa-icon [icon]="faUtensils"></fa-icon>
-      <input type="text" id="name" placeholder="Serek wiejski">
+      <input type="text" id="name" [placeholder]="selectedElement?.name">
     </div>
     <div class="data-option">
       <label for="calories">Liczba kalorii ( kcal )</label>
       <fa-icon [icon]="faFire"></fa-icon>
-      <input type="number" id="calories" placeholder="200">
+      <input type="number" id="calories" [placeholder]="selectedElement?.calories">
     </div>
   </div>
   <div class="row">
     <div class="data-option">
       <label for="protein">Białko ( gram )</label>
       <fa-icon [icon]="faDrumstickBite"></fa-icon>
-      <input type="number" id="protein" placeholder="22">
+      <input type="number" id="protein" [placeholder]="selectedElement?.protein">
     </div>
     <div class="data-option">
       <label for="fats">Tłuszcze ( gram )</label>
       <fa-icon [icon]="faBurger"></fa-icon>
-      <input type="number" id="fats" placeholder="10">
+      <input type="number" id="fats" [placeholder]="selectedElement?.fats">
     </div>
     <div class="data-option">
       <label for="carbohydrates">Węglowodany ( gram )</label>
       <fa-icon [icon]="faBreadSlice"></fa-icon>
-      <input type="number" id="carbohydrates" placeholder="4">
+      <input type="number" id="carbohydrates" [placeholder]="selectedElement?.carbohydrates">
     </div>
   </div>
   <div class="buttons-container">
-    <button class="cancel">Anuluj zmiany</button>
+    <button class="cancel" (click)="onCancelCLick()">Anuluj zmiany</button>
     <button class="save">Zapisz i dodaj</button>
   </div>
 </div>
