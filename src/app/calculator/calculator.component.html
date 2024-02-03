@@ -2,7 +2,7 @@
   [sectionTitle]="sectionName" 
   [sectionDescription]="sectionDescription">
 </app-title>
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-button-toggle-group formControlName="gender">
     <mat-button-toggle value="male" checked>
       <fa-icon [icon]="faMars"></fa-icon><span>Mężczyzna</span>
@@ -45,7 +45,7 @@
   </div>
 
   <div class="buttons-container">
-    <button class="cancel">Wróć</button>
-    <button class="submit">Wynik</button>
+    <button class="cancel" (click)="onReturn()">Wróć</button>
+    <button type="submit" class="submit">Wynik</button>
   </div>
 </form>

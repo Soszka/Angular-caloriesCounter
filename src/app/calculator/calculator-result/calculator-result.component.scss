@@ -1,8 +1,14 @@
 @import '../../../styles/settings.scss';
 
+.calculator-result {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .result {
   display: flex;
   justify-content: space-between;
+  
 }
 
 .result-data {

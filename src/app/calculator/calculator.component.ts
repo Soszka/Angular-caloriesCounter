@@ -9,6 +9,8 @@ import {
   faPersonRunning,
   faDumbbell }
 from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+import { ActivatedRoute  } from '@angular/router';
 
 
 @Component({
@@ -28,7 +30,9 @@ export class CalculatorComponent {
   faDumbbell = faDumbbell;
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+     private router: Router) {
+  }
   
   ngOnInit() {
     this.form = this.fb.group({
@@ -40,4 +44,17 @@ export class CalculatorComponent {
       dietGoal: ['', Validators.required]
     });
   }
+
+  onSubmit() {
+    this.router.navigate(['result']).then(() => {
+      window.scrollTo(0, 0);
+    });
+  }
+
+  onReturn() {
+    this.router.navigate(['']).then(() => {
+      window.scrollTo(0, 0);
+    });
+  }
+
 }

@@ -1,4 +1,4 @@
-<div class="calcultor-result">
+<div class="calculator-result">
   <app-title 
     [sectionTitle]="sectionName" 
     [sectionDescription]="sectionDescription">
@@ -59,7 +59,7 @@
     </div>
   </div>
   <div class="buttons-container">
-    <button class="recalculate">Przelicz ponownie</button>
+    <button class="recalculate" (click)="recalculate()">Przelicz ponownie</button>
     <button class="save">Zapisz rezultat</button>
   </div>
 </div>

@@ -53,6 +53,10 @@ table {
 
 // PAGINATOR
 
+mat-paginator {
+  margin-bottom: 50px;
+}
+
 ::ng-deep .mat-mdc-paginator-outer-container {
   background: linear-gradient(to top, rgb(109, 0, 0), rgb(26, 0, 0));
   color: white;

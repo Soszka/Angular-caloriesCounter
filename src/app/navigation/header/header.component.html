@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Licznik kalorii by <span>Bartłomiej Socha</span></h1>
   <div class="nav">
-    <a href="https://bartlomiejsocha.pl/" class="active">Kalkulator</a>
-    <a href="https://bartlomiejsocha.pl/">Żywność</a>
-    <a href="https://bartlomiejsocha.pl/">Kalorie</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Wstęp</a>
+    <a routerLink="/meals" routerLinkActive="active">Żywność</a>
+    <a routerLink="/calories" routerLinkActive="active">Kalorie</a>
   </div>
 </div>
