@@ -3,37 +3,39 @@
     [sectionTitle]="sectionName" 
     [sectionDescription]="sectionDescription">
   </app-title>
-  <div class="row">
-    <div class="data-option">
-      <label for="name">Nazwa</label>
-      <fa-icon [icon]="faUtensils"></fa-icon>
-      <input type="text" id="name" [placeholder]="selectedElement?.name">
+  <form [formGroup]="mealForm">
+    <div class="row">
+      <div class="data-option">
+        <label for="name">Nazwa</label>
+        <fa-icon [icon]="faUtensils"></fa-icon>
+        <input type="text" id="name" formControlName="name" placeholder="Wprowadź nazwę">
+      </div>
+      <div class="data-option">
+        <label for="calories">Liczba kalorii ( kcal )</label>
+        <fa-icon [icon]="faFire"></fa-icon>
+        <input type="number" id="calories" formControlName="calories" placeholder="Wprowadź ilość kcal">
+      </div>
     </div>
-    <div class="data-option">
-      <label for="calories">Liczba kalorii ( kcal )</label>
-      <fa-icon [icon]="faFire"></fa-icon>
-      <input type="number" id="calories" [placeholder]="selectedElement?.calories">
+    <div class="row">
+      <div class="data-option">
+        <label for="protein">Białko ( gram )</label>
+        <fa-icon [icon]="faDrumstickBite"></fa-icon>
+        <input type="number" id="protein" formControlName="protein" placeholder="Białko" (input)="updateCalories()">
+      </div>
+      <div class="data-option">
+        <label for="fats">Tłuszcze ( gram )</label>
+        <fa-icon [icon]="faBurger"></fa-icon>
+        <input type="number" id="fats" formControlName="fats" placeholder="Tłuszcze" (input)="updateCalories()">
+      </div>
+      <div class="data-option">
+        <label for="carbohydrates">Węglowodany ( gram )</label>
+        <fa-icon [icon]="faBreadSlice"></fa-icon>
+        <input type="number" id="carbohydrates" formControlName="carbohydrates" placeholder="Węglowodany" (input)="updateCalories()">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="data-option">
-      <label for="protein">Białko ( gram )</label>
-      <fa-icon [icon]="faDrumstickBite"></fa-icon>
-      <input type="number" id="protein" [placeholder]="selectedElement?.protein">
+    <div class="buttons-container">
+      <button class="cancel" (click)="onCancelCLick()">Anuluj zmiany</button>
+      <button class="save" (click)="onSaveClick()">Zapisz i dodaj</button>
     </div>
-    <div class="data-option">
-      <label for="fats">Tłuszcze ( gram )</label>
-      <fa-icon [icon]="faBurger"></fa-icon>
-      <input type="number" id="fats" [placeholder]="selectedElement?.fats">
-    </div>
-    <div class="data-option">
-      <label for="carbohydrates">Węglowodany ( gram )</label>
-      <fa-icon [icon]="faBreadSlice"></fa-icon>
-      <input type="number" id="carbohydrates" [placeholder]="selectedElement?.carbohydrates">
-    </div>
-  </div>
-  <div class="buttons-container">
-    <button class="cancel" (click)="onCancelCLick()">Anuluj zmiany</button>
-    <button class="save">Zapisz i dodaj</button>
-  </div>
+  </form>
 </div>

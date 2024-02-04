@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faFire, faUtensils, faCubesStacked } from '@fortawesome/free-solid-svg-icons';
+import { MealsService } from '../meals.service';
 
 
 @Component({
@@ -14,13 +15,19 @@ export class MealsFormComponent implements OnInit {
   faUtensils = faUtensils;
   faCubesStacked = faCubesStacked;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+    private mealsService: MealsService) {}
 
   ngOnInit() {
     this.form = this.fb.group({
-      caloriesAmount: ['', Validators.required],
+      calories: ['', Validators.required],
       kind: ['', Validators.required],
       taste: ['', Validators.required]
     });
+  }
+
+  onFilterClick() {
+    const filterOptions = this.form.value;
+    this.mealsService.filterMeals(filterOptions);
   }
 }

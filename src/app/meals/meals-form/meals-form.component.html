@@ -3,7 +3,7 @@
     <div class="form-selects">
       <div class="select">
         <fa-icon [icon]="faFire"></fa-icon>
-        <select id="calories-amount" name="calories-amount" required>
+        <select id="calories" formControlName="calories" required>
           <option value="" disabled selected hidden>Kalorie</option>
           <option value="small">poniżej 500kcal</option>
           <option value="medium">500kcal - 1000kcal</option>
@@ -12,7 +12,7 @@
       </div>
       <div class="select">
         <fa-icon [icon]="faUtensils"></fa-icon>
-        <select id="kind" name="kind" required>
+        <select id="kind" formControlName="kind" required>
           <option value="" disabled selected hidden>Rodzaj</option>
           <option value="snacks">Przekąski</option>
           <option value="dinners">Obiady</option>
@@ -23,7 +23,7 @@
       </div>
       <div class="select">
         <fa-icon [icon]="faCubesStacked"></fa-icon>
-        <select id="taste" name="taste" required>
+        <select id="taste" formControlName="taste" required>
           <option value="" disabled selected hidden>Smak</option>
           <option value="sweet">Na słodko</option>
           <option value="salty">Na słono</option>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="buttons-container">
-      <button class="filter">Filtruj</button>
+      <button class="filter"  (click)="onFilterClick()">Filtruj</button>
     </div>
   </form>
 </div>
