@@ -1,6 +1,6 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { CaloriesService } from '../calories.service';
 import { AddedMeal } from '../../meals/meal.model';
 
@@ -22,6 +22,8 @@ const addedElements: addedElement[] = [];
 export class CaloriesTableComponent implements AfterViewInit {
   displayedColumns: string[] = ['name', 'calories', 'carbohydrates', 'protein', 'fats', 'remove'];
   dataSource = new MatTableDataSource<addedElement>(addedElements);
+  showMessage: boolean = false;
+  messageInfo = "Usunięto wybrany produkt !"
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -36,5 +38,10 @@ export class CaloriesTableComponent implements AfterViewInit {
 
   removeElement(element: AddedMeal) {
     this.caloriesService.removeElement(element);
+    this.showMessage = true;
+  }
+
+  onOkClick() {
+    this.showMessage = false;
   }
 }

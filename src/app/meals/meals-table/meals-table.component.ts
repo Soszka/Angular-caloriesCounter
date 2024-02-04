@@ -15,6 +15,8 @@ import { CaloriesService } from '../../calories/calories.service';
 export class MealsTableComponent implements AfterViewInit {
   displayedColumns: string[] = ['name', 'calories', 'carbohydrates', 'protein', 'fats', 'edit', 'add'];
   dataSource = new MatTableDataSource<MealElement>([]);
+  showMessage: boolean = false;
+  messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce kalorie"
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -45,6 +47,11 @@ export class MealsTableComponent implements AfterViewInit {
       element.carbohydrates
     );
     this.caloriesService.addElement(addedMeal);
+    this.showMessage = true;
+  }
+
+  onOkClick() {
+    this.showMessage = false;
   }
 }
 

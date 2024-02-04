@@ -25,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 
 import { MealsService } from './meals/meals.service';
+import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { MealsService } from './meals/meals.service';
     MealsEditComponent,
     MealsTableComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
+    InfoDialogComponent
   ],
   imports: [
     BrowserModule,

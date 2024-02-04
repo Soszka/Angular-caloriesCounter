@@ -1,0 +1,5 @@
+<div [ngClass]="{ 'overlay': !showMessage, 'overlay active': showMessage }"></div>
+<div class="messageBox" *ngIf="showMessage">
+  <p>{{ messageInfo }}</p>
+  <button (click)="handleOkClick()">OK</button>
+</div>

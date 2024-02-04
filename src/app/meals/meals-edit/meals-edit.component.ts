@@ -22,18 +22,21 @@ export class MealsEditComponent {
 
   selectedElement: MealElement | null = null;
   mealForm: FormGroup;
+  showMessage: boolean = false;
+  shouldNavigate: boolean = false;
+  messageInfo = ""
 
   constructor(private mealsService: MealsService,
      private router: Router, private fb: FormBuilder,
      private caloriesService: CaloriesService) {
-    this.mealForm = this.fb.group({
-      name: ['', Validators.required],
-      calories: ['', Validators.required],
-      protein: ['', Validators.required],
-      fats: ['', Validators.required],
-      carbohydrates: ['', Validators.required],
-    });
-  }
+      this.mealForm = this.fb.group({
+        name: ['', Validators.required],
+        calories: ['', Validators.required],
+        protein: ['', Validators.required],
+        fats: ['', Validators.required],
+        carbohydrates: ['', Validators.required],
+      }
+  )}
 
   ngOnInit() {
     this.mealsService.selectedElement$.subscribe(element => {
@@ -47,7 +50,6 @@ export class MealsEditComponent {
           carbohydrates: this.selectedElement.carbohydrates,
         });
       }
-      this.mealForm.get('calories')?.disable();
     });
   }
 
@@ -56,22 +58,36 @@ export class MealsEditComponent {
     const fats = this.mealForm.value.fats;
     const carbohydrates = this.mealForm.value.carbohydrates;
     const calories = protein * 4 + fats * 9 + carbohydrates * 4;
-    this.mealForm.setValue({
-      ...this.mealForm.value, 
-      calories: calories,
-    });
+    this.mealForm.controls['calories'].setValue(calories);
   }
 
   onSaveClick() {
     if (this.mealForm.valid) {
+      const caloriesControl = this.mealForm.get('calories');
+      const calories = caloriesControl ? caloriesControl.value : 0;
       const addedMeal = new AddedMeal(
         this.mealForm.value.name,
-        this.mealForm.value.calories,
+        calories,
         this.mealForm.value.fats,
         this.mealForm.value.protein,
         this.mealForm.value.carbohydrates
       );
       this.caloriesService.addElement(addedMeal);
+      this.messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce kalorie"
+      this.showMessage = true;
+      this.shouldNavigate = true;
+    }
+  }
+
+  onCaloriesClick() {
+    this.messageInfo = "Nie można zmieniać ilości kalorii. Jest ona zależna od tłuszczy, białka i węglowodanów";
+    this.showMessage = true;
+    this.shouldNavigate = false; 
+  }
+  
+  onOkClick() {
+    this.showMessage = false;
+    if (this.shouldNavigate) {
       this.router.navigate(['meals']);
     }
   }

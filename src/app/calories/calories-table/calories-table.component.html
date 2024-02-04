@@ -40,4 +40,9 @@
                  aria-label="Select page of periodic elements">
   </mat-paginator>
 </div>
+<app-info-dialog 
+  [showMessage]="showMessage"
+  [messageInfo]="messageInfo"
+  (okClick)="onOkClick()">
+</app-info-dialog>
 
