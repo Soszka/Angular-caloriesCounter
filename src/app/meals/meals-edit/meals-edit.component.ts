@@ -24,8 +24,14 @@ export class MealsEditComponent {
   mealForm: FormGroup;
   showMessage: boolean = false;
   shouldNavigate: boolean = false;
-  messageInfo = ""
+  messageInfo = "";
 
+  dataMacroOptions = [
+    { label: 'Białko ( gram )', name: 'Białko', icon: faDrumstickBite, formControlName: 'protein' },
+    { label: 'Tłuszcze ( gram )', name: 'Tłuszcze', icon: faBurger, formControlName: 'fats' },
+    { label: 'Węglowodany ( gram )', name: 'Węglowodany', icon: faBreadSlice, formControlName: 'carbohydrates' }
+  ];
+  
   constructor(private mealsService: MealsService,
     private router: Router,
     private fb: FormBuilder,
@@ -39,7 +45,6 @@ export class MealsEditComponent {
      });
   }
   
-
   ngOnInit() {
     this.mealsService.selectedElement$.subscribe(element => {
       this.selectedElement = element;

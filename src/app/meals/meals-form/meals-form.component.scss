@@ -42,9 +42,11 @@
 
 .buttons-container {
   text-align: center;
+  max-width: 300px;
+  margin: 50px auto;
 
   button {
-    width: 200px;
+    width: 250px;
   }
 
   .filter {
@@ -52,4 +54,12 @@
     font-size: $content-font-size * 1.75;
     letter-spacing: 1px;
   }
+
+  mat-spinner {
+    margin: 70px auto;
+  }
+}
+
+::ng-deep .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+  stroke: $text-secondary-color !important;
 }

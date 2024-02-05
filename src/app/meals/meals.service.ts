@@ -1,5 +1,5 @@
 import { Injectable  } from '@angular/core'
-import { BehaviorSubject, filter } from 'rxjs';;
+import { BehaviorSubject, Subject } from 'rxjs';;
 
 export interface MealElement {
   id: number
@@ -19,6 +19,9 @@ export class MealsService {
 
   private selectedElementSubject = new BehaviorSubject<MealElement | null>(null);
   selectedElement$ = this.selectedElementSubject.asObservable();
+
+  loadingSubject = new Subject<boolean>();
+  loading$ = this.loadingSubject.asObservable();
   
   private elementsData: MealElement[] = [
     { id: 1, name: 'Jogurt truskawkowy', calories: 192, carbohydrates: 24, protein: 12, fats: 6, kind: 'breakfasts', taste: 'sweet' },
@@ -127,6 +130,18 @@ export class MealsService {
     this.updateElementData(this.elementsData);
   }
 
+  setLoading(loading: boolean) {
+    this.loadingSubject.next(loading);
+    let loadingTimer;
+    if (loading) {
+      loadingTimer = setTimeout(() => {
+        this.loadingSubject.next(false);
+      }, 1500);
+    } else {
+      clearTimeout(loadingTimer);
+    }
+  }
+
   updateElementData(data: MealElement[]) {
     this.elementDataSubject.next(data);
   }
@@ -149,8 +164,6 @@ export class MealsService {
 
       return caloriesCondition && kindCondition && tasteCondition;
     });
-
-    console.log(filteredElements);
     this.elementDataSubject.next(filteredElements);
   }
 }

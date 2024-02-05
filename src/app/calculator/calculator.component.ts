@@ -10,7 +10,6 @@ import {
   faDumbbell }
 from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
-import { ActivatedRoute  } from '@angular/router';
 
 
 @Component({

@@ -12,11 +12,13 @@ import { CaloriesService } from '../../calories/calories.service';
   templateUrl: './meals-table.component.html',
   styleUrl: './meals-table.component.scss'
 })
-export class MealsTableComponent implements AfterViewInit {
+export class MealsTableComponent implements  AfterViewInit {
   displayedColumns: string[] = ['name', 'calories', 'carbohydrates', 'protein', 'fats', 'edit', 'add'];
   dataSource = new MatTableDataSource<MealElement>([]);
   showMessage: boolean = false;
   messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce kalorie"
+  loading: boolean = false;
+  
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -25,13 +27,17 @@ export class MealsTableComponent implements AfterViewInit {
      private caloriesService: CaloriesService) {}
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+    this.mealsService.loading$.subscribe((loading) => {
+      this.loading = loading;
+    });
     this.mealsService.elementData$.subscribe(data => {
       setTimeout(() => {
         this.dataSource.data = data;
+        this.dataSource.paginator = this.paginator;
       });
     });
   }
+
 
   onEditClick(element: MealElement) {
     this.mealsService.setSelectedElement(element);

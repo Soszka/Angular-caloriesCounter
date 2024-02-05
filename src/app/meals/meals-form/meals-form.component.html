@@ -32,6 +32,11 @@
     </div>
     <div class="buttons-container">
       <button class="filter"  (click)="onFilterClick()">Filtruj</button>
+      <mat-spinner
+       *ngIf="loading"
+       [diameter]="150"
+       [strokeWidth]="15">
+      </mat-spinner>
     </div>
   </form>
 </div>

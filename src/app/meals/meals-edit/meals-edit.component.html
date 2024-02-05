@@ -17,20 +17,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="data-option">
-        <label for="protein">Białko ( gram )</label>
-        <fa-icon [icon]="faDrumstickBite"></fa-icon>
-        <input type="number" id="protein" formControlName="protein" placeholder="Białko" (input)="validateInput('protein'); updateCalories()">
-      </div>
-      <div class="data-option">
-        <label for="fats">Tłuszcze ( gram )</label>
-        <fa-icon [icon]="faBurger"></fa-icon>
-        <input type="number" id="fats" formControlName="fats" placeholder="Tłuszcze" (input)="validateInput('fats'); updateCalories()">
-      </div>
-      <div class="data-option">
-        <label for="carbohydrates">Węglowodany ( gram )</label>
-        <fa-icon [icon]="faBreadSlice"></fa-icon>
-        <input type="number" id="carbohydrates" formControlName="carbohydrates" placeholder="Węglowodany" (input)="validateInput('carbohydrates'); updateCalories()">
+      <div *ngFor="let option of dataMacroOptions" class="data-option">
+        <label [for]="option.formControlName">{{ option.label }}</label>
+        <fa-icon [icon]="option.icon"></fa-icon>
+        <input
+          type="number"
+          [id]="option.formControlName"
+          [formControlName]="option.formControlName"
+          [placeholder]="option.name"
+          (input)="validateInput(option.formControlName); updateCalories()"
+        >
       </div>
     </div>
     <div class="buttons-container">
