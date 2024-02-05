@@ -27,16 +27,18 @@ export class MealsEditComponent {
   messageInfo = ""
 
   constructor(private mealsService: MealsService,
-     private router: Router, private fb: FormBuilder,
-     private caloriesService: CaloriesService) {
+    private router: Router,
+    private fb: FormBuilder,
+    private caloriesService: CaloriesService) {
       this.mealForm = this.fb.group({
-        name: ['', Validators.required],
+        name: ['', [Validators.required,]],
         calories: ['', Validators.required],
-        protein: ['', Validators.required],
-        fats: ['', Validators.required],
-        carbohydrates: ['', Validators.required],
-      }
-  )}
+        protein: ['', [Validators.required]],
+        fats: ['', [Validators.required,]],
+        carbohydrates: ['', [Validators.required,]],
+     });
+  }
+  
 
   ngOnInit() {
     this.mealsService.selectedElement$.subscribe(element => {
@@ -51,6 +53,17 @@ export class MealsEditComponent {
         });
       }
     });
+
+  }
+
+  validateInput(controlName: string) {
+    const control = this.mealForm.get(controlName);
+    if (control) {
+      let value = control.value;
+      if (value < 0 || value > 1000 || isNaN(value)) {
+        control.setValue(1);
+      }
+    }
   }
 
   updateCalories() {
@@ -76,6 +89,10 @@ export class MealsEditComponent {
       this.messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce kalorie"
       this.showMessage = true;
       this.shouldNavigate = true;
+    } else {
+      this.messageInfo = "Uzepłnij wszystkie pola żeby dodać produkt !"
+      this.showMessage = true;
+      this.shouldNavigate = false;
     }
   }
 

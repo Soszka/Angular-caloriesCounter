@@ -8,7 +8,7 @@
       <div class="data-option">
         <label for="name">Nazwa</label>
         <fa-icon [icon]="faUtensils"></fa-icon>
-        <input type="text" id="name" formControlName="name" placeholder="Wprowadź nazwę">
+        <input type="text" id="name" formControlName="name" maxlength="25" placeholder="Wprowadź nazwę">
       </div>
       <div class="data-option" (click)="onCaloriesClick()">
         <label for="calories">Liczba kalorii ( kcal )</label>
@@ -20,17 +20,17 @@
       <div class="data-option">
         <label for="protein">Białko ( gram )</label>
         <fa-icon [icon]="faDrumstickBite"></fa-icon>
-        <input type="number" id="protein" formControlName="protein" placeholder="Białko" (input)="updateCalories()">
+        <input type="number" id="protein" formControlName="protein" placeholder="Białko" (input)="validateInput('protein'); updateCalories()">
       </div>
       <div class="data-option">
         <label for="fats">Tłuszcze ( gram )</label>
         <fa-icon [icon]="faBurger"></fa-icon>
-        <input type="number" id="fats" formControlName="fats" placeholder="Tłuszcze" (input)="updateCalories()">
+        <input type="number" id="fats" formControlName="fats" placeholder="Tłuszcze" (input)="validateInput('fats'); updateCalories()">
       </div>
       <div class="data-option">
         <label for="carbohydrates">Węglowodany ( gram )</label>
         <fa-icon [icon]="faBreadSlice"></fa-icon>
-        <input type="number" id="carbohydrates" formControlName="carbohydrates" placeholder="Węglowodany" (input)="updateCalories()">
+        <input type="number" id="carbohydrates" formControlName="carbohydrates" placeholder="Węglowodany" (input)="validateInput('carbohydrates'); updateCalories()">
       </div>
     </div>
     <div class="buttons-container">
