@@ -15,6 +15,25 @@ export class MealsFormComponent implements OnInit {
   faUtensils = faUtensils;
   faCubesStacked = faCubesStacked;
   loading: boolean = false;
+
+  caloriesOptions = [
+    { value: "small", label: "poniżej 500kcal" },
+    { value: "medium", label: "500kcal - 1000kcal" },
+    { value: "large", label: "powyżej 1000kcal" }
+  ];
+  
+  kindOptions = [
+    { value: "snacks", label: "Przekąski" },
+    { value: "dinners", label: "Obiady" },
+    { value: "breakfasts", label: "Śniadania" },
+    { value: "suppers", label: "Kolacje" },
+    { value: "fruits-vegetables", label: "Owoce/Warzywa" }
+  ];
+  
+  tasteOptions = [
+    { value: "sweet", label: "Na słodko" },
+    { value: "salty", label: "Na słono" }
+  ];
   
   constructor(private fb: FormBuilder,
     private mealsService: MealsService) {}

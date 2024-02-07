@@ -5,37 +5,39 @@
         <fa-icon [icon]="faFire"></fa-icon>
         <select id="calories" formControlName="calories" required>
           <option value="" disabled selected hidden>Kalorie</option>
-          <option value="small">poniżej 500kcal</option>
-          <option value="medium">500kcal - 1000kcal</option>
-          <option value="large">powyżej 1000kcal</option>
+          <option 
+            *ngFor="let option of caloriesOptions"
+            [value]="option.value">{{ option.label }}
+          </option>
         </select>
       </div>
       <div class="select">
         <fa-icon [icon]="faUtensils"></fa-icon>
         <select id="kind" formControlName="kind" required>
           <option value="" disabled selected hidden>Rodzaj</option>
-          <option value="snacks">Przekąski</option>
-          <option value="dinners">Obiady</option>
-          <option value="breakfasts">Śniadania</option>
-          <option value="suppers">Kolacje</option>
-          <option value="fruits-vegetables">Owoce/Warzywa</option>
+          <option 
+            *ngFor="let option of kindOptions"
+            [value]="option.value">{{ option.label }}
+          </option>
         </select>
       </div>
       <div class="select">
         <fa-icon [icon]="faCubesStacked"></fa-icon>
         <select id="taste" formControlName="taste" required>
           <option value="" disabled selected hidden>Smak</option>
-          <option value="sweet">Na słodko</option>
-          <option value="salty">Na słono</option>
+          <option 
+            *ngFor="let option of tasteOptions"
+            [value]="option.value">{{ option.label }}
+          </option>
         </select>
       </div>
     </div>
     <div class="buttons-container">
       <button class="filter"  (click)="onFilterClick()">Filtruj</button>
       <mat-spinner
-       *ngIf="loading"
-       [diameter]="150"
-       [strokeWidth]="15">
+        *ngIf="loading"
+        [diameter]="150"
+        [strokeWidth]="15">
       </mat-spinner>
     </div>
   </form>

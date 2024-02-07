@@ -36,6 +36,10 @@
       color: $text-secondary-color;
       outline: none;
     }
+
+    option:hover {
+      background-color: red;
+    }
   }
 
 }
