@@ -5,55 +5,23 @@
   </app-title>
   <div class="result">
     <div class="result-data">
-      <div class="data-item">
-        <h2>Twój wskaźnik BMR to :</h2>
+      <div class="data-item" *ngFor="let item of resultData">
+        <h2>{{ item.title }}</h2>
         <div class="calories-amount">
-          <fa-icon [icon]="faAppleWhole"></fa-icon>
-          <h2>{{ bmr }} kalorii dziennie</h2>
-        </div>
-      </div>
-      <div class="data-item">
-        <h2>Twoje zapotrzebowanie kaloryczne to :</h2>
-        <div class="calories-amount">
-          <fa-icon [icon]="faPersonRunning"></fa-icon>
-          <h2>{{ caloricNeeds }} kalorii dziennie</h2>
-        </div>
-      </div>
-      <div class="data-item">
-        <h2>{{ dietGoalMessage }}</h2>
-        <div class="calories-amount">
-          <fa-icon [icon]="faDumbbell"></fa-icon>
-          <h2>{{ caloriesGoal }} kalorii dziennie</h2>
+          <fa-icon [icon]="item.icon"></fa-icon>
+          <h2>{{ item.calories }} kalorii dziennie</h2>
         </div>
       </div>
     </div>
     <div class="result-diagrams">
       <h3>Rozkład makroskładników</h3>
-      <div class="diagram carbohydrates">
+      <div *ngFor="let diagram of resultDiagrams" class="diagram" [ngClass]="diagram.class">
         <div class="diagram-circle">
-          <h4>50%</h4>
+          <h4>{{ diagram.percentage }}%</h4>
         </div>
         <div class="diagram-description">
-          <h3>WĘGLOWODANY</h3>
-          <p>{{ macroNutrients.carbohydrates.calories }} kcal = {{ macroNutrients.carbohydrates.grams }}g</p>
-        </div>
-      </div>
-      <div class="diagram protein">
-        <div class="diagram-circle">
-          <h4>25%</h4>
-        </div>
-        <div class="diagram-description">
-          <h3>BIAŁKO</h3>
-          <p>{{ macroNutrients.protein.calories }} kcal = {{ macroNutrients.protein.grams }}g</p>
-        </div>
-      </div>
-      <div class="diagram fats">
-        <div class="diagram-circle">
-          <h4>25%</h4>
-        </div>
-        <div class="diagram-description">
-          <h3>TŁUSZCZE</h3>
-          <p>{{ macroNutrients.fats.calories }} kcal = {{ macroNutrients.fats.grams }}g</p>
+          <h3>{{ diagram.title }}</h3>
+          <p>{{ diagram.calories }} kcal = {{ diagram.grams }} g</p>
         </div>
       </div>
     </div>

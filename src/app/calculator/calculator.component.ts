@@ -28,10 +28,33 @@ export class CalculatorComponent {
   faArrowsUpDown = faArrowsUpDown;
   faPersonRunning = faPersonRunning;
   faDumbbell = faDumbbell;
+
+  dataOptions = [
+    { formControlName: 'age', placeholder: 'Wiek ( lat )', icon: faCalendarDays, validator: 'validateAge' },
+    { formControlName: 'weight', placeholder: 'Waga ( kg )', icon: faWeightHanging, validator: 'validateBodyInputs' },
+    { formControlName: 'height', placeholder: 'Wzrost ( cm )', icon: faArrowsUpDown, validator: 'validateBodyInputs' }
+  ];
+  genderOptions = [
+    { value: 'male', icon: this.faMars, label: 'Mężczyzna' },
+    { value: 'female', icon: this.faVenus, label: 'Kobieta' }
+  ];
+  activityLevelOptions = [
+    { value: 'ver-low', label: 'Bardzo niska aktywność (minimalny wysiłek fizyczny)' },
+    { value: 'low', label: 'Niska aktywność (1-2 treningi/tydzień)' },
+    { value: 'medium', label: 'Średnia aktywność (3-4 treningi/tydzień)' },
+    { value: 'high', label: 'Wysoka aktywność (5-6 treningi/tydzień)' },
+    { value: 'very-high', label: 'Bardzo wysoka aktywność ( codzienne treningi )' }
+  ];
+  dietGoalOptions = [
+    { value: 'lose-weight', label: 'Chcę schudnąć' },
+    { value: 'maintain-weight', label: 'Chcę utrzymać wagę' },
+    { value: 'gain-weight', label: 'Chcę przytyć' }
+  ];
+
   showMessage: boolean = false;
   messageInfo = "Uzupełnij wszystkie pola !";
-  form!: FormGroup;
   dietGoalMessage: string = '';
+  form!: FormGroup;
 
   constructor(private fb: FormBuilder,
      private router: Router,
