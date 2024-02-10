@@ -28,7 +28,10 @@ export class CalculatorComponent {
   faArrowsUpDown = faArrowsUpDown;
   faPersonRunning = faPersonRunning;
   faDumbbell = faDumbbell;
+  showMessage: boolean = false;
+  messageInfo = "Uzupełnij wszystkie pola !";
   form!: FormGroup;
+  dietGoalMessage: string = '';
 
   constructor(private fb: FormBuilder,
      private router: Router,
@@ -37,27 +40,64 @@ export class CalculatorComponent {
   
   ngOnInit() {
     this.form = this.fb.group({
-      gender: ['', Validators.required],
-      age: ['', Validators.required],
-      weight: ['', Validators.required],
-      height: ['', Validators.required],
+      gender: ['male', Validators.required],
+      age: ['', [Validators.required, Validators.max(120)]],
+      weight: ['', [Validators.required, Validators.max(250)]],
+      height: ['', [Validators.required, Validators.max(250)]],
       activityLevel: ['', Validators.required],
       dietGoal: ['', Validators.required]
     });
   }
 
+  validateAge(controlName: string) {
+    const control = this.form.get(controlName);
+    if (control) {
+      let value = control.value;
+      if (value < 0 || value > 120 || isNaN(value)) {
+        control.setValue(120);
+      }
+    }
+  }
+
+  validateBodyInputs(controlName: string) {
+    const control = this.form.get(controlName);
+    if (control) {
+      let value = control.value;
+      if (value < 0 || value > 250 || isNaN(value)) {
+        control.setValue(250);
+      }
+    }
+  }
+
   onSubmit() {
-    const weight = this.form.value.weight;
-    const height = this.form.value.height;
-    const age = this.form.value.age;
-    const gender = this.form.value.gender;
-    const activityLevel = this.form.value.activityLevel;
-    const bmr = this.calculatorService.calculateBMR(weight, height, age, gender)
-    const caloricNeeds = this.calculatorService.calculateCaloricNeeds(weight, height, age, gender, activityLevel);
-    console.log(caloricNeeds, bmr);
-    this.router.navigate(['result']).then(() => {
-      window.scrollTo(0, 0);
-    });
+    if (this.form.valid) {
+      const { weight, height, age, gender, activityLevel, dietGoal } = this.form.value;
+      this.calculatorService.calculateCaloricNeeds(weight, height, age, gender, activityLevel, dietGoal);
+      this.dietGoalMessage = this.getDietGoalMessage(this.form.value.dietGoal);
+      this.calculatorService.dietGoalMessage = this.dietGoalMessage;
+      this.router.navigate(['result']).then(() => {
+        window.scrollTo(0, 0);
+      });
+    } else {
+      this.showMessage = true;
+    }
+  }
+
+  private getDietGoalMessage(goal: string): string {
+    switch (goal) {
+      case 'lose-weight':
+        return 'Jeśli chcesz zmniejszyć wagę, powinieneś spożywać około:';
+      case 'gain-weight':
+        return 'Jeśli chcesz zwiększyć wagę, powinieneś spożywać około:';
+      case 'maintain-weight':
+        return 'Jeśli chcesz utrzymać wagę, powinieneś spożywać około:';
+      default:
+        return '';
+    }
+  }
+
+  onOkClick() {
+    this.showMessage = false;
   }
 
   onReturn() {

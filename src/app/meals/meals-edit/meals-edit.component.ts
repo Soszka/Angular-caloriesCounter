@@ -66,7 +66,7 @@ export class MealsEditComponent {
     if (control) {
       let value = control.value;
       if (value < 0 || value > 1000 || isNaN(value)) {
-        control.setValue(1);
+        control.setValue(1000);
       }
     }
   }

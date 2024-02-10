@@ -9,21 +9,21 @@
         <h2>Twój wskaźnik BMR to :</h2>
         <div class="calories-amount">
           <fa-icon [icon]="faAppleWhole"></fa-icon>
-          <h2>2000 kalorii dziennie</h2>
+          <h2>{{ bmr }} kalorii dziennie</h2>
         </div>
       </div>
       <div class="data-item">
         <h2>Twoje zapotrzebowanie kaloryczne to :</h2>
         <div class="calories-amount">
           <fa-icon [icon]="faPersonRunning"></fa-icon>
-          <h2>3000 kalorii dziennie</h2>
+          <h2>{{ caloricNeeds }} kalorii dziennie</h2>
         </div>
       </div>
       <div class="data-item">
-        <h2>Jeśli chcesz zwiększyć wagę powinieneś spożywać około:</h2>
+        <h2>{{ dietGoalMessage }}</h2>
         <div class="calories-amount">
           <fa-icon [icon]="faDumbbell"></fa-icon>
-          <h2>3500 kalorii dziennie</h2>
+          <h2>{{ caloriesGoal }} kalorii dziennie</h2>
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="diagram-description">
           <h3>WĘGLOWODANY</h3>
-          <p>1741 kcal = 435g</p>
+          <p>{{ macroNutrients.carbohydrates.calories }} kcal = {{ macroNutrients.carbohydrates.grams }}g</p>
         </div>
       </div>
       <div class="diagram protein">
@@ -44,7 +44,7 @@
         </div>
         <div class="diagram-description">
           <h3>BIAŁKO</h3>
-          <p>1741 kcal = 435g</p>
+          <p>{{ macroNutrients.protein.calories }} kcal = {{ macroNutrients.protein.grams }}g</p>
         </div>
       </div>
       <div class="diagram fats">
@@ -53,7 +53,7 @@
         </div>
         <div class="diagram-description">
           <h3>TŁUSZCZE</h3>
-          <p>1741 kcal = 435g</p>
+          <p>{{ macroNutrients.fats.calories }} kcal = {{ macroNutrients.fats.grams }}g</p>
         </div>
       </div>
     </div>

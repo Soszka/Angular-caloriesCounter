@@ -4,7 +4,7 @@
 </app-title>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-button-toggle-group formControlName="gender">
-    <mat-button-toggle value="male" checked>
+    <mat-button-toggle value="male">
       <fa-icon [icon]="faMars"></fa-icon><span>Mężczyzna</span>
     </mat-button-toggle>
     <mat-button-toggle value="female">
@@ -14,29 +14,29 @@
   
   <div class="body-data">
     <div class="data-option">
-      <input name="age" type="number" id="age" placeholder="Wiek ( lat )">
+      <input formControlName="age" type="number" id="age" placeholder="Wiek ( lat )" (input)="validateAge('age')">
       <fa-icon [icon]="faCalendarDays"></fa-icon>
     </div>
     <div class="data-option">
-      <input name="weight" type="number" id="weight" placeholder="Waga ( kg )">
+      <input formControlName="weight" type="number" id="weight" placeholder="Waga ( kg )" (input)="validateBodyInputs('weight')">
       <fa-icon [icon]="faWeightHanging"></fa-icon>
     </div>
     <div class="data-option">
-      <input name="height" type="number" id="height" placeholder="Wzrost ( cm )">
+      <input formControlName="height" type="number" id="height" placeholder="Wzrost ( cm )" (input)="validateBodyInputs('height')">
       <fa-icon [icon]="faArrowsUpDown"></fa-icon>
     </div>
   </div>
 
   <div class="exercise-data">
-    <select id="activity-level" name="activity-level" required>
+    <select id="activity-level" formControlName="activityLevel" required>
       <option value="" disabled selected hidden>Wybierz poziom aktywności</option>
-      <option value="ver-lowlow">Bardzo niska aktywność (minimalny wysiłek fizyczny)</option>
+      <option value="ver-low">Bardzo niska aktywność (minimalny wysiłek fizyczny)</option>
       <option value="low">Niska aktywność (1-2 treningi/tydzień)</option>
       <option value="medium">Średnia aktywność (3-4 treningi/tydzień)</option>
       <option value="high">Wysoka aktywność (5-6 treningi/tydzień)</option>
       <option value="very-high">Bardzo wysoka aktywność ( codzienne treningi )</option>
     </select>
-    <select id="diet-goal" name="diet-goal" required>
+    <select id="diet-goal" formControlName="dietGoal" required>
       <option value="" disabled selected hidden>Wybierz cel diety</option>
       <option value="lose-weight">Chcę schudnąć</option>
       <option value="maintain-weight">Chcę utrzymać wagę</option>
@@ -49,3 +49,8 @@
     <button type="submit" class="submit">Wynik</button>
   </div>
 </form>
+<app-info-dialog 
+    [showMessage]="showMessage"
+    [messageInfo]="messageInfo"
+    (okClick)="onOkClick()">
+</app-info-dialog>

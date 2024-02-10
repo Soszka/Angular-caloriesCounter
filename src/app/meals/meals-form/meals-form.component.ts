@@ -26,7 +26,6 @@ export class MealsFormComponent implements OnInit {
     { value: "snacks", label: "Przekąski" },
     { value: "dinners", label: "Obiady" },
     { value: "breakfasts", label: "Śniadania" },
-    { value: "suppers", label: "Kolacje" },
     { value: "fruits-vegetables", label: "Owoce/Warzywa" }
   ];
   

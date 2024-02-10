@@ -4,27 +4,26 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CalculatorService {
+  bmr: number = 0;
+  caloricNeeds: number = 0;
+  caloriesGoal: number | null = null;
+  dietGoalMessage: string = '';
 
   constructor() { }
 
   calculateCaloricNeeds(weight: number, height: number, age: number, gender: string, activityLevel: string, dietGoal: string) {
-    const bmr = this.calculateBMR(weight, height, age, gender);
+    this.bmr = this.calculateBMR(weight, height, age, gender);
     const activityLevels: {
       [key: string]: number;
     } = {
-      'ver-low': 1.2,
-      'low': 1.4,
-      'medium': 1.6,
-      'high': 1.8,
-      'very-high': 2
+      'ver-low': 1.25,
+      'low': 1.5,
+      'medium': 1.7,
+      'high': 1.9,
+      'very-high': 2.1
     };
-    const caloricNeeds = bmr * activityLevels[activityLevel];
-    const caloriesGoal = this.dietGoal(caloricNeeds, dietGoal);
-    return {
-      bmr: bmr,
-      caloricNeeds: caloricNeeds,
-      caloriesGoal: caloriesGoal
-    };
+    this.caloricNeeds = Math.floor(this.bmr * activityLevels[activityLevel]);
+    this.caloriesGoal = this.dietGoal(this.caloricNeeds, dietGoal) || 0;
   }
 
   private calculateBMR(weight: number, height: number, age: number, gender: string) {
@@ -34,19 +33,35 @@ export class CalculatorService {
     } else {
       bmr = 9.99 * weight + 6.25 * height - 4.92 * age - 161;
     }
-    return bmr;
+    return Math.floor(bmr);
   }
 
-  private dietGoal(calories: number, goal: string) {
+  private dietGoal(calories: number, goal: string): number {
     switch (goal) {
       case 'lose-weight':
-        return calories * 0.8;
+        return Math.floor(calories * 0.8);
       case 'gain-weight':
-        return calories * 1.2;
+        return Math.floor(calories * 1.2);
       case 'maintain-weight':
-        return calories;
+        return Math.floor(calories);
       default:
-        return null;
+        return 0;
     }
+  }
+
+  calculateMacroNutrients(caloriesGoal: number) {
+    const carbohydratesCalories = Math.floor(caloriesGoal * 0.5); 
+    const proteinCalories = Math.floor(caloriesGoal * 0.25); 
+    const fatsCalories = Math.floor(caloriesGoal * 0.25); 
+  
+    const carbohydratesGrams = Math.floor(carbohydratesCalories / 4); 
+    const proteinGrams = Math.floor(proteinCalories / 4); 
+    const fatsGrams = Math.floor(fatsCalories / 9); 
+  
+    return {
+      carbohydrates: {calories: carbohydratesCalories, grams: carbohydratesGrams},
+      protein: {calories: proteinCalories, grams: proteinGrams},
+      fats: {calories: fatsCalories, grams: fatsGrams}
+    };
   }
 }
