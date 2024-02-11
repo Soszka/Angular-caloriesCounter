@@ -1,6 +1,10 @@
 @import '../../styles/settings.scss';
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   margin: 20px auto 0;
   text-align: center;
   font-size: $content-font-size * 1.1;

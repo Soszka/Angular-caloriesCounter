@@ -16,10 +16,9 @@
 
   .diagram-container {
     height: 20px;
-    background: linear-gradient(to right, rgb(1, 24, 230) 0%, rgb(1, 12, 95) 20%,
-    rgb(197, 201, 0) 20%, rgb(100, 102, 1) 40%,
-    rgb(1, 219, 37) 40%, rgb(0, 100, 17) 60%,
-    rgb(133, 133, 133) 60%, rgb(83, 83, 83) 100% );
+    background: linear-gradient(to right, rgb(1, 24, 230) 0%, rgb(1, 12, 95) 33.3%,
+    rgb(197, 201, 0) 33.3%, rgb(100, 102, 1) 66.6%,
+    rgb(0, 199, 33) 66.6%, rgb(0, 100, 17) 100%);
     border-radius: 50px;
   }
 
