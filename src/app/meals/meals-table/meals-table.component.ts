@@ -16,7 +16,7 @@ export class MealsTableComponent implements  AfterViewInit {
   displayedColumns: string[] = ['name', 'calories', 'carbohydrates', 'protein', 'fats', 'edit', 'add'];
   dataSource = new MatTableDataSource<MealElement>([]);
   showMessage: boolean = false;
-  messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce kalorie"
+  messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce KALORIE"
   loading: boolean = false;
   
   

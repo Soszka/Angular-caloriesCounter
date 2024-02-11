@@ -91,7 +91,7 @@ export class MealsEditComponent {
         this.mealForm.value.carbohydrates
       );
       this.caloriesService.addElement(addedMeal);
-      this.messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce kalorie"
+      this.messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce KALORIE"
       this.showMessage = true;
       this.shouldNavigate = true;
     } else {

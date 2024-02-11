@@ -17,9 +17,9 @@ export class MealsFormComponent implements OnInit {
   loading: boolean = false;
 
   caloriesOptions = [
-    { value: "small", label: "poniżej 500kcal" },
-    { value: "medium", label: "500kcal - 1000kcal" },
-    { value: "large", label: "powyżej 1000kcal" }
+    { value: "small", label: "poniżej 300kcal" },
+    { value: "medium", label: "300kcal - 700kcal" },
+    { value: "large", label: "powyżej 700kcal" }
   ];
   
   kindOptions = [
