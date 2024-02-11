@@ -1,4 +1,4 @@
-<div class="calculator-result">
+<div class="calculator-result" data-aos="zoom-in">
   <app-title 
     [sectionTitle]="sectionName" 
     [sectionDescription]="sectionDescription">
@@ -30,10 +30,10 @@
     <button class="recalculate" (click)="recalculate()">Przelicz ponownie</button>
     <button class="save" (click)="onSave()">Zapisz rezultat</button>
   </div>
-  <app-info-dialog 
-    [showMessage]="showMessage"
-    [messageInfo]="messageInfo"
-    (okClick)="onOkClick()">
-  </app-info-dialog>
 </div>
+<app-info-dialog 
+  [showMessage]="showMessage"
+  [messageInfo]="messageInfo"
+  (okClick)="onOkClick()">
+</app-info-dialog>
 

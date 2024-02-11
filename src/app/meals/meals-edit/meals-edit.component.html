@@ -1,4 +1,4 @@
-<div class="meals-edit">
+<div class="meals-edit" data-aos="zoom-in">
   <app-title 
     [sectionTitle]="sectionName" 
     [sectionDescription]="sectionDescription">
@@ -34,9 +34,9 @@
       <button class="save" (click)="onSaveClick()">Zapisz i dodaj</button>
     </div>
   </form>
-  <app-info-dialog 
-    [showMessage]="showMessage"
-    [messageInfo]="messageInfo"
-    (okClick)="onOkClick()">
-  </app-info-dialog>
 </div>
+<app-info-dialog 
+  [showMessage]="showMessage"
+  [messageInfo]="messageInfo"
+  (okClick)="onOkClick()">
+</app-info-dialog>

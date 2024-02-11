@@ -1,8 +1,8 @@
-<app-title 
-  [sectionTitle]="sectionName" 
-  [sectionDescription]="sectionDescription">
-</app-title>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" data-aos="zoom-in">
+  <app-title 
+    [sectionTitle]="sectionName" 
+    [sectionDescription]="sectionDescription">
+  </app-title>
   <mat-button-toggle-group formControlName="gender">
     <mat-button-toggle *ngFor="let option of genderOptions" [value]="option.value">
       <fa-icon [icon]="option.icon"></fa-icon><span>{{ option.label }}</span>
