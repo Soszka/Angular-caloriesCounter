@@ -28,7 +28,12 @@
   </div>
   <div class="buttons-container">
     <button class="recalculate" (click)="recalculate()">Przelicz ponownie</button>
-    <button class="save">Zapisz rezultat</button>
+    <button class="save" (click)="onSave()">Zapisz rezultat</button>
   </div>
+  <app-info-dialog 
+    [showMessage]="showMessage"
+    [messageInfo]="messageInfo"
+    (okClick)="onOkClick()">
+  </app-info-dialog>
 </div>
 

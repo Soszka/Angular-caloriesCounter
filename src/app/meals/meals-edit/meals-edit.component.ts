@@ -102,7 +102,7 @@ export class MealsEditComponent {
   }
 
   onCaloriesClick() {
-    this.messageInfo = "Nie można zmieniać ilości kalorii. Jest ona zależna od tłuszczy, białka i węglowodanów";
+    this.messageInfo = "Nie można zmieniać ilości kalorii. Jest ona zależna od ilości tłuszczy, białka i węglowodanów";
     this.showMessage = true;
     this.shouldNavigate = false; 
   }

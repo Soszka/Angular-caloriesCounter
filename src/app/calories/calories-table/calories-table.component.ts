@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild  } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { CaloriesService } from '../calories.service';
@@ -38,6 +38,7 @@ export class CaloriesTableComponent implements AfterViewInit {
 
   removeElement(element: AddedMeal) {
     this.caloriesService.removeElement(element);
+    this.caloriesService.callUpdateCaloriesMessage();
     this.showMessage = true;
   }
 
