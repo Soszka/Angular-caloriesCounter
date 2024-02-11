@@ -16,6 +16,9 @@ export class CaloriesDiagramComponent implements OnInit, OnDestroy {
   remainingCalories: number = 0;
   exceededCalories: number = 0;
   caloriesMessage: string = ""
+  proteinPercentage: number = 0;
+  fatPercentage: number = 0;
+  carbohydratesPercentage: number = 0;
   private diagramDataSubscription!: Subscription;
   private totalNutrientsSubscription!: Subscription;
 
@@ -31,6 +34,7 @@ export class CaloriesDiagramComponent implements OnInit, OnDestroy {
       this.totalFat = nutrients.totalFat;
       this.totalCarbohydrates = nutrients.totalCarbohydrates;
       this.totalCalories = nutrients.totalCalories;
+      this.calculateNutrientPercentages();
     });
 
     this.caloriesService.updateCaloriesMessage$.subscribe(() => {
@@ -58,6 +62,19 @@ export class CaloriesDiagramComponent implements OnInit, OnDestroy {
       this.caloriesMessage = `Przekroczono o ${this.exceededCalories} kalorii`;
     } else {
       this.caloriesMessage = '';
+    }
+  }
+
+  calculateNutrientPercentages() {
+    const totalNutrients = this.totalProtein + this.totalFat + this.totalCarbohydrates;
+    if (totalNutrients > 0) {
+      this.proteinPercentage = (this.totalProtein / totalNutrients) * 100;
+      this.fatPercentage = (this.totalFat / totalNutrients) * 100;
+      this.carbohydratesPercentage = (this.totalCarbohydrates / totalNutrients) * 100;
+    } else {
+      this.proteinPercentage = 0;
+      this.fatPercentage = 0;
+      this.carbohydratesPercentage = 0;
     }
   }
 
