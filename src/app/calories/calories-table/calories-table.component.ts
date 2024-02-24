@@ -46,3 +46,4 @@ export class CaloriesTableComponent implements AfterViewInit {
     this.showMessage = false;
   }
 }
+

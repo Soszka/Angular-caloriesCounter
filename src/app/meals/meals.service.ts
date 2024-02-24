@@ -167,3 +167,4 @@ export class MealsService {
     this.elementDataSubject.next(filteredElements);
   }
 }
+
