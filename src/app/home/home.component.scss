@@ -10,6 +10,14 @@
     width: 30%;
     text-align: center;
 
+    @include extra-large-screens {
+      margin-top: 30px;
+    }
+
+    @include large-screens {
+      display: none;
+    }
+
     img {
       width: 350px;
       height: 400px;
@@ -20,11 +28,33 @@
     margin-top: 10px;
     width: 65%;
     text-align: center;
+
+    @include large-screens {
+      width: 100%;
+      margin: 0;
+      padding: 10px 30px;
+    }
+
+    @include small-screens {
+      padding: 5px;
+      font-size: $content-font-size * 0.9;
+    }
   }
 
   .btn {
     @include button($text-secondary-color, rgb(34, 0, 0), rgb(151, 0, 0), $text-color);
     font-size: 32px;
+
+    @include small-screens {
+      padding: 5px 20px;
+      margin: 10px 10px 20px;
+    }
+
+    @include tiny-screens {
+      padding: 0;
+      font-size: $content-font-size * 1.5;
+    }
+
     &:hover {
       border: 3px solid rgb(119, 0, 0); 
     }

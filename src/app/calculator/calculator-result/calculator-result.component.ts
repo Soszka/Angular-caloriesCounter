@@ -32,11 +32,7 @@ export class CalculatorResultComponent {
     calories: number,
     class: string
   }[] = [];
-  macroNutrients: { 
-    carbohydrates: { calories: number, grams: number },
-    protein: { calories: number, grams: number },
-    fats: { calories: number, grams: number }
-  } = { 
+  macroNutrients = { 
     carbohydrates: { calories: 0, grams: 0 },
     protein: { calories: 0, grams: 0 },
     fats: { calories: 0, grams: 0 }
@@ -120,3 +116,4 @@ export class CalculatorResultComponent {
     });
   }
 }
+
