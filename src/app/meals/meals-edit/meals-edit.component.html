@@ -1,0 +1,42 @@
+<div class="meals-edit" data-aos="zoom-in">
+  <app-title 
+    [sectionTitle]="sectionName" 
+    [sectionDescription]="sectionDescription">
+  </app-title>
+  <form [formGroup]="mealForm">
+    <div class="row">
+      <div class="data-option">
+        <label for="name">Nazwa</label>
+        <fa-icon [icon]="faUtensils"></fa-icon>
+        <input type="text" id="name" formControlName="name" maxlength="25" placeholder="Wprowadź nazwę">
+      </div>
+      <div class="data-option" (click)="onCaloriesClick()">
+        <label for="calories">Liczba kalorii ( kcal )</label>
+        <fa-icon [icon]="faFire"></fa-icon>
+        <input type="number" id="calories" formControlName="calories" placeholder="Wprowadź ilość kcal" readonly>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let option of dataMacroOptions" class="data-option">
+        <label [for]="option.formControlName">{{ option.label }}</label>
+        <fa-icon [icon]="option.icon"></fa-icon>
+        <input
+          type="number"
+          [id]="option.formControlName"
+          [formControlName]="option.formControlName"
+          [placeholder]="option.name"
+          (input)="validateInput(option.formControlName); updateCalories()"
+        >
+      </div>
+    </div>
+    <div class="buttons-container">
+      <button class="cancel" (click)="onCancelCLick()">Anuluj zmiany</button>
+      <button class="save" (click)="onSaveClick()">Zapisz i dodaj</button>
+    </div>
+  </form>
+</div>
+<app-info-dialog 
+  [showMessage]="showMessage"
+  [messageInfo]="messageInfo"
+  (okClick)="onOkClick()">
+</app-info-dialog>

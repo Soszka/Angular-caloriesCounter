@@ -1,0 +1,62 @@
+@import '../../../styles/settings.scss';
+
+
+.container {
+  background: linear-gradient(to top, rgb(66, 0, 0),rgb(0, 0, 0));
+}
+
+h1 {
+  text-align: center;
+  word-spacing: 5px;
+  font-family: monospace;
+  font-size: 46px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding-top: 30px;
+  
+  span {
+    color: rgb(145, 3, 3);
+  }
+}
+
+.nav {
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $text-color;
+    display: inline-block;
+    width: 270px;
+    text-transform: uppercase;
+    margin: 10px 50px 0;
+    padding: 15px;
+    font-size: 28px;
+    background: linear-gradient(to top, rgb(119, 0, 0), rgb(34, 0, 0));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.25s;
+    border: 3px solid rgb(145, 3, 3);
+    border-bottom: none;
+    
+    &:hover {
+      background: linear-gradient(to top, rgb(235, 2, 2), rgb(71, 0, 0));
+      border: 3px solid rgb(206, 1, 1);
+      border-bottom: none;
+    }
+  }
+
+  .active {
+    color: $text-secondary-color;
+    background: rgb(0, 0, 0);
+    font-weight: bold;
+    border: 3px solid rgb(145, 3, 3);
+    border-bottom: none;
+
+    &:hover {
+      color: $text-secondary-color;
+      background: rgb(0, 0, 0);
+      border: 3px solid rgb(145, 3, 3);
+      border-bottom: none;
+    }
+  }
+}
