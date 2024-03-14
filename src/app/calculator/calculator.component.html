@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" data-aos="zoom-in">
+  <app-title 
+    [sectionTitle]="sectionName" 
+    [sectionDescription]="sectionDescription">
+  </app-title>
+  <mat-button-toggle-group formControlName="gender">
+    <mat-button-toggle *ngFor="let option of genderOptions" [value]="option.value">
+      <fa-icon [icon]="option.icon"></fa-icon><span>{{ option.label }}</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  
+  <div class="body-data">
+    <div class="data-option" *ngFor="let option of dataOptions">
+      <input 
+        [formControlName]="option.formControlName"
+        type="number" 
+        [id]="option.formControlName" 
+        [placeholder]="option.placeholder" 
+        (input)="option.validator === 'validateAge' ? validateAge(option.formControlName) : validateBodyInputs(option.formControlName)">
+      <fa-icon [icon]="option.icon"></fa-icon>
+    </div>
+  </div>
+
+  <div class="exercise-data">
+    <select id="activity-level" formControlName="activityLevel" required>
+      <option value="" disabled selected hidden>Wybierz poziom aktywności</option>
+      <option *ngFor="let option of activityLevelOptions" [value]="option.value">{{ option.label }}</option>
+    </select>
+    <select id="diet-goal" formControlName="dietGoal" required>
+      <option value="" disabled selected hidden>Wybierz cel diety</option>
+      <option *ngFor="let option of dietGoalOptions" [value]="option.value">{{ option.label }}</option>
+    </select>
+  </div>
+
+  <div class="buttons-container">
+    <button class="cancel" (click)="onReturn()">Wróć</button>
+    <button type="submit" class="submit">Wynik</button>
+  </div>
+</form>
+<app-info-dialog 
+    [showMessage]="showMessage"
+    [messageInfo]="messageInfo"
+    (okClick)="onOkClick()">
+</app-info-dialog>

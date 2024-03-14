@@ -1,0 +1,31 @@
+@import '../../styles/settings.scss';
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 20px auto 0;
+  text-align: center;
+  font-size: $content-font-size * 1.1;
+  background: linear-gradient(to right, rgb(143, 0, 0), rgb(12, 0, 0));
+  padding: 10px;
+  @include small-screens {
+    margin-top: 10px;
+    font-size: $content-font-size * 0.9;
+  }
+
+  span {
+    color: rgb(192, 0, 0);
+    font-size: $content-font-size * 1.1;
+    font-family: cursive;
+  }
+}
+
+.footer.calories {
+  background: linear-gradient(to right, rgb(0, 124, 17),rgb(0, 0, 0));
+
+  span {
+    color: rgb(16, 192, 0);
+  }
+}

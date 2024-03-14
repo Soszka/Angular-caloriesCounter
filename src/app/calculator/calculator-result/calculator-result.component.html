@@ -1,0 +1,39 @@
+<div class="calculator-result" data-aos="zoom-in">
+  <app-title 
+    [sectionTitle]="sectionName" 
+    [sectionDescription]="sectionDescription">
+  </app-title>
+  <div class="result">
+    <div class="result-data">
+      <div class="data-item" *ngFor="let item of resultData">
+        <h2>{{ item.title }}</h2>
+        <div class="calories-amount">
+          <fa-icon [icon]="item.icon"></fa-icon>
+          <h2>{{ item.calories }} kalorii dziennie</h2>
+        </div>
+      </div>
+    </div>
+    <div class="result-diagrams">
+      <h3>Rozkład makroskładników</h3>
+      <div *ngFor="let diagram of resultDiagrams" class="diagram" [ngClass]="diagram.class">
+        <div class="diagram-circle">
+          <h4>{{ diagram.percentage }}%</h4>
+        </div>
+        <div class="diagram-description">
+          <h3>{{ diagram.title }}</h3>
+          <p>{{ diagram.calories }} kcal = {{ diagram.grams }} g</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons-container">
+    <button class="recalculate" (click)="recalculate()">Przelicz ponownie</button>
+    <button class="save" (click)="onSave()">Zapisz rezultat</button>
+  </div>
+</div>
+<app-info-dialog 
+  [showMessage]="showMessage"
+  [messageInfo]="messageInfo"
+  (okClick)="onOkClick()">
+</app-info-dialog>
+
