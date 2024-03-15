@@ -27,12 +27,7 @@ export class MealsService {
   private elementsData!: MealElement[] 
 
   constructor(private http: HttpClient) {
-    this.updateElementData(this.elementsData);
     this.fetchMeals();
-  }
-
-  updateElementData(data: MealElement[]) {
-    this.elementDataSubject.next(data);
   }
 
   setSelectedElement(element: MealElement) {
@@ -40,11 +35,13 @@ export class MealsService {
   }
 
   fetchMeals() {
+    this.loadingSubject.next(true); 
     this.http.get<MealElement[]>(
       'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/meals/-Nt0MsmPKnIYx5z6t0ZL.json'
     ).subscribe(data => {
       this.elementsData = data;
       this.elementDataSubject.next(this.elementsData);
+      this.loadingSubject.next(false); 
     });
   }
 
