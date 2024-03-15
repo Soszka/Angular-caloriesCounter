@@ -1,5 +1,6 @@
 import { Injectable  } from '@angular/core'
-import { BehaviorSubject, Subject } from 'rxjs';;
+import { BehaviorSubject, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 export interface MealElement {
   id: number
