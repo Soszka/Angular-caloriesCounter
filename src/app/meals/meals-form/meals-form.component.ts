@@ -51,6 +51,5 @@ export class MealsFormComponent implements OnInit {
   onFilterClick() {
     const filterOptions = this.form.value;
     this.mealsService.filterMeals(filterOptions);
-    this.mealsService.setLoading(true);
   }
 }
