@@ -1,5 +1,5 @@
 import { Injectable  } from '@angular/core'
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Subject, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 export interface MealElement {
@@ -31,18 +31,6 @@ export class MealsService {
     this.fetchMeals();
   }
 
-  setLoading(loading: boolean) {
-    this.loadingSubject.next(loading);
-    let loadingTimer;
-    if (loading) {
-      loadingTimer = setTimeout(() => {
-        this.loadingSubject.next(false);
-      }, 1500);
-    } else {
-      clearTimeout(loadingTimer);
-    }
-  }
-
   updateElementData(data: MealElement[]) {
     this.elementDataSubject.next(data);
   }
@@ -55,27 +43,32 @@ export class MealsService {
     this.http.get<MealElement[]>(
       'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/meals/-Nt0MsmPKnIYx5z6t0ZL.json'
     ).subscribe(data => {
-      console.log(data);
       this.elementsData = data;
       this.elementDataSubject.next(this.elementsData);
     });
   }
 
   filterMeals(filterOptions: any) {
-    const mealElements: MealElement[] = this.elementsData;
-    console.log(filterOptions);
-    const filteredElements = mealElements.filter(element => {
-      const caloriesCondition =
-        (filterOptions.calories === "small" && element.calories < 300) ||
-        (filterOptions.calories === "medium" && element.calories >= 300 && element.calories <= 700) ||
-        (filterOptions.calories === "large" && element.calories > 700) ||
-        !filterOptions.calories; 
-      const kindCondition = !filterOptions.kind || element.kind === filterOptions.kind;
-      const tasteCondition = !filterOptions.taste || element.taste === filterOptions.taste;
-
-      return caloriesCondition && kindCondition && tasteCondition;
+    this.loadingSubject.next(true);
+    this.http.get<MealElement[]>(
+      'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/meals/-Nt0MsmPKnIYx5z6t0ZL.json'
+    ).pipe(
+      map(data => {
+        const filteredElements = data.filter(element => {
+          const caloriesCondition =
+            (filterOptions.calories === "small" && element.calories < 300) ||
+            (filterOptions.calories === "medium" && element.calories >= 300 && element.calories <= 700) ||
+            (filterOptions.calories === "large" && element.calories > 700) ||
+            !filterOptions.calories; 
+          const kindCondition = !filterOptions.kind || element.kind === filterOptions.kind;
+          const tasteCondition = !filterOptions.taste || element.taste === filterOptions.taste;
+          return caloriesCondition && kindCondition && tasteCondition;
+        });
+        this.elementDataSubject.next(filteredElements);
+      })
+    ).subscribe(() => {
+      this.loadingSubject.next(false);
     });
-    this.elementDataSubject.next(filteredElements);
   }
 }
 
