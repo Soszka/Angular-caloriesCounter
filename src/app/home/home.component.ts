@@ -15,3 +15,4 @@ export class HomeComponent {
   dziennej listy spożytych produktów, którą znajdziesz w zakładce - KALORIE. Tam również znajduje
   się diagram reprezentujacy twoje dzienne spożycie poszczególnych makroskładników. Zaczynajmy !`
 }
+
