@@ -36,7 +36,7 @@
     width: 100%;
     height: 60px;
     background: inherit;
-    text-align: center;
+    text-align: left;
     color: white;
     font-size: 28px;
     --webkit-appearance: none;
@@ -51,14 +51,31 @@
   
     &:focus {
       border-bottom-color: rgb(211, 0, 0);
-      + fa-icon {
-        color: rgb(211, 0, 0); 
-      }
   
       &::placeholder {
         color: black;
       }
     }
+  }
+
+  select {
+    border: none;
+    border-bottom: 5px solid $text-secondary-color;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 40px;
+    background: inherit;
+    color: white;
+    font-size: 28px;
+    --webkit-appearance: none;
+    outline: none;
+    position: relative;
+  }
+
+  option {
+    background: black;
+    color: $text-secondary-color;
+    outline: none;
   }
 }
 
@@ -70,14 +87,19 @@
     width: 400px;
   }
 
+  .add {
+    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
+    font-size: $content-font-size * 1.3;
+  }
+
   .cancel {
     @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
-    font-size: $content-font-size * 1.6;
+    font-size: $content-font-size * 1.3;
   }
 
   .save {
     @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
-    font-size: $content-font-size * 1.6;
+    font-size: $content-font-size * 1.3;
   }
 }
 
@@ -87,11 +109,7 @@
   width: 48%;
 }
 
-.row:nth-child(3) .data-option,
-.row:nth-child(4) .data-option,
-.row:nth-child(5) .data-option {
-  width: 20%;
-}
+
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

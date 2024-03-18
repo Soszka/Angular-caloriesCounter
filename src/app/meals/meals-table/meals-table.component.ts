@@ -13,7 +13,7 @@ import { CaloriesService } from '../../calories/calories.service';
   styleUrl: './meals-table.component.scss'
 })
 export class MealsTableComponent implements  AfterViewInit {
-  displayedColumns: string[] = ['name', 'calories', 'carbohydrates', 'protein', 'fats', 'edit', 'add'];
+  displayedColumns: string[] = ['name', 'calories', 'carbohydrates', 'protein', 'fats', 'remove', 'edit', 'add'];
   dataSource = new MatTableDataSource<MealElement>([]);
   showMessage: boolean = false;
   messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce KALORIE"
@@ -38,10 +38,20 @@ export class MealsTableComponent implements  AfterViewInit {
     });
   }
 
+  onAddMeal() {
+    this.mealsService.setEditMode('add');
+    this.mealsService.setSelectedElement(null);
+    this.router.navigate(['/meals/edit']);
+  }
 
   onEditClick(element: MealElement) {
+    this.mealsService.setEditMode('edit');
     this.mealsService.setSelectedElement(element);
     this.router.navigate(['/meals/edit', element.id]);
+  }
+
+  onRemoveClick() {
+    console.log("item removed");
   }
 
   onAddClick(element: MealElement) {
