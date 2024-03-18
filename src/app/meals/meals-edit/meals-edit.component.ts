@@ -74,6 +74,8 @@ export class MealsEditComponent {
         this.mealForm.setValue({
           name: element.name,
           calories: element.calories,
+          taste: element.taste,
+          kind: element.kind,
           protein: element.protein,
           fats: element.fats,
           carbohydrates: element.carbohydrates,
