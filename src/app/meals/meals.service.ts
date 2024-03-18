@@ -15,12 +15,13 @@ export interface MealElement {
 
 @Injectable()
 export class MealsService {
+
   private elementDataSubject = new BehaviorSubject<MealElement[]>([]);
   elementData$ = this.elementDataSubject.asObservable();
-
   private selectedElementSubject = new BehaviorSubject<MealElement | null>(null);
   selectedElement$ = this.selectedElementSubject.asObservable();
-
+  private editModeSubject = new BehaviorSubject<'edit' | 'add'>('add');
+  editMode$ = this.editModeSubject.asObservable();
   loadingSubject = new Subject<boolean>();
   loading$ = this.loadingSubject.asObservable();
   
@@ -30,7 +31,11 @@ export class MealsService {
     this.fetchMeals();
   }
 
-  setSelectedElement(element: MealElement) {
+  setEditMode(mode: 'edit' | 'add') {
+    this.editModeSubject.next(mode);
+  }
+
+  setSelectedElement(element: MealElement | null) {
     this.selectedElementSubject.next(element);
   }
 

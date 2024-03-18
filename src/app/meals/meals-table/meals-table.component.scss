@@ -1,7 +1,49 @@
 @import '../../../styles/settings.scss';
 
+.table-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+
+  .btn-add-meal {
+    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
+    font-size: $content-font-size * 1.5;
+    float: left;
+    margin: 0 0px 20px 30px;
+    width: 30%;
+  }
+
+  input {
+    border: none;
+    border-bottom: 5px solid $text-secondary-color;
+    width: 62.5%;
+    height: 60px;
+    background: inherit;
+    text-align: left;
+    color: white;
+    font-size: 28px;
+    --webkit-appearance: none;
+    outline: none;
+    position: relative;
+    margin-right: 20px;
+    color: white;
+  
+    &::placeholder {
+      color: white;
+    }
+  
+    &:focus {
+      border-bottom-color: rgb(211, 0, 0);
+  
+      &::placeholder {
+        color: black;
+      }
+    }
+  }
+}
+
 .mat-elevation-z8 {
- margin-top: 80px;
+  margin-top: 10px;
 }
 
 table {
@@ -46,6 +88,11 @@ table {
 
   .btn-edit {
     @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
+    font-size: $content-font-size * 0.9;
+  }
+
+  .btn-remove {
+    @include button(rgb(216, 0, 0), rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
     font-size: $content-font-size * 0.9;
   }
 }

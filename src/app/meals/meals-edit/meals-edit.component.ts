@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { faFire, faUtensils, faBurger, faBreadSlice, faDrumstickBite  } from '@fortawesome/free-solid-svg-icons';
+import { faFire, faUtensils, faBurger, faBreadSlice, faDrumstickBite, faCubesStacked  } from '@fortawesome/free-solid-svg-icons';
 import { MealElement, MealsService } from '../meals.service';
 import { Router } from '@angular/router';
 import { CaloriesService } from '../../calories/calories.service';
@@ -12,18 +12,20 @@ import { AddedMeal } from '../meal.model';
   styleUrl: './meals-edit.component.scss'
 })
 export class MealsEditComponent {
+  faCubesStacked = faCubesStacked;
   faFire = faFire;
   faUtensils = faUtensils;
   faBurger = faBurger;
   faBreadSlice = faBreadSlice;
   faDrumstickBite = faDrumstickBite;
-  sectionName = "EDYCJA";
-  sectionDescription = "Edytuj wybrany produkt i dodaj go do swojej listy !";
 
+  sectionName!: string
+  sectionDescription!: string;
   selectedElement: MealElement | null = null;
   mealForm: FormGroup;
   showMessage: boolean = false;
   shouldNavigate: boolean = false;
+  editMode!: 'edit' | 'add';
   messageInfo = "";
 
   dataMacroOptions = [
@@ -39,6 +41,8 @@ export class MealsEditComponent {
       this.mealForm = this.fb.group({
         name: ['', [Validators.required,]],
         calories: ['', Validators.required],
+        kind: ['', Validators.required],
+        taste: ['', Validators.required],
         protein: ['', [Validators.required]],
         fats: ['', [Validators.required,]],
         carbohydrates: ['', [Validators.required,]],
@@ -46,19 +50,36 @@ export class MealsEditComponent {
   }
   
   ngOnInit() {
+    this.subscribeToEditMode();
+    this.subscribeToSelectedElement();
+  }
+
+  subscribeToEditMode() {
+    this.mealsService.editMode$.subscribe(mode => {
+      this.editMode = mode;
+      if (mode === 'edit') {
+        this.sectionName = "EDYCJA";
+        this.sectionDescription = "Edytuj wybrany produkt i zapisz go do swojej liście produktów!";
+      } else {
+        this.sectionName = "DODAWANIE PRODUKTU";
+        this.sectionDescription = "Wprowadź nowy produkt i dodaj go do swojej listy produktów !";
+      }
+    });
+  }
+
+  subscribeToSelectedElement() {
     this.mealsService.selectedElement$.subscribe(element => {
       this.selectedElement = element;
-      if (this.mealForm && this.selectedElement) {
+      if (this.mealForm && element) {
         this.mealForm.setValue({
-          name: this.selectedElement.name,
-          calories: this.selectedElement.calories,
-          protein: this.selectedElement.protein,
-          fats: this.selectedElement.fats,
-          carbohydrates: this.selectedElement.carbohydrates,
+          name: element.name,
+          calories: element.calories,
+          protein: element.protein,
+          fats: element.fats,
+          carbohydrates: element.carbohydrates,
         });
       }
     });
-
   }
 
   validateInput(controlName: string) {
@@ -99,6 +120,10 @@ export class MealsEditComponent {
       this.showMessage = true;
       this.shouldNavigate = false;
     }
+  }
+
+  onAddClick() {
+
   }
 
   onCaloriesClick() {

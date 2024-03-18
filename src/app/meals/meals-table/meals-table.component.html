@@ -1,3 +1,7 @@
+<div class="table-actions">
+  <button class="btn-add-meal" (click)="onAddMeal()">Dodaj nowy posiłek</button>
+  <input type="text" id="filter" maxlength="30" placeholder="Wyszukaj produkt po nazwie">
+</div>
 <div class="mat-elevation-z8" [ngStyle]="{ 'display': loading ? 'none' : 'block' }">
   <table *ngIf="!loading" mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="name">
@@ -23,6 +27,12 @@
     <ng-container matColumnDef="fats">
       <th mat-header-cell *matHeaderCellDef>Tłuszcze</th>
       <td mat-cell *matCellDef="let element"> {{element.fats}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="remove">
+      <th mat-header-cell *matHeaderCellDef>Usuwanie</th>
+      <td mat-cell *matCellDef="let element">
+        <button class="btn-remove" (click)="onRemoveClick()">Usuń</button></td>
     </ng-container>
 
     <ng-container matColumnDef="edit">

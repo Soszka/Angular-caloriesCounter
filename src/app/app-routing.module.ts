@@ -14,12 +14,13 @@ const routes: Routes = [
   { path: 'meals', component: MealsComponent },
   { path: 'calculator', component: CalculatorComponent },
   { path: 'result', component: CalculatorResultComponent },
+  { path: 'meals/edit', component: MealsEditComponent },
   { path: 'meals/edit/:id', component: MealsEditComponent }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

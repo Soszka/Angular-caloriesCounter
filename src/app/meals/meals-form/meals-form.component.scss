@@ -36,27 +36,20 @@
       color: $text-secondary-color;
       outline: none;
     }
-
-    option:hover {
-      background-color: red;
-    }
   }
-
 }
 
 .buttons-container {
   text-align: center;
-  max-width: 300px;
-  margin: 50px auto;
+  max-width: 350px;
+  margin: 30px auto;
 
-  button {
-    width: 250px;
-  }
 
   .filter {
     @include button($text-secondary-color, rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
     font-size: $content-font-size * 1.75;
     letter-spacing: 1px;
+    width: 350px;
   }
 
   mat-spinner {
