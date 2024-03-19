@@ -1,0 +1,103 @@
+@mixin button($color-one, $color-two, $color-three, $color-four) {
+  color: $color-one;
+  text-decoration: none;
+  border: 3px solid $color-one;
+  background: inherit;
+  cursor: pointer;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-size: $content-font-size * 1.5;
+  display: inline-block;
+  transition: all 0.25s;
+  font-weight: bold;
+  &:hover {
+    background: linear-gradient(to bottom right, $color-two, $color-three);
+    border: 3px solid $color-two;
+    box-shadow: 0px 0px 5px $color-two;
+    color: $color-four;
+  }
+}
+
+@mixin input($width) {
+  border: none;
+  border-bottom: 5px solid $text-secondary-color;
+  height: 60px;
+  width: $width;
+  background: inherit;
+  color: white;
+  font-size: 28px;
+  --webkit-appearance: none;
+  outline: none;
+  position: relative;
+
+  &::placeholder {
+    color: white;
+  }
+
+  &:focus {
+    border-bottom-color: rgb(211, 0, 0);
+    + fa-icon {
+      color: rgb(211, 0, 0); 
+    }
+
+    &::placeholder {
+      color: black;
+    }
+  }
+}
+
+@mixin select($width) {
+  border: none;
+  border-bottom: 5px solid $text-secondary-color;
+  height: 60px;
+  width: $width;
+  margin-bottom: 40px;
+  background: inherit;
+  color: white;
+  font-size: 28px;
+  --webkit-appearance: none;
+  outline: none;
+  position: relative;
+}
+
+@mixin option() {
+  background: black;
+  color: $text-secondary-color;
+  outline: none;
+}
+
+@mixin tiny-screens () {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin small-screens () {
+  @media only screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin medium-screens () {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large-screens () {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin extra-large-screens () {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mega-large-screens () {
+  @media only screen and (max-width: 1400px) {
+    @content;
+  }
+}
