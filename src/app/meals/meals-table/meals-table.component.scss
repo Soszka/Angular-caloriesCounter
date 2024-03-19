@@ -14,31 +14,7 @@
   }
 
   input {
-    border: none;
-    border-bottom: 5px solid $text-secondary-color;
-    width: 62.5%;
-    height: 60px;
-    background: inherit;
-    text-align: left;
-    color: white;
-    font-size: 28px;
-    --webkit-appearance: none;
-    outline: none;
-    position: relative;
-    margin-right: 20px;
-    color: white;
-  
-    &::placeholder {
-      color: white;
-    }
-  
-    &:focus {
-      border-bottom-color: rgb(211, 0, 0);
-  
-      &::placeholder {
-        color: black;
-      }
-    }
+    @include input(62.5%);
   }
 }
 
