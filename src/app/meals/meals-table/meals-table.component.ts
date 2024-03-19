@@ -58,8 +58,8 @@ export class MealsTableComponent implements  AfterViewInit {
     this.router.navigate(['/meals/edit', element.id]);
   }
 
-  onRemoveClick() {
-    console.log("item removed");
+  onRemoveClick(element: MealElement) {
+    this.mealsService.removeMeal(element);
   }
 
   onAddClick(element: MealElement) {

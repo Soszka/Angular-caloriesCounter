@@ -3,7 +3,7 @@ import { BehaviorSubject, Subject, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 export interface MealElement {
-  id: number
+  id: string;
   name: string;
   calories: number;
   carbohydrates: number;
@@ -40,16 +40,40 @@ export class MealsService {
   }
 
   fetchMeals() {
-    this.loadingSubject.next(true); 
-    this.http.get<MealElement[]>(
+    this.loadingSubject.next(true);
+    this.http.get<{ [key: string]: MealElement }>(
       'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/meals/-Nt0MsmPKnIYx5z6t0ZL.json'
     ).subscribe(data => {
-      this.elementsData = data;
+      const meals: MealElement[] = [];
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          meals.push({ ...data[key], id: key });
+        }
+      }
+      this.elementsData = meals;
       this.elementDataSubject.next(this.elementsData);
-      this.loadingSubject.next(false); 
+      this.loadingSubject.next(false);
     });
   }
 
+  removeMeal(element: MealElement) {
+    const confirmation = confirm(`Czy na pewno chcesz usunąć produkt: ${element.name} z listy produktów?`);
+    if (confirmation) {
+      this.loadingSubject.next(true);
+      const url = `https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/meals/-Nt0MsmPKnIYx5z6t0ZL/${element.id}.json`;
+      this.http.delete(url).subscribe({
+        next: () => {
+          this.fetchMeals();
+          this.loadingSubject.next(false);
+        },
+        error: (error) => {
+          console.error("Wystąpił błąd przy usuwaniu produktu", error);
+          this.loadingSubject.next(false);
+        }
+      });
+    }
+  }
+  
   filterMeals(filterOptions: any) {
     this.loadingSubject.next(true);
     this.http.get<MealElement[]>(
