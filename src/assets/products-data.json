@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": "0",
     "name": "Owsianka z miodem",
     "calories": 320,
     "carbohydrates": 40,
@@ -10,7 +10,7 @@
     "taste": "sweet"
   },
   {
-    "id": "2",
+    "id": "1",
     "name": "Smoothie owocowe",
     "calories": 180,
     "carbohydrates": 30,
@@ -20,12 +20,22 @@
     "taste": "sweet"
   },
   {
-    "id": "3",
+    "id": "2",
     "name": "Wrap z kurczakiem",
     "calories": 400,
     "carbohydrates": 35,
     "protein": 25,
     "fats": 15,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "id": "3",
+    "name": "Serek wiejski",
+    "calories": 200,
+    "carbohydrates": 12,
+    "protein": 25,
+    "fats": 5,
     "kind": "dinners",
     "taste": "salty"
   },

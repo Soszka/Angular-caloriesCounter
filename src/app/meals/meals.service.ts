@@ -13,6 +13,8 @@ export interface MealElement {
   taste: string
 }
 
+
+
 @Injectable()
 export class MealsService {
 
@@ -24,11 +26,9 @@ export class MealsService {
   editMode$ = this.editModeSubject.asObservable();
   loadingSubject = new Subject<boolean>();
   loading$ = this.loadingSubject.asObservable();
-  
-  private elementsData!: MealElement[] 
 
   constructor(private http: HttpClient) {
-    this.fetchMeals();
+    this.updateMeals();
   }
 
   setEditMode(mode: 'edit' | 'add') {
@@ -39,36 +39,31 @@ export class MealsService {
     this.selectedElementSubject.next(element);
   }
 
-  fetchMeals() {
-    this.loadingSubject.next(true);
-    this.http.get<{ [key: string]: MealElement }>(
-      'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/meals/-Nt0MsmPKnIYx5z6t0ZL.json'
-    ).subscribe(data => {
-      const meals: MealElement[] = [];
-      for (const key in data) {
-        if (data.hasOwnProperty(key)) {
-          meals.push({ ...data[key], id: key });
-        }
-      }
-      this.elementsData = meals;
-      this.elementDataSubject.next(this.elementsData);
-      this.loadingSubject.next(false);
+  updateMeals() {
+    const url = 'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/.json';
+    this.http.get<MealElement[]>(url).subscribe({
+      next: (data) => {
+        this.elementDataSubject.next(data || []);
+      },
+      error: (error) => console.error('Wystąpił błąd przy ładowaniu produktów', error),
     });
   }
 
   removeMeal(element: MealElement) {
     const confirmation = confirm(`Czy na pewno chcesz usunąć produkt: ${element.name} z listy produktów?`);
     if (confirmation) {
-      this.loadingSubject.next(true);
-      const url = `https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/meals/-Nt0MsmPKnIYx5z6t0ZL/${element.id}.json`;
-      this.http.delete(url).subscribe({
+      this.loadingSubject.next(true); 
+      const currentData = this.elementDataSubject.value; 
+      const updatedData = currentData.filter(item => item.id !== element.id);
+      const url = 'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/.json';
+      this.http.put(url, updatedData).subscribe({
         next: () => {
-          this.fetchMeals();
-          this.loadingSubject.next(false);
+          this.elementDataSubject.next(updatedData); 
+          this.loadingSubject.next(false); 
         },
         error: (error) => {
-          console.error("Wystąpił błąd przy usuwaniu produktu", error);
-          this.loadingSubject.next(false);
+          console.error('Wystąpił błąd przy usuwaniu produktu', error);
+          this.loadingSubject.next(false); 
         }
       });
     }
@@ -77,7 +72,7 @@ export class MealsService {
   filterMeals(filterOptions: any) {
     this.loadingSubject.next(true);
     this.http.get<MealElement[]>(
-      'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/meals/-Nt0MsmPKnIYx5z6t0ZL.json'
+      'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/.json'
     ).pipe(
       map(data => {
         const filteredElements = data.filter(element => {

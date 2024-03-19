@@ -1,26 +1,8 @@
-@import '../src/styles/settings.scss';
-@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import '../src/styles/colors.scss';
+@import '../src/styles/fonts.scss';
+@import '../src/styles/mixins.scss';
 
+@import '../src/styles/global.scss';
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-html {
-  height: 100%;
-}
-
-
-body {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  min-height: 100%;
-  padding-bottom: 5rem;
-  color: $text-color;
-  box-sizing: inherit;
-  font-family: $content-font;
-  font-size: $content-font-size;
-  line-height: 1.6;
-  background: $dark-color;
-}
