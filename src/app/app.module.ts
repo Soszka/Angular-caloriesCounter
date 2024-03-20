@@ -13,7 +13,7 @@ import { MaterialModule } from './material.module';
 import { HeaderComponent } from './navigation/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-import { TitleComponent } from './title/title.component';
+import { TitleComponent } from './shared/title/title.component';
 import { CalculatorResultComponent } from './calculator/calculator-result/calculator-result.component';
 import { MealsComponent } from './meals/meals.component';
 import { MealsFormComponent } from './meals/meals-form/meals-form.component';
@@ -22,11 +22,11 @@ import { CaloriesDiagramComponent } from './calories/calories-diagram/calories-d
 import { CaloriesTableComponent } from './calories/calories-table/calories-table.component';
 import { MealsEditComponent } from './meals/meals-edit/meals-edit.component';
 import { MealsTableComponent } from './meals/meals-table/meals-table.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 
 import { MealsService } from './meals/meals.service';
-import { InfoDialogComponent } from './info-dialog/info-dialog.component';
+import { InfoDialogComponent } from './shared/info-dialog/info-dialog.component';
 
 
 @NgModule({
