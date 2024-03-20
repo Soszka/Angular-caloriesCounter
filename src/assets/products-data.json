@@ -1,0 +1,915 @@
+[
+  {
+    "name": "Owsianka z miodem",
+    "calories": 320,
+    "carbohydrates": 40,
+    "protein": 10,
+    "fats": 8,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Smoothie owocowe",
+    "calories": 180,
+    "carbohydrates": 30,
+    "protein": 2,
+    "fats": 1,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Wrap z kurczakiem",
+    "calories": 400,
+    "carbohydrates": 35,
+    "protein": 25,
+    "fats": 15,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Serek wiejski",
+    "calories": 200,
+    "carbohydrates": 12,
+    "protein": 25,
+    "fats": 5,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Sałatka Cezar",
+    "calories": 450,
+    "carbohydrates": 12,
+    "protein": 30,
+    "fats": 25,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Jogurt naturalny",
+    "calories": 220,
+    "carbohydrates": 18,
+    "protein": 12,
+    "fats": 10,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Kanapka łososiem",
+    "calories": 300,
+    "carbohydrates": 25,
+    "protein": 20,
+    "fats": 12,
+    "kind": "snacks",
+    "taste": "salty"
+  },
+  {
+    "name": "Pasta bolognese",
+    "calories": 550,
+    "carbohydrates": 60,
+    "protein": 25,
+    "fats": 20,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Koktajl bananowo-truskawkowy",
+    "calories": 200,
+    "carbohydrates": 35,
+    "protein": 4,
+    "fats": 2,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Sałatka grecka",
+    "calories": 290,
+    "carbohydrates": 10,
+    "protein": 8,
+    "fats": 22,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Naleśniki z serem",
+    "calories": 350,
+    "carbohydrates": 45,
+    "protein": 10,
+    "fats": 12,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Kurczak pieczony",
+    "calories": 490,
+    "carbohydrates": 40,
+    "protein": 35,
+    "fats": 18,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Tosty francuskie",
+    "calories": 330,
+    "carbohydrates": 30,
+    "protein": 12,
+    "fats": 16,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Hummus z pieczywem",
+    "calories": 270,
+    "carbohydrates": 35,
+    "protein": 9,
+    "fats": 12,
+    "kind": "snacks",
+    "taste": "salty"
+  },
+  {
+    "name": "Ryż z warzywami",
+    "calories": 410,
+    "carbohydrates": 55,
+    "protein": 11,
+    "fats": 14,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Koktajl mango z kefirem",
+    "calories": 230,
+    "carbohydrates": 33,
+    "protein": 8,
+    "fats": 4,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Grillowany stek",
+    "calories": 520,
+    "carbohydrates": 8,
+    "protein": 40,
+    "fats": 35,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Owocowa sałatka",
+    "calories": 210,
+    "carbohydrates": 32,
+    "protein": 6,
+    "fats": 6,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Zupa",
+    "calories": 310,
+    "carbohydrates": 45,
+    "protein": 12,
+    "fats": 8,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Muesli z mlekiem",
+    "calories": 280,
+    "carbohydrates": 40,
+    "protein": 10,
+    "fats": 5,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Krewetki",
+    "calories": 360,
+    "carbohydrates": 15,
+    "protein": 25,
+    "fats": 20,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Pizza wegetariańska",
+    "calories": 480,
+    "carbohydrates": 50,
+    "protein": 20,
+    "fats": 22,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Pudding chia",
+    "calories": 250,
+    "carbohydrates": 25,
+    "protein": 5,
+    "fats": 10,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Sałatka z quinoa ",
+    "calories": 420,
+    "carbohydrates": 45,
+    "protein": 12,
+    "fats": 20,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Grzanki z guacamole",
+    "calories": 310,
+    "carbohydrates": 30,
+    "protein": 5,
+    "fats": 18,
+    "kind": "snacks",
+    "taste": "salty"
+  },
+  {
+    "name": "Koktajl z kiwi",
+    "calories": 190,
+    "carbohydrates": 30,
+    "protein": 4,
+    "fats": 2,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Indyk pieczony",
+    "calories": 510,
+    "carbohydrates": 20,
+    "protein": 45,
+    "fats": 25,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Sernik na zimno",
+    "calories": 300,
+    "carbohydrates": 30,
+    "protein": 6,
+    "fats": 16,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Burgery z ciecierzycy",
+    "calories": 350,
+    "carbohydrates": 40,
+    "protein": 14,
+    "fats": 12,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Szakszuka",
+    "calories": 280,
+    "carbohydrates": 18,
+    "protein": 12,
+    "fats": 18,
+    "kind": "breakfasts",
+    "taste": "salty"
+  },
+  {
+    "name": "Czekoladowy mus",
+    "calories": 320,
+    "carbohydrates": 35,
+    "protein": 4,
+    "fats": 18,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Makaron z sosem pesto",
+    "calories": 440,
+    "carbohydrates": 55,
+    "protein": 10,
+    "fats": 20,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Jabłecznik",
+    "calories": 250,
+    "carbohydrates": 40,
+    "protein": 4,
+    "fats": 8,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Zupa krem z brokułów",
+    "calories": 180,
+    "carbohydrates": 15,
+    "protein": 4,
+    "fats": 10,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Owocowy kebab",
+    "calories": 210,
+    "carbohydrates": 50,
+    "protein": 2,
+    "fats": 1,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Falafel w pitce",
+    "calories": 400,
+    "carbohydrates": 45,
+    "protein": 13,
+    "fats": 18,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Sorbet truskawkowy",
+    "calories": 160,
+    "carbohydrates": 38,
+    "protein": 1,
+    "fats": 1,
+    "kind": "snacks",
+    "taste": "salty"
+  },
+  {
+    "name": "Kompot z rabarbaru",
+    "calories": 120,
+    "carbohydrates": 30,
+    "protein": 1,
+    "fats": 0,
+    "kind": "fruits-vegetables",
+    "taste": "sweet"
+  },
+  {
+    "name": "Sałatka owocowa",
+    "calories": 190,
+    "carbohydrates": 47,
+    "protein": 2,
+    "fats": 1,
+    "kind": "fruits-vegetables",
+    "taste": "sweet"
+  },
+  {
+    "name": "Chipsy warzywne",
+    "calories": 150,
+    "carbohydrates": 18,
+    "protein": 2,
+    "fats": 8,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Warzywny stir-fry",
+    "calories": 320,
+    "carbohydrates": 40,
+    "protein": 9,
+    "fats": 14,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Parfait z jogurtem",
+    "calories": 270,
+    "carbohydrates": 42,
+    "protein": 10,
+    "fats": 6,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Panini z warzywami",
+    "calories": 350,
+    "carbohydrates": 45,
+    "protein": 12,
+    "fats": 12,
+    "kind": "snacks",
+    "taste": "salty"
+  },
+  {
+    "name": "Smoothie szpinakowe",
+    "calories": 220,
+    "carbohydrates": 40,
+    "protein": 5,
+    "fats": 3,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Quiche z brokułami",
+    "calories": 410,
+    "carbohydrates": 35,
+    "protein": 18,
+    "fats": 22,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Tarta z truskawkami",
+    "calories": 330,
+    "carbohydrates": 50,
+    "protein": 4,
+    "fats": 12,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Grillowana kukurydza",
+    "calories": 200,
+    "carbohydrates": 27,
+    "protein": 5,
+    "fats": 9,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Gazpacho",
+    "calories": 130,
+    "carbohydrates": 18,
+    "protein": 3,
+    "fats": 6,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Bruschetta",
+    "calories": 250,
+    "carbohydrates": 30,
+    "protein": 7,
+    "fats": 10,
+    "kind": "snacks",
+    "taste": "salty"
+  },
+  {
+    "name": "Frittata z warzywami",
+    "calories": 320,
+    "carbohydrates": 12,
+    "protein": 20,
+    "fats": 22,
+    "kind": "breakfasts",
+    "taste": "salty"
+  },
+  {
+    "name": "Sałatka z bobu i szparagów",
+    "calories": 180,
+    "carbohydrates": 20,
+    "protein": 12,
+    "fats": 6,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Orientalny ryż z mango",
+    "calories": 400,
+    "carbohydrates": 60,
+    "protein": 6,
+    "fats": 12,
+    "kind": "dinners",
+    "taste": "sweet"
+  },
+  {
+    "name": "Placki z cukinii",
+    "calories": 280,
+    "carbohydrates": 22,
+    "protein": 8,
+    "fats": 16,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Granola z mlekiem",
+    "calories": 320,
+    "carbohydrates": 40,
+    "protein": 8,
+    "fats": 14,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Sałatka Nicoise",
+    "calories": 370,
+    "carbohydrates": 20,
+    "protein": 25,
+    "fats": 22,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Lody owocowe",
+    "calories": 150,
+    "carbohydrates": 36,
+    "protein": 2,
+    "fats": 1,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Risotto z pieczarkami",
+    "calories": 420,
+    "carbohydrates": 55,
+    "protein": 10,
+    "fats": 16,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Szparagi grillowane",
+    "calories": 110,
+    "carbohydrates": 5,
+    "protein": 3,
+    "fats": 7,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Zupa marchewkowa z imbirem",
+    "calories": 140,
+    "carbohydrates": 18,
+    "protein": 2,
+    "fats": 7,
+    "kind": "dinners",
+    "taste": "sweet"
+  },
+  {
+    "name": "Guacamole z nachosami",
+    "calories": 320,
+    "carbohydrates": 35,
+    "protein": 4,
+    "fats": 18,
+    "kind": "snacks",
+    "taste": "salty"
+  },
+  {
+    "name": "Sałatka z melonem",
+    "calories": 220,
+    "carbohydrates": 20,
+    "protein": 14,
+    "fats": 10,
+    "kind": "fruits-vegetables",
+    "taste": "sweet"
+  },
+  {
+    "name": "Tartaletki z kremem mascarpone",
+    "calories": 290,
+    "carbohydrates": 30,
+    "protein": 5,
+    "fats": 17,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Grillowana pierś",
+    "calories": 400,
+    "carbohydrates": 10,
+    "protein": 35,
+    "fats": 22,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Zapiekanka z batatów",
+    "calories": 350,
+    "carbohydrates": 50,
+    "protein": 5,
+    "fats": 14,
+    "kind": "dinners",
+    "taste": "sweet"
+  },
+  {
+    "name": "Sałatka z kuskusem",
+    "calories": 320,
+    "carbohydrates": 45,
+    "protein": 8,
+    "fats": 12,
+    "kind": "fruits-vegetables",
+    "taste": "sweet"
+  },
+  {
+    "name": "Chłodnik litewski",
+    "calories": 180,
+    "carbohydrates": 15,
+    "protein": 10,
+    "fats": 8,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Pasta z awokado",
+    "calories": 250,
+    "carbohydrates": 30,
+    "protein": 6,
+    "fats": 12,
+    "kind": "breakfasts",
+    "taste": "salty"
+  },
+  {
+    "name": "Smoothie z awokado",
+    "calories": 230,
+    "carbohydrates": 25,
+    "protein": 5,
+    "fats": 14,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Carpaccio z buraków",
+    "calories": 120,
+    "carbohydrates": 10,
+    "protein": 2,
+    "fats": 8,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Quiche z szpinakiem",
+    "calories": 420,
+    "carbohydrates": 30,
+    "protein": 20,
+    "fats": 24,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Parfait z chia",
+    "calories": 280,
+    "carbohydrates": 30,
+    "protein": 10,
+    "fats": 12,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Ryż curry z warzywami",
+    "calories": 380,
+    "carbohydrates": 55,
+    "protein": 8,
+    "fats": 12,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Pieczone jabłka",
+    "calories": 160,
+    "carbohydrates": 35,
+    "protein": 1,
+    "fats": 2,
+    "kind": "fruits-vegetables",
+    "taste": "sweet"
+  },
+  {
+    "name": "Omlet z warzywami",
+    "calories": 250,
+    "carbohydrates": 5,
+    "protein": 18,
+    "fats": 18,
+    "kind": "breakfasts",
+    "taste": "salty"
+  },
+  {
+    "name": "Sałatka z roszponką",
+    "calories": 240,
+    "carbohydrates": 8,
+    "protein": 12,
+    "fats": 18,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Naleśniki z musem",
+    "calories": 310,
+    "carbohydrates": 50,
+    "protein": 8,
+    "fats": 8,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Zielone curry",
+    "calories": 450,
+    "carbohydrates": 35,
+    "protein": 18,
+    "fats": 25,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Grillowane warzywa",
+    "calories": 320,
+    "carbohydrates": 15,
+    "protein": 14,
+    "fats": 22,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Risotto z grzybami",
+    "calories": 410,
+    "carbohydrates": 55,
+    "protein": 10,
+    "fats": 15,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Koktajl z kiwi",
+    "calories": 180,
+    "carbohydrates": 30,
+    "protein": 6,
+    "fats": 3,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Gazpacho z awokado",
+    "calories": 150,
+    "carbohydrates": 12,
+    "protein": 2,
+    "fats": 10,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Pancakes z syropem",
+    "calories": 350,
+    "carbohydrates": 45,
+    "protein": 8,
+    "fats": 12,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Sałatka z bobem",
+    "calories": 190,
+    "carbohydrates": 20,
+    "protein": 9,
+    "fats": 8,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Pasta z makrelą",
+    "calories": 420,
+    "carbohydrates": 5,
+    "protein": 25,
+    "fats": 34,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Babeczki z jagodami",
+    "calories": 280,
+    "carbohydrates": 40,
+    "protein": 4,
+    "fats": 12,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Sałatka z  fasolą",
+    "calories": 220,
+    "carbohydrates": 30,
+    "protein": 12,
+    "fats": 6,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Tofu smażone",
+    "calories": 380,
+    "carbohydrates": 15,
+    "protein": 20,
+    "fats": 26,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Krem z papryki",
+    "calories": 170,
+    "carbohydrates": 18,
+    "protein": 3,
+    "fats": 9,
+    "kind": "dinners",
+    "taste": "sweet"
+  },
+  {
+    "name": "Chleb bananowy",
+    "calories": 230,
+    "carbohydrates": 35,
+    "protein": 4,
+    "fats": 8,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Koktajl z ananasem",
+    "calories": 210,
+    "carbohydrates": 25,
+    "protein": 3,
+    "fats": 12,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  },
+  {
+    "name": "Caprese z mozzarellą",
+    "calories": 250,
+    "carbohydrates": 3,
+    "protein": 10,
+    "fats": 20,
+    "kind": "fruits-vegetables",
+    "taste": "salty"
+  },
+  {
+    "name": "Quiche z łososiem",
+    "calories": 480,
+    "carbohydrates": 30,
+    "protein": 22,
+    "fats": 30,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Mus jabłkowy",
+    "calories": 120,
+    "carbohydrates": 28,
+    "protein": 0,
+    "fats": 0,
+    "kind": "fruits-vegetables",
+    "taste": "sweet"
+  },
+  {
+    "name": "Falafel z sosem",
+    "calories": 330,
+    "carbohydrates": 40,
+    "protein": 13,
+    "fats": 15,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Ratatouille",
+    "calories": 180,
+    "carbohydrates": 25,
+    "protein": 4,
+    "fats": 8,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Chipsy jabłkowe",
+    "calories": 100,
+    "carbohydrates": 24,
+    "protein": 1,
+    "fats": 0,
+    "kind": "fruits-vegetables",
+    "taste": "sweet"
+  },
+  {
+    "name": "Hummus z pieczonym",
+    "calories": 220,
+    "carbohydrates": 20,
+    "protein": 6,
+    "fats": 12,
+    "kind": "snacks",
+    "taste": "salty"
+  },
+  {
+    "name": "Sushi wegetariańskie",
+    "calories": 300,
+    "carbohydrates": 60,
+    "protein": 8,
+    "fats": 5,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Creme brulee",
+    "calories": 310,
+    "carbohydrates": 18,
+    "protein": 6,
+    "fats": 24,
+    "kind": "snacks",
+    "taste": "sweet"
+  },
+  {
+    "name": "Makaron z awokado",
+    "calories": 420,
+    "carbohydrates": 55,
+    "protein": 10,
+    "fats": 18,
+    "kind": "dinners",
+    "taste": "salty"
+  },
+  {
+    "name": "Smoothie z mango",
+    "calories": 230,
+    "carbohydrates": 35,
+    "protein": 5,
+    "fats": 7,
+    "kind": "breakfasts",
+    "taste": "sweet"
+  }
+]
+
+      
+
+

@@ -1,4 +1,4 @@
-@import '../../../styles/settings.scss';
+@import '../../../styles.scss';
 
 .form-selects {
   display: flex;
@@ -17,46 +17,28 @@
     }
 
     select {
-      border: none;
-      border-bottom: 5px solid $text-secondary-color;
-      width: 100%;
-      height: 60px;
-      margin-bottom: 40px;
-      background: inherit;
-      color: white;
+      @include select(100%);
       text-align: center;
       font-size: 32px;
-      --webkit-appearance: none;
-      outline: none;
-      position: relative;
     }
   
     option {
-      background: black;
-      color: $text-secondary-color;
-      outline: none;
-    }
-
-    option:hover {
-      background-color: red;
+      @include option;
     }
   }
-
 }
 
 .buttons-container {
   text-align: center;
-  max-width: 300px;
-  margin: 50px auto;
+  max-width: 400px;
+  margin: 30px auto 90px;
 
-  button {
-    width: 250px;
-  }
 
   .filter {
-    @include button($text-secondary-color, rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
-    font-size: $content-font-size * 1.75;
+    @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
+    font-size: $content-font-size * 1.8;
     letter-spacing: 1px;
+    width: 400px;
   }
 
   mat-spinner {

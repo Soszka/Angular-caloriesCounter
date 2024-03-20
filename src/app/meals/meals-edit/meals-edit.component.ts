@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { faFire, faUtensils, faBurger, faBreadSlice, faDrumstickBite  } from '@fortawesome/free-solid-svg-icons';
+import { faFire, faUtensils, faBurger, faBreadSlice, faDrumstickBite, faCubesStacked  } from '@fortawesome/free-solid-svg-icons';
 import { MealElement, MealsService } from '../meals.service';
 import { Router } from '@angular/router';
-import { CaloriesService } from '../../calories/calories.service';
-import { AddedMeal } from '../meal.model';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-meals-edit',
@@ -12,18 +12,20 @@ import { AddedMeal } from '../meal.model';
   styleUrl: './meals-edit.component.scss'
 })
 export class MealsEditComponent {
+  faCubesStacked = faCubesStacked;
   faFire = faFire;
   faUtensils = faUtensils;
   faBurger = faBurger;
   faBreadSlice = faBreadSlice;
   faDrumstickBite = faDrumstickBite;
-  sectionName = "EDYCJA";
-  sectionDescription = "Edytuj wybrany produkt i dodaj go do swojej listy !";
 
+  sectionName!: string
+  sectionDescription!: string;
   selectedElement: MealElement | null = null;
   mealForm: FormGroup;
   showMessage: boolean = false;
   shouldNavigate: boolean = false;
+  editMode!: boolean;
   messageInfo = "";
 
   dataMacroOptions = [
@@ -34,11 +36,12 @@ export class MealsEditComponent {
   
   constructor(private mealsService: MealsService,
     private router: Router,
-    private fb: FormBuilder,
-    private caloriesService: CaloriesService) {
+    private fb: FormBuilder) {
       this.mealForm = this.fb.group({
         name: ['', [Validators.required,]],
         calories: ['', Validators.required],
+        kind: ['', Validators.required],
+        taste: ['', Validators.required],
         protein: ['', [Validators.required]],
         fats: ['', [Validators.required,]],
         carbohydrates: ['', [Validators.required,]],
@@ -46,19 +49,37 @@ export class MealsEditComponent {
   }
   
   ngOnInit() {
-    this.mealsService.selectedElement$.subscribe(element => {
-      this.selectedElement = element;
-      if (this.mealForm && this.selectedElement) {
-        this.mealForm.setValue({
-          name: this.selectedElement.name,
-          calories: this.selectedElement.calories,
-          protein: this.selectedElement.protein,
-          fats: this.selectedElement.fats,
-          carbohydrates: this.selectedElement.carbohydrates,
-        });
+    this.mealsService.selectedElement$.subscribe(selectedMeal => {
+      this.selectedElement = selectedMeal;
+      if (selectedMeal) {
+        this.setupFormForEdit(selectedMeal);
+      } else {
+        this.setupFormForAdd();
       }
     });
+  }
+  
+  setupFormForEdit(element: MealElement) {
+    this.sectionName = "EDYCJA";
+    this.sectionDescription = "Edytuj wybrany produkt i zapisz w liście wszystkich produktów!";
+    this.editMode = true;
+    if (this.mealForm) {
+      this.mealForm.setValue({
+        name: element.name,
+        calories: element.calories,
+        kind: element.kind,
+        taste: element.taste,
+        protein: element.protein,
+        fats: element.fats,
+        carbohydrates: element.carbohydrates,
+      });
+    }
+  }
 
+  setupFormForAdd() {
+    this.sectionName = "DODAWANIE PRODUKTU";
+    this.sectionDescription = "Dodaj nowy produkt do listy wszystkich produktów!";
+    this.editMode = false;
   }
 
   validateInput(controlName: string) {
@@ -81,23 +102,32 @@ export class MealsEditComponent {
 
   onSaveClick() {
     if (this.mealForm.valid) {
-      const caloriesControl = this.mealForm.get('calories');
-      const calories = caloriesControl ? caloriesControl.value : 0;
-      const addedMeal = new AddedMeal(
-        this.mealForm.value.name,
-        calories,
-        this.mealForm.value.fats,
-        this.mealForm.value.protein,
-        this.mealForm.value.carbohydrates
-      );
-      this.caloriesService.addElement(addedMeal);
-      this.messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce KALORIE"
-      this.showMessage = true;
-      this.shouldNavigate = true;
+      const mealData = this.mealForm.value;
+      if (this.editMode && this.selectedElement) {
+        const updatedMeal: MealElement = { ...mealData, name: this.selectedElement.name };
+        this.mealsService.updateMeal(updatedMeal).subscribe(() => {
+          this.messageInfo = "Pomyślnie zapisano zmiany w wybranym produkcie!";
+          this.shouldNavigate = true;
+          this.showMessage = true;
+        });
+      } else {
+        this.mealsService.addMeal(mealData).subscribe(() => {
+          this.messageInfo = "Pomyślnie dodano nowy posiłek do listy produktów!";
+          this.shouldNavigate = true;
+          this.showMessage = true;
+        });
+      }
     } else {
-      this.messageInfo = "Uzepłnij wszystkie pola żeby dodać produkt !"
+      this.messageInfo = "Proszę wypełnić wszystkie wymagane pola formularza.";
       this.showMessage = true;
-      this.shouldNavigate = false;
+    }
+  }
+
+  onNameClick() {
+    if (this.editMode) {
+      this.messageInfo = "Nie można zmienić nazwy produktu podczas jego edycji !";
+      this.showMessage = true;
+      this.shouldNavigate = false; 
     }
   }
 

@@ -5,7 +5,7 @@
   </app-title>
   <form [formGroup]="mealForm">
     <div class="row">
-      <div class="data-option">
+      <div class="data-option" (click)="onNameClick()">
         <label for="name">Nazwa</label>
         <fa-icon [icon]="faUtensils"></fa-icon>
         <input type="text" id="name" formControlName="name" maxlength="25" placeholder="Wprowadź nazwę">
@@ -13,7 +13,29 @@
       <div class="data-option" (click)="onCaloriesClick()">
         <label for="calories">Liczba kalorii ( kcal )</label>
         <fa-icon [icon]="faFire"></fa-icon>
-        <input type="number" id="calories" formControlName="calories" placeholder="Wprowadź ilość kcal" readonly>
+        <input type="number" id="calories" formControlName="calories" placeholder="Ilość kcal" readonly>
+      </div>
+    </div>
+    <div class="row">
+      <div class="data-option">
+        <label for="kind">Rodzaj</label>
+        <fa-icon [icon]="faCubesStacked"></fa-icon>
+        <select id="kind" formControlName="kind" required>
+          <option value="" disabled selected hidden>Wybierz rodzaj</option>
+          <option value="snacks">Przekąska</option>
+          <option value="dinners">Obiad</option>
+          <option value="breakfasts">Śniadanie</option>
+          <option value="fruits-vegetables">Owoc/Warzywo</option>
+        </select>
+      </div>
+      <div class="data-option">
+        <label for="taste">Smak</label>
+        <fa-icon [icon]="faUtensils"></fa-icon>
+        <select id="taste" formControlName="taste" required>
+          <option value="" disabled selected hidden>Wybierz smak</option>
+          <option value="sweet">Na słodko</option>
+          <option value="salty">Na słono</option>
+        </select>
       </div>
     </div>
     <div class="row">
@@ -30,8 +52,8 @@
       </div>
     </div>
     <div class="buttons-container">
-      <button class="cancel" (click)="onCancelCLick()">Anuluj zmiany</button>
-      <button class="save" (click)="onSaveClick()">Zapisz i dodaj</button>
+      <button class="cancel" (click)="onCancelCLick()">Anuluj wprowadzone zmiany</button>
+      <button class="save" (click)="onSaveClick()">Zapisz nowy produkt w liście produktów</button>
     </div>
   </form>
 </div>
