@@ -15,8 +15,7 @@ const routes: Routes = [
   { path: 'calculator', component: CalculatorComponent },
   { path: 'result', component: CalculatorResultComponent },
   { path: 'meals/edit', component: MealsEditComponent },
-  { path: 'meals/edit/:id', component: MealsEditComponent }
-
+  { path: 'meals/edit/:name', component: MealsEditComponent }
 ];
 
 @NgModule({

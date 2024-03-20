@@ -5,7 +5,7 @@
   </app-title>
   <form [formGroup]="mealForm">
     <div class="row">
-      <div class="data-option">
+      <div class="data-option" (click)="onNameClick()">
         <label for="name">Nazwa</label>
         <fa-icon [icon]="faUtensils"></fa-icon>
         <input type="text" id="name" formControlName="name" maxlength="25" placeholder="Wprowadź nazwę">
@@ -53,8 +53,7 @@
     </div>
     <div class="buttons-container">
       <button class="cancel" (click)="onCancelCLick()">Anuluj wprowadzone zmiany</button>
-      <button class="save" *ngIf="editMode === 'edit'" (click)="onSaveClick()">Zapisz nowy produkt w liście produktów</button>
-      <button class="add" *ngIf="editMode === 'add'" (click)="onAddClick()">Dodaj nowy produkt do listy produktów</button>
+      <button class="save" (click)="onSaveClick()">Zapisz nowy produkt w liście produktów</button>
     </div>
   </form>
 </div>

@@ -1,6 +1,5 @@
 [
   {
-    "id": "0",
     "name": "Owsianka z miodem",
     "calories": 320,
     "carbohydrates": 40,
@@ -10,7 +9,6 @@
     "taste": "sweet"
   },
   {
-    "id": "1",
     "name": "Smoothie owocowe",
     "calories": 180,
     "carbohydrates": 30,
@@ -20,7 +18,6 @@
     "taste": "sweet"
   },
   {
-    "id": "2",
     "name": "Wrap z kurczakiem",
     "calories": 400,
     "carbohydrates": 35,
@@ -30,7 +27,6 @@
     "taste": "salty"
   },
   {
-    "id": "3",
     "name": "Serek wiejski",
     "calories": 200,
     "carbohydrates": 12,
@@ -40,7 +36,6 @@
     "taste": "salty"
   },
   {
-    "id": "4",
     "name": "Sałatka Cezar",
     "calories": 450,
     "carbohydrates": 12,
@@ -50,7 +45,6 @@
     "taste": "salty"
   },
   {
-    "id": "5",
     "name": "Jogurt naturalny",
     "calories": 220,
     "carbohydrates": 18,
@@ -60,7 +54,6 @@
     "taste": "sweet"
   },
   {
-    "id": "6",
     "name": "Kanapka łososiem",
     "calories": 300,
     "carbohydrates": 25,
@@ -70,7 +63,6 @@
     "taste": "salty"
   },
   {
-    "id": "7",
     "name": "Pasta bolognese",
     "calories": 550,
     "carbohydrates": 60,
@@ -80,7 +72,6 @@
     "taste": "salty"
   },
   {
-    "id": "8",
     "name": "Koktajl bananowo-truskawkowy",
     "calories": 200,
     "carbohydrates": 35,
@@ -90,7 +81,6 @@
     "taste": "sweet"
   },
   {
-    "id": "9",
     "name": "Sałatka grecka",
     "calories": 290,
     "carbohydrates": 10,
@@ -100,7 +90,6 @@
     "taste": "salty"
   },
   {
-    "id": "10",
     "name": "Naleśniki z serem",
     "calories": 350,
     "carbohydrates": 45,
@@ -110,7 +99,6 @@
     "taste": "sweet"
   },
   {
-    "id": "11",
     "name": "Kurczak pieczony",
     "calories": 490,
     "carbohydrates": 40,
@@ -120,7 +108,6 @@
     "taste": "salty"
   },
   {
-    "id": "12",
     "name": "Tosty francuskie",
     "calories": 330,
     "carbohydrates": 30,
@@ -130,7 +117,6 @@
     "taste": "sweet"
   },
   {
-    "id": "13",
     "name": "Hummus z pieczywem",
     "calories": 270,
     "carbohydrates": 35,
@@ -140,7 +126,6 @@
     "taste": "salty"
   },
   {
-    "id": "14",
     "name": "Ryż z warzywami",
     "calories": 410,
     "carbohydrates": 55,
@@ -150,7 +135,6 @@
     "taste": "salty"
   },
   {
-    "id": "15",
     "name": "Koktajl mango z kefirem",
     "calories": 230,
     "carbohydrates": 33,
@@ -160,7 +144,6 @@
     "taste": "sweet"
   },
   {
-    "id": "16",
     "name": "Grillowany stek",
     "calories": 520,
     "carbohydrates": 8,
@@ -170,7 +153,6 @@
     "taste": "salty"
   },
   {
-    "id": "17",
     "name": "Owocowa sałatka",
     "calories": 210,
     "carbohydrates": 32,
@@ -180,8 +162,7 @@
     "taste": "sweet"
   },
   {
-    "id": "18",
-    "name": "Zupa pomidorowa",
+    "name": "Zupa",
     "calories": 310,
     "carbohydrates": 45,
     "protein": 12,
@@ -190,7 +171,6 @@
     "taste": "salty"
   },
   {
-    "id": "19",
     "name": "Muesli z mlekiem",
     "calories": 280,
     "carbohydrates": 40,
@@ -200,7 +180,6 @@
     "taste": "sweet"
   },
   {
-    "id": "20",
     "name": "Krewetki",
     "calories": 360,
     "carbohydrates": 15,
@@ -210,7 +189,6 @@
     "taste": "salty"
   },
   {
-    "id": "21",
     "name": "Pizza wegetariańska",
     "calories": 480,
     "carbohydrates": 50,
@@ -220,7 +198,6 @@
     "taste": "salty"
   },
   {
-    "id": "22",
     "name": "Pudding chia",
     "calories": 250,
     "carbohydrates": 25,
@@ -230,7 +207,6 @@
     "taste": "sweet"
   },
   {
-    "id": "23",
     "name": "Sałatka z quinoa ",
     "calories": 420,
     "carbohydrates": 45,
@@ -240,7 +216,6 @@
     "taste": "salty"
   },
   {
-    "id": "24",
     "name": "Grzanki z guacamole",
     "calories": 310,
     "carbohydrates": 30,
@@ -250,7 +225,6 @@
     "taste": "salty"
   },
   {
-    "id": "25",
     "name": "Koktajl z kiwi",
     "calories": 190,
     "carbohydrates": 30,
@@ -260,7 +234,6 @@
     "taste": "sweet"
   },
   {
-    "id": "26",
     "name": "Indyk pieczony",
     "calories": 510,
     "carbohydrates": 20,
@@ -270,7 +243,6 @@
     "taste": "salty"
   },
   {
-    "id": "27",
     "name": "Sernik na zimno",
     "calories": 300,
     "carbohydrates": 30,
@@ -280,7 +252,6 @@
     "taste": "sweet"
   },
   {
-    "id": "28",
     "name": "Burgery z ciecierzycy",
     "calories": 350,
     "carbohydrates": 40,
@@ -290,7 +261,6 @@
     "taste": "salty"
   },
   {
-    "id": "29",
     "name": "Szakszuka",
     "calories": 280,
     "carbohydrates": 18,
@@ -300,7 +270,6 @@
     "taste": "salty"
   },
   {
-    "id": "30",
     "name": "Czekoladowy mus",
     "calories": 320,
     "carbohydrates": 35,
@@ -310,7 +279,6 @@
     "taste": "sweet"
   },
   {
-    "id": "31",
     "name": "Makaron z sosem pesto",
     "calories": 440,
     "carbohydrates": 55,
@@ -320,7 +288,6 @@
     "taste": "salty"
   },
   {
-    "id": "32",
     "name": "Jabłecznik",
     "calories": 250,
     "carbohydrates": 40,
@@ -330,7 +297,6 @@
     "taste": "sweet"
   },
   {
-    "id": "33",
     "name": "Zupa krem z brokułów",
     "calories": 180,
     "carbohydrates": 15,
@@ -340,7 +306,6 @@
     "taste": "salty"
   },
   {
-    "id": "34",
     "name": "Owocowy kebab",
     "calories": 210,
     "carbohydrates": 50,
@@ -350,7 +315,6 @@
     "taste": "sweet"
   },
   {
-    "id": "35",
     "name": "Falafel w pitce",
     "calories": 400,
     "carbohydrates": 45,
@@ -360,7 +324,6 @@
     "taste": "salty"
   },
   {
-    "id": "36",
     "name": "Sorbet truskawkowy",
     "calories": 160,
     "carbohydrates": 38,
@@ -370,7 +333,6 @@
     "taste": "salty"
   },
   {
-    "id": "37",
     "name": "Kompot z rabarbaru",
     "calories": 120,
     "carbohydrates": 30,
@@ -380,7 +342,6 @@
     "taste": "sweet"
   },
   {
-    "id": "38",
     "name": "Sałatka owocowa",
     "calories": 190,
     "carbohydrates": 47,
@@ -390,7 +351,6 @@
     "taste": "sweet"
   },
   {
-    "id": "39",
     "name": "Chipsy warzywne",
     "calories": 150,
     "carbohydrates": 18,
@@ -400,7 +360,6 @@
     "taste": "salty"
   },
   {
-    "id": "40",
     "name": "Warzywny stir-fry",
     "calories": 320,
     "carbohydrates": 40,
@@ -410,7 +369,6 @@
     "taste": "salty"
   },
   {
-    "id": "41",
     "name": "Parfait z jogurtem",
     "calories": 270,
     "carbohydrates": 42,
@@ -420,7 +378,6 @@
     "taste": "sweet"
   },
   {
-    "id": "42",
     "name": "Panini z warzywami",
     "calories": 350,
     "carbohydrates": 45,
@@ -430,7 +387,6 @@
     "taste": "salty"
   },
   {
-    "id": "43",
     "name": "Smoothie szpinakowe",
     "calories": 220,
     "carbohydrates": 40,
@@ -440,7 +396,6 @@
     "taste": "sweet"
   },
   {
-    "id": "44",
     "name": "Quiche z brokułami",
     "calories": 410,
     "carbohydrates": 35,
@@ -450,7 +405,6 @@
     "taste": "salty"
   },
   {
-    "id": "45",
     "name": "Tarta z truskawkami",
     "calories": 330,
     "carbohydrates": 50,
@@ -460,7 +414,6 @@
     "taste": "sweet"
   },
   {
-    "id": "46",
     "name": "Grillowana kukurydza",
     "calories": 200,
     "carbohydrates": 27,
@@ -470,7 +423,6 @@
     "taste": "salty"
   },
   {
-    "id": "47",
     "name": "Gazpacho",
     "calories": 130,
     "carbohydrates": 18,
@@ -480,8 +432,7 @@
     "taste": "salty"
   },
   {
-    "id": "48",
-    "name": "Bruschetta z pomidorami",
+    "name": "Bruschetta",
     "calories": 250,
     "carbohydrates": 30,
     "protein": 7,
@@ -490,7 +441,6 @@
     "taste": "salty"
   },
   {
-    "id": "49",
     "name": "Frittata z warzywami",
     "calories": 320,
     "carbohydrates": 12,
@@ -500,7 +450,6 @@
     "taste": "salty"
   },
   {
-    "id": "50",
     "name": "Sałatka z bobu i szparagów",
     "calories": 180,
     "carbohydrates": 20,
@@ -510,7 +459,6 @@
     "taste": "salty"
   },
   {
-    "id": "51",
     "name": "Orientalny ryż z mango",
     "calories": 400,
     "carbohydrates": 60,
@@ -520,7 +468,6 @@
     "taste": "sweet"
   },
   {
-    "id": "52",
     "name": "Placki z cukinii",
     "calories": 280,
     "carbohydrates": 22,
@@ -530,7 +477,6 @@
     "taste": "salty"
   },
   {
-    "id": "53",
     "name": "Granola z mlekiem",
     "calories": 320,
     "carbohydrates": 40,
@@ -540,7 +486,6 @@
     "taste": "sweet"
   },
   {
-    "id": "54",
     "name": "Sałatka Nicoise",
     "calories": 370,
     "carbohydrates": 20,
@@ -550,7 +495,6 @@
     "taste": "salty"
   },
   {
-    "id": "55",
     "name": "Lody owocowe",
     "calories": 150,
     "carbohydrates": 36,
@@ -560,7 +504,6 @@
     "taste": "sweet"
   },
   {
-    "id": "56",
     "name": "Risotto z pieczarkami",
     "calories": 420,
     "carbohydrates": 55,
@@ -570,7 +513,6 @@
     "taste": "salty"
   },
   {
-    "id": "57",
     "name": "Szparagi grillowane",
     "calories": 110,
     "carbohydrates": 5,
@@ -580,7 +522,6 @@
     "taste": "salty"
   },
   {
-    "id": "58",
     "name": "Zupa marchewkowa z imbirem",
     "calories": 140,
     "carbohydrates": 18,
@@ -590,7 +531,6 @@
     "taste": "sweet"
   },
   {
-    "id": "59",
     "name": "Guacamole z nachosami",
     "calories": 320,
     "carbohydrates": 35,
@@ -600,7 +540,6 @@
     "taste": "salty"
   },
   {
-    "id": "60",
     "name": "Sałatka z melonem",
     "calories": 220,
     "carbohydrates": 20,
@@ -610,7 +549,6 @@
     "taste": "sweet"
   },
   {
-    "id": "61",
     "name": "Tartaletki z kremem mascarpone",
     "calories": 290,
     "carbohydrates": 30,
@@ -620,7 +558,6 @@
     "taste": "sweet"
   },
   {
-    "id": "62",
     "name": "Grillowana pierś",
     "calories": 400,
     "carbohydrates": 10,
@@ -630,7 +567,6 @@
     "taste": "salty"
   },
   {
-    "id": "63",
     "name": "Zapiekanka z batatów",
     "calories": 350,
     "carbohydrates": 50,
@@ -640,7 +576,6 @@
     "taste": "sweet"
   },
   {
-    "id": "64",
     "name": "Sałatka z kuskusem",
     "calories": 320,
     "carbohydrates": 45,
@@ -650,7 +585,6 @@
     "taste": "sweet"
   },
   {
-    "id": "65",
     "name": "Chłodnik litewski",
     "calories": 180,
     "carbohydrates": 15,
@@ -660,7 +594,6 @@
     "taste": "salty"
   },
   {
-    "id": "66",
     "name": "Pasta z awokado",
     "calories": 250,
     "carbohydrates": 30,
@@ -670,7 +603,6 @@
     "taste": "salty"
   },
   {
-    "id": "67",
     "name": "Smoothie z awokado",
     "calories": 230,
     "carbohydrates": 25,
@@ -680,7 +612,6 @@
     "taste": "sweet"
   },
   {
-    "id": "68",
     "name": "Carpaccio z buraków",
     "calories": 120,
     "carbohydrates": 10,
@@ -690,7 +621,6 @@
     "taste": "salty"
   },
   {
-    "id": "69",
     "name": "Quiche z szpinakiem",
     "calories": 420,
     "carbohydrates": 30,
@@ -700,7 +630,6 @@
     "taste": "salty"
   },
   {
-    "id": "70",
     "name": "Parfait z chia",
     "calories": 280,
     "carbohydrates": 30,
@@ -710,7 +639,6 @@
     "taste": "sweet"
   },
   {
-    "id": "71",
     "name": "Ryż curry z warzywami",
     "calories": 380,
     "carbohydrates": 55,
@@ -720,7 +648,6 @@
     "taste": "salty"
   },
   {
-    "id": "72",
     "name": "Pieczone jabłka",
     "calories": 160,
     "carbohydrates": 35,
@@ -730,7 +657,6 @@
     "taste": "sweet"
   },
   {
-    "id": "73",
     "name": "Omlet z warzywami",
     "calories": 250,
     "carbohydrates": 5,
@@ -740,7 +666,6 @@
     "taste": "salty"
   },
   {
-    "id": "74",
     "name": "Sałatka z roszponką",
     "calories": 240,
     "carbohydrates": 8,
@@ -750,7 +675,6 @@
     "taste": "salty"
   },
   {
-    "id": "75",
     "name": "Naleśniki z musem",
     "calories": 310,
     "carbohydrates": 50,
@@ -760,7 +684,6 @@
     "taste": "sweet"
   },
   {
-    "id": "76",
     "name": "Zielone curry",
     "calories": 450,
     "carbohydrates": 35,
@@ -770,7 +693,6 @@
     "taste": "salty"
   },
   {
-    "id": "77",
     "name": "Grillowane warzywa",
     "calories": 320,
     "carbohydrates": 15,
@@ -780,7 +702,6 @@
     "taste": "salty"
   },
   {
-    "id": "78",
     "name": "Risotto z grzybami",
     "calories": 410,
     "carbohydrates": 55,
@@ -790,7 +711,6 @@
     "taste": "salty"
   },
   {
-    "id": "79",
     "name": "Koktajl z kiwi",
     "calories": 180,
     "carbohydrates": 30,
@@ -800,7 +720,6 @@
     "taste": "sweet"
   },
   {
-    "id": "80",
     "name": "Gazpacho z awokado",
     "calories": 150,
     "carbohydrates": 12,
@@ -810,7 +729,6 @@
     "taste": "salty"
   },
   {
-    "id": "81",
     "name": "Pancakes z syropem",
     "calories": 350,
     "carbohydrates": 45,
@@ -820,7 +738,6 @@
     "taste": "sweet"
   },
   {
-    "id": "82",
     "name": "Sałatka z bobem",
     "calories": 190,
     "carbohydrates": 20,
@@ -830,7 +747,6 @@
     "taste": "salty"
   },
   {
-    "id": "83",
     "name": "Pasta z makrelą",
     "calories": 420,
     "carbohydrates": 5,
@@ -840,7 +756,6 @@
     "taste": "salty"
   },
   {
-    "id": "84",
     "name": "Babeczki z jagodami",
     "calories": 280,
     "carbohydrates": 40,
@@ -850,7 +765,6 @@
     "taste": "sweet"
   },
   {
-    "id": "85",
     "name": "Sałatka z  fasolą",
     "calories": 220,
     "carbohydrates": 30,
@@ -860,7 +774,6 @@
     "taste": "salty"
   },
   {
-    "id": "86",
     "name": "Tofu smażone",
     "calories": 380,
     "carbohydrates": 15,
@@ -870,7 +783,6 @@
     "taste": "salty"
   },
   {
-    "id": "87",
     "name": "Krem z papryki",
     "calories": 170,
     "carbohydrates": 18,
@@ -880,7 +792,6 @@
     "taste": "sweet"
   },
   {
-    "id": "88",
     "name": "Chleb bananowy",
     "calories": 230,
     "carbohydrates": 35,
@@ -890,7 +801,6 @@
     "taste": "sweet"
   },
   {
-    "id": "89",
     "name": "Koktajl z ananasem",
     "calories": 210,
     "carbohydrates": 25,
@@ -900,7 +810,6 @@
     "taste": "sweet"
   },
   {
-    "id": "90",
     "name": "Caprese z mozzarellą",
     "calories": 250,
     "carbohydrates": 3,
@@ -910,7 +819,6 @@
     "taste": "salty"
   },
   {
-    "id": "91",
     "name": "Quiche z łososiem",
     "calories": 480,
     "carbohydrates": 30,
@@ -920,7 +828,6 @@
     "taste": "salty"
   },
   {
-    "id": "92",
     "name": "Mus jabłkowy",
     "calories": 120,
     "carbohydrates": 28,
@@ -930,7 +837,6 @@
     "taste": "sweet"
   },
   {
-    "id": "93",
     "name": "Falafel z sosem",
     "calories": 330,
     "carbohydrates": 40,
@@ -940,7 +846,6 @@
     "taste": "salty"
   },
   {
-    "id": "94",
     "name": "Ratatouille",
     "calories": 180,
     "carbohydrates": 25,
@@ -950,7 +855,6 @@
     "taste": "salty"
   },
   {
-    "id": "95",
     "name": "Chipsy jabłkowe",
     "calories": 100,
     "carbohydrates": 24,
@@ -960,7 +864,6 @@
     "taste": "sweet"
   },
   {
-    "id": "96",
     "name": "Hummus z pieczonym",
     "calories": 220,
     "carbohydrates": 20,
@@ -970,7 +873,6 @@
     "taste": "salty"
   },
   {
-    "id": "97",
     "name": "Sushi wegetariańskie",
     "calories": 300,
     "carbohydrates": 60,
@@ -980,7 +882,6 @@
     "taste": "salty"
   },
   {
-    "id": "98",
     "name": "Creme brulee",
     "calories": 310,
     "carbohydrates": 18,
@@ -990,7 +891,6 @@
     "taste": "sweet"
   },
   {
-    "id": "99",
     "name": "Makaron z awokado",
     "calories": 420,
     "carbohydrates": 55,
@@ -1000,7 +900,6 @@
     "taste": "salty"
   },
   {
-    "id": "100",
     "name": "Smoothie z mango",
     "calories": 230,
     "carbohydrates": 35,
