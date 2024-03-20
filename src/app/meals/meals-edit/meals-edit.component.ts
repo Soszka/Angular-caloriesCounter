@@ -111,10 +111,19 @@ export class MealsEditComponent {
           this.showMessage = true;
         });
       } else {
-        this.mealsService.addMeal(mealData).subscribe(() => {
-          this.messageInfo = "Pomyślnie dodano nowy posiłek do listy produktów!";
-          this.shouldNavigate = true;
-          this.showMessage = true;
+        this.mealsService.elementData$.subscribe(meals => {
+          const existingMeal = meals.find(meal => meal.name.toLowerCase() === mealData.name.toLowerCase());
+          if (existingMeal) {
+            this.mealForm.controls['name'].setValue('');
+            this.messageInfo = "Produkt o tej nazwie już istnieje! Wprowadź nazwę ponownie.";
+            this.showMessage = true;
+          } else {
+            this.mealsService.addMeal(mealData).subscribe(() => {
+              this.messageInfo = "Pomyślnie dodano nowy posiłek do listy produktów!";
+              this.shouldNavigate = true;
+              this.showMessage = true;
+            });
+          }
         });
       }
     } else {
