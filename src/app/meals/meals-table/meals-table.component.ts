@@ -55,7 +55,7 @@ export class MealsTableComponent implements  AfterViewInit {
   onEditClick(element: MealElement) {
     this.mealsService.setEditMode('edit');
     this.mealsService.setSelectedElement(element);
-    this.router.navigate(['/meals/edit', element.id]);
+    this.router.navigate(['/meals/edit', element.name]);
   }
 
   onRemoveClick(element: MealElement) {
