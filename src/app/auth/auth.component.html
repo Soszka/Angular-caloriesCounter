@@ -1,0 +1,33 @@
+<div class="auth">
+  <app-title
+    [sectionTitle]="sectionName" 
+    [sectionDescription]="sectionDescription">
+  </app-title>
+  <mat-spinner
+    *ngIf="isLoading"
+    [diameter]="150"
+    [strokeWidth]="15">
+  </mat-spinner>
+  <div class="logout-container" *ngIf="isLoggedIn">
+    <p>Jesteś obecnie zalogowany.</p>
+    <button (click)="onLogout()">Wyloguj się</button>
+  </div>
+  <form [formGroup]="loginForm" *ngIf="!isLoading && !isLoggedIn" (ngSubmit)="onLogin()" class="login-form">
+    <div class="login-input">
+      <label for="email">Użytkownik</label>
+      <input type="email" autocomplete="off" id="email" formControlName="email" placeholder="Wprowadź nazwę użytkownika">
+    </div>
+    <div class="login-input">
+      <label for="password">Hasło</label>
+      <input type="password" id="password" formControlName="password" placeholder="Wprowadź hasło">
+    </div>
+    <div class="button-container">
+      <button type="submit" class="login-button">Zaloguj</button>
+    </div>
+  </form>
+  <app-info-dialog 
+    [showMessage]="showMessage"
+    [messageInfo]="messageInfo"
+    (okClick)="onOkClick()">
+  </app-info-dialog>
+</div>

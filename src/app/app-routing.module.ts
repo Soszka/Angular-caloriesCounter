@@ -7,6 +7,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { CaloriesComponent } from './calories/calories.component';
 import { CalculatorResultComponent } from './calculator/calculator-result/calculator-result.component';
 import { MealsEditComponent } from './meals/meals-edit/meals-edit.component';
+import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'meals', component: MealsComponent },
   { path: 'calculator', component: CalculatorComponent },
   { path: 'result', component: CalculatorResultComponent },
+  { path: 'auth', component: AuthComponent },
   { path: 'meals/edit', component: MealsEditComponent },
   { path: 'meals/edit/:name', component: MealsEditComponent }
 ];

@@ -24,6 +24,7 @@ import { MealsEditComponent } from './meals/meals-edit/meals-edit.component';
 import { MealsTableComponent } from './meals/meals-table/meals-table.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
+import { AuthComponent } from './auth/auth.component';
 
 import { MealsService } from './meals/meals.service';
 import { InfoDialogComponent } from './shared/info-dialog/info-dialog.component';
@@ -46,7 +47,8 @@ import { InfoDialogComponent } from './shared/info-dialog/info-dialog.component'
     MealsTableComponent,
     FooterComponent,
     SidenavComponent,
-    InfoDialogComponent
+    InfoDialogComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
