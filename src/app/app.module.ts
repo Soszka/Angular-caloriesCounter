@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './auth/auth.guard';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
@@ -61,7 +62,7 @@ import { InfoDialogComponent } from './shared/info-dialog/info-dialog.component'
     RouterModule,
     HttpClientModule
   ],
-  providers: [MealsService],
+  providers: [MealsService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
