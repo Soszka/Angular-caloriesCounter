@@ -14,7 +14,9 @@ export interface MealElement {
   taste: string
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class MealsService {
 
   private originalElementDataSubject = new BehaviorSubject<MealElement[]>([]);
