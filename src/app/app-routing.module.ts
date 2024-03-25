@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 import { HomeComponent } from './home/home.component';
 import { MealsComponent } from './meals/meals.component';
@@ -16,8 +17,8 @@ const routes: Routes = [
   { path: 'calculator', component: CalculatorComponent },
   { path: 'result', component: CalculatorResultComponent },
   { path: 'auth', component: AuthComponent },
-  { path: 'meals/edit', component: MealsEditComponent },
-  { path: 'meals/edit/:name', component: MealsEditComponent }
+  { path: 'meals/edit', component: MealsEditComponent, canActivate: [AuthGuard], },
+  { path: 'meals/edit/:name', component: MealsEditComponent, canActivate: [AuthGuard], }
 ];
 
 @NgModule({
