@@ -10,7 +10,7 @@
   </mat-spinner>
   <div class="logout-container" *ngIf="isLoggedIn">
     <p>Jesteś obecnie zalogowany.</p>
-    <button (click)="onLogout()">Wyloguj się</button>
+    <button (click)="onLogoutClick()">Wyloguj się</button>
   </div>
   <form [formGroup]="loginForm" *ngIf="!isLoading && !isLoggedIn" (ngSubmit)="onLogin()" class="login-form">
     <div class="login-input">

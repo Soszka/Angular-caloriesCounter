@@ -1,4 +1,4 @@
-<div class="table-actions">
+<div class="table-actions" *ngIf="!loading" >
   <button class="btn-add-meal" (click)="onAddMeal()">Dodaj nowy posiłek</button>
   <input type="text" id="filter" (keyup)="applyFilter($event)" maxlength="30" placeholder="Wyszukaj produkt po nazwie">
 </div>
