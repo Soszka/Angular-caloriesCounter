@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -28,14 +26,12 @@ const components = [
 ]
 
 const modulesImportExport = [
-  
+
   // ANGULAR
-  BrowserModule,
   CommonModule,
   ReactiveFormsModule,
-  BrowserAnimationsModule,
   FormsModule,
-
+  
   // ANGULAR MATERIAL
   MatButtonModule,
   MatButtonToggleModule,
@@ -44,6 +40,9 @@ const modulesImportExport = [
   MatProgressSpinnerModule,
   MatPaginatorModule ,
   MatTableModule,
+
+  // FONTAWESOME
+  FontAwesomeModule
 ]
 
 @NgModule({
