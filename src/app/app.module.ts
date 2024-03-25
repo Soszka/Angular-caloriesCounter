@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './auth/auth.guard';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
@@ -24,6 +25,7 @@ import { MealsEditComponent } from './meals/meals-edit/meals-edit.component';
 import { MealsTableComponent } from './meals/meals-table/meals-table.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
+import { AuthComponent } from './auth/auth.component';
 
 import { MealsService } from './meals/meals.service';
 import { InfoDialogComponent } from './shared/info-dialog/info-dialog.component';
@@ -46,7 +48,8 @@ import { InfoDialogComponent } from './shared/info-dialog/info-dialog.component'
     MealsTableComponent,
     FooterComponent,
     SidenavComponent,
-    InfoDialogComponent
+    InfoDialogComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,7 @@ import { InfoDialogComponent } from './shared/info-dialog/info-dialog.component'
     RouterModule,
     HttpClientModule
   ],
-  providers: [MealsService],
+  providers: [MealsService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

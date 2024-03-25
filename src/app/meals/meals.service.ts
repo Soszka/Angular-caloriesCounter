@@ -1,6 +1,8 @@
 import { Injectable  } from '@angular/core'
 import { BehaviorSubject, Subject, map, Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { of } from 'rxjs';
+import { EventEmitter } from '@angular/core';
 
 export interface MealElement {
   name: string;
@@ -48,37 +50,44 @@ export class MealsService {
     }});
   }
 
-  removeMeal(meal: MealElement): void {
-    const confirmation = confirm(`Czy na pewno chcesz usunąć produkt: ${meal.name} z listy produktów?`);
-    if (confirmation) {
-      this.loadingSubject.next(true); 
-      const currentMeals = this.originalElementDataSubject.value;
-      const updatedMeals = currentMeals.filter(item => item.name !== meal.name);
-      this.updateMealsOnServer(updatedMeals).subscribe({
+  removeMeal(meal: MealElement): Observable<any> {
+    this.loadingSubject.next(true);
+    const currentMeals = this.originalElementDataSubject.value;
+    const updatedMeals = currentMeals.filter(item => item.name !== meal.name);
+    return this.updateMealsOnServer(updatedMeals).pipe(
+      tap({
         next: () => {
-          this.loadingSubject.next(false); 
-      }});
-    }
+          this.loadingSubject.next(false);
+          this.elementDataSubject.next(updatedMeals);
+        }
+      })
+    );
   }
   
   addMeal(meal: MealElement): Observable<any> {
     this.loadingSubject.next(true); 
-    const currentMeals = this.elementDataSubject.value;
+    const currentMeals = this.originalElementDataSubject.value;
     const updatedMeals = [...currentMeals, meal];
     return this.updateMealsOnServer(updatedMeals).pipe(
       tap({
-        next: () => this.loadingSubject.next(false)
+        next: () => {
+          this.loadingSubject.next(false);
+          this.elementDataSubject.next(updatedMeals);
+        }
       })
     );
   }
   
   updateMeal(meal: MealElement): Observable<any> {
     this.loadingSubject.next(true); 
-    const currentMeals = this.elementDataSubject.value;
+    const currentMeals = this.originalElementDataSubject.value;
     const updatedMeals = currentMeals.map(item => item.name === meal.name ? meal : item);
     return this.updateMealsOnServer(updatedMeals).pipe(
       tap({
-        next: () => this.loadingSubject.next(false)
+        next: () => {
+          this.loadingSubject.next(false);
+          this.elementDataSubject.next(updatedMeals);
+        }
       })
     );
   }
@@ -93,8 +102,8 @@ export class MealsService {
           this.elementDataSubject.next(filteredMeals);
         } else {
           this.elementDataSubject.next(meals);
+          this.originalElementDataSubject.next(meals);
         }
-        this.loadingSubject.next(false); 
       })
     );
   }

@@ -1,0 +1,62 @@
+@import '../../styles.scss';
+
+.login-form {
+  max-width: 600px;
+  margin: 60px auto 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-input {
+  margin-bottom: 60px;
+  position: relative;
+
+  label {
+    position: absolute;
+    top: -45%;
+    left: 0;
+    color: $text-secondary-color;
+    font-family: cursive;
+  }
+
+  input {
+    @include input(100%);
+  }
+}
+
+.button-container {
+  max-width: 300px;
+  margin: 10px auto 20px;
+
+  .login-button {
+    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color); 
+    font-size: $content-font-size * 1.6;
+    width: 100%;
+  }
+}
+
+.logout-container {
+
+  max-width: 1200px;
+  text-align: center;
+  margin: 80px auto;
+
+  p {
+    font-size: $content-font-size * 1.5;
+    margin-bottom: 15px;
+  }
+
+  button {
+    @include button(rgb(175, 0, 0), rgb(175, 0, 0), rgb(31, 0, 0), $text-color);
+    font-size: $content-font-size * 1.6;
+  }
+}
+
+mat-spinner {
+  max-width: 300px;
+  margin: 100px auto;
+}
+
+::ng-deep .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+  stroke: $text-secondary-color !important;
+}
