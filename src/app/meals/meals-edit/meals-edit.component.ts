@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faFire, faUtensils, faBurger, faBreadSlice, faDrumstickBite, faCubesStacked  } from '@fortawesome/free-solid-svg-icons';
 import { MealElement, MealsService } from '../meals.service';
 import { Router } from '@angular/router';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-meals-edit',
@@ -109,7 +110,7 @@ export class MealsEditComponent {
           this.showMessage = true;
         });
       } else {
-        this.mealsService.elementData$.subscribe(meals => {
+        this.mealsService.elementData$.pipe(take(1)).subscribe(meals => {
           const existingMeal = meals.find(meal => meal.name.toLowerCase() === mealData.name.toLowerCase());
           if (existingMeal) {
             this.mealForm.controls['name'].setValue('');

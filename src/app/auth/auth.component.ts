@@ -28,7 +28,9 @@ export class AuthComponent {
   }
 
   ngOnInit() {
-    this.isLoggedIn = this.authService.isLoggedIn;
+    this.authService.isLoggedIn$.subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+    });
   }
 
   onLogin() {
@@ -57,12 +59,12 @@ export class AuthComponent {
     }
   }
 
-  onLogout() {
-    this.isLoggedIn = false;
+  onLogoutClick() {
+    this.authService.logout();
     this.loginForm.reset();  
-    localStorage.removeItem('authToken'); 
-    this.messageInfo = "Pomyślnie wylogowano !";
     this.showMessage = true;
+    this.messageInfo = "Pomyślnie wylogowano!";
+    this.shouldNavigate = false;
   }
 
   onOkClick() {
