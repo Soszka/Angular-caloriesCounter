@@ -62,17 +62,15 @@ export class MealsEditComponent {
     this.sectionName = "EDYCJA";
     this.sectionDescription = "Edytuj wybrany produkt i zapisz w liście wszystkich produktów!";
     this.editMode = true;
-    if (this.mealForm) {
-      this.mealForm.setValue({
-        name: element.name,
-        calories: element.calories,
-        kind: element.kind,
-        taste: element.taste,
-        protein: element.protein,
-        fats: element.fats,
-        carbohydrates: element.carbohydrates,
-      });
-    }
+    this.mealForm.patchValue({
+      name: element.name,
+      calories: element.calories,
+      kind: element.kind,
+      taste: element.taste,
+      protein: element.protein,
+      fats: element.fats,
+      carbohydrates: element.carbohydrates,
+    });
   }
 
   setupFormForAdd() {

@@ -13,15 +13,11 @@ import { MatTableModule } from '@angular/material/table';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { FooterComponent } from './footer/footer.component';
-import { Title } from '@angular/platform-browser';
+import { TitleComponent } from './title/title.component';
 import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 
-
-
 const components = [
-  FooterComponent,
-  Title,
+  TitleComponent,
   InfoDialogComponent
 ]
 
@@ -48,7 +44,7 @@ const modulesImportExport = [
 @NgModule({
   imports: [...modulesImportExport],
   declarations: [...components],
-  exports: [...modulesImportExport],
+  exports: [...modulesImportExport, ...components],
   providers: [],
 })
 export class SharedModule {}
