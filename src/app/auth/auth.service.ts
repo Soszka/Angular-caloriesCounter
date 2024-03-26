@@ -32,6 +32,10 @@ export class AuthService {
     this.isLoggedInSubject.next(false);
   }
 
+  getUserUID(): string | null {
+    return localStorage.getItem('userUID');
+  }
+
   get isLoggedIn$(): Observable<boolean> {
     return this.isLoggedInSubject.asObservable();
   }

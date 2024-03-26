@@ -6,21 +6,25 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component'; 
 import { HeaderComponent } from './navigation/header/header.component'; 
+import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { AuthGuard } from './auth/auth.guard';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SidenavComponent
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
+    AppRoutingModule, 
+    SharedModule,
     BrowserAnimationsModule, 
     HttpClientModule, 
-    AppRoutingModule, 
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

@@ -1,0 +1,33 @@
+.sidenav-container {
+  background: linear-gradient(to top, rgb(173, 1, 1), rgb(36, 0, 0));
+
+  mat-sidenav-content {
+    height: 61px;
+
+    fa-icon {
+      color: white;
+    }
+  }
+
+  mat-sidenav {
+    width: 550px; 
+    background: linear-gradient(to top, rgb(173, 1, 1), rgb(36, 0, 0));
+
+    a {
+      color: white; 
+      display: block; 
+      padding: 10px; 
+      text-decoration: none; 
+
+      &:hover, &:active {
+        background-color: black; 
+        color: rgb(173, 1, 1); 
+      }
+    }
+  }
+}
+
+::ng-deep svg.svg-inline--fa.fa-bars {
+  width: 55px !important;
+  height: 38px !important;
+}
