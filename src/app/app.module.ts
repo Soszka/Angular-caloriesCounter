@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component'; 
 import { HeaderComponent } from './navigation/header/header.component'; 
-import { FooterComponent } from './shared/footer/footer.component';
+import { FooterComponent } from './footer/footer.component';
 
 import { AuthGuard } from './auth/auth.guard';
 

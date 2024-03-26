@@ -6,6 +6,7 @@ import { CalculatorResultComponent } from './calculator-result/calculator-result
 
 const routes: Routes = [
   { path: '', component: CalculatorComponent },
+  { path: 'result', component: CalculatorResultComponent }
 ];
 
 @NgModule({
