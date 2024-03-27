@@ -1,9 +1,16 @@
 @import '../styles.scss';
 
+.app-container { 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 .sidenav-container {
-
+  
   mat-sidenav-content {
-
+    
     .btn-toggle-container {
       background: linear-gradient(to top, rgb(173, 1, 1), rgb(36, 0, 0));
       height: 65px;
@@ -17,6 +24,7 @@
   mat-sidenav {
     width: 350px; 
     background: linear-gradient(to left, rgb(145, 0, 0), rgb(44, 0, 0));
+
     @include small-screens {
       width: 300px;
     }
@@ -39,8 +47,7 @@
       text-decoration: none;
 
       &:hover {
-        background: black;
-        color: rgb(173, 1, 1); 
+        color: black;
         font-weight: bold;
       }
 
@@ -61,4 +68,8 @@
 ::ng-deep .mat-drawer-content.mat-sidenav-content {
   color: white;
   background-color: black;
+}
+
+::ng-deep .mat-drawer-container.mat-sidenav-container.sidenav-container.mat-drawer-transition {
+  background-color: black !important;
 }
