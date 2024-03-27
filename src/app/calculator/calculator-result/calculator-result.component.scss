@@ -75,7 +75,6 @@
   }
 }
 
-
 // DIAGRAMS
 
 .result-diagrams {
@@ -195,9 +194,13 @@
 
 .buttons-container {
   margin-top: 60px;
-  text-align: center;
-  @include small-screens {
-    margin: 40px 0 40px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  @include medium-screens {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 
   button {

@@ -5,21 +5,37 @@
   margin: 60px auto 30px;
   max-width: 1300px;
   justify-content: space-between;
+  @include extra-large-screens {
+    flex-direction: column;
+    align-items: center;
+  }
    
   .select {
     width: 30%;
     display: flex;
+    @include extra-large-screens {
+      width: 80%;
+    }
     
     fa-icon {
       margin: 0 25px 3px 0;
       font-size: 44px;
       color: rgb(182, 181, 181);
+      @include small-screens {
+        font-size: 36px;
+        margin-top: 10px;
+      }
     }
 
     select {
       @include select(100%);
       text-align: center;
       font-size: 32px;
+      @include small-screens {
+        font-size: $content-font-size * 1.4;
+        width: 90%;
+        font-size: 28px;
+      }
     }
   
     option {
@@ -32,6 +48,9 @@
   text-align: center;
   max-width: 400px;
   margin: 30px auto 90px;
+  @include large-screens {
+    margin: 10px auto 40px;
+  }
 
 
   .filter {
@@ -39,6 +58,10 @@
     font-size: $content-font-size * 1.8;
     letter-spacing: 1px;
     width: 400px;
+    @include small-screens {
+      font-size: $content-font-size * 1.4;
+      width: 90%;
+    }
   }
 
   mat-spinner {
