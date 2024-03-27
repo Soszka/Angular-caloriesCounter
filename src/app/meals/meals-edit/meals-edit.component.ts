@@ -27,6 +27,17 @@ export class MealsEditComponent {
   editMode!: boolean;
   messageInfo = "";
 
+  kinds = [
+    { value: 'snacks', display: 'Przekąska' },
+    { value: 'dinners', display: 'Obiad' },
+    { value: 'breakfasts', display: 'Śniadanie' },
+    { value: 'fruits-vegetables', display: 'Owoc/Warzywo' }
+  ];
+
+  tastes = [
+    { value: 'sweet', display: 'Na słodko' },
+    { value: 'salty', display: 'Na słono' }
+  ];
   dataMacroOptions = [
     { label: 'Białko ( gram )', name: 'Białko', icon: faDrumstickBite, formControlName: 'protein' },
     { label: 'Tłuszcze ( gram )', name: 'Tłuszcze', icon: faBurger, formControlName: 'fats' },

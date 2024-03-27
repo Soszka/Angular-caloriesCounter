@@ -21,6 +21,9 @@
 
   input {
     @include input(100%);
+    @include small-screens {
+      font-size: $content-font-size * 1.1;
+    }
   }
 }
 
@@ -32,6 +35,9 @@
     @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color); 
     font-size: $content-font-size * 1.6;
     width: 100%;
+    @include small-screens {
+      font-size: $content-font-size * 1.4;
+    }
   }
 }
 
