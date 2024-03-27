@@ -5,8 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module'; 
 
 import { AppComponent } from './app.component'; 
-import { HeaderComponent } from './navigation/header/header.component'; 
-import { SidenavComponent } from './navigation/sidenav/sidenav.component';
+import { HeaderComponent } from './navigation/header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { AuthGuard } from './auth/auth.guard';
@@ -17,7 +16,6 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SidenavComponent
   ],
   imports: [
     BrowserModule,

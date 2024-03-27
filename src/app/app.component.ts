@@ -17,10 +17,11 @@ export class AppComponent implements OnInit {
   @ViewChild('drawer') sidenav!: MatSidenav
 
   links = [
-    { path: '/', name: 'Wstęp', exact: true },
-    { path: '/meals', name: 'Żywność', exact: false },
-    { path: '/calories', name: 'Kalorie', exact: false },
-    { path: '/auth', name: 'Logowanie', exact: false }
+    { path: '/', name: 'WSTĘP', exact: true },
+    { path: '/meals', name: 'ŻYWNOŚĆ', exact: false },
+    { path: '/calories', name: 'KALORIE', exact: false },
+    { path: '/auth', name: 'LOGOWANIE', exact: false },
+    { path: '/calculator', name: 'KALKULATOR', exact: false }
   ];
 
   constructor() {
@@ -36,10 +37,11 @@ export class AppComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-
   onResize(event: any) {
     this.checkScreenSize();
-    this.sidenav.close();
+      if (!this.isLargeScreen) {
+      this.sidenav.close();
+    }
   }
 
   onClose() {
