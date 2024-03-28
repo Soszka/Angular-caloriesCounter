@@ -54,6 +54,9 @@ table {
     font-size: 24px;
     text-align: center;
     font-weight: bold;
+    @include medium-screens {
+      font-size: 21px;
+    }
   }
 
   tr.mat-row {
@@ -66,6 +69,9 @@ table {
     border-bottom: 2px solid;
     font-size: 22px;
     border-spacing: 1px;
+    @include medium-screens {
+      font-size: 18px;
+    }
   }
 
   .mat-mdc-row.mdc-data-table__row.cdk-row:hover {
@@ -82,16 +88,25 @@ table {
   .btn-add {
     @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
     font-size: $content-font-size * 0.9;
+    @include medium-screens {
+      font-size: $content-font-size * 0.75;
+    }
   }
 
   .btn-edit {
     @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
     font-size: $content-font-size * 0.9;
+    @include medium-screens {
+      font-size: $content-font-size * 0.75;
+    }
   }
 
   .btn-remove {
     @include button(rgb(216, 0, 0), rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
     font-size: $content-font-size * 0.9;
+    @include medium-screens {
+      font-size: $content-font-size * 0.75;
+    }
   }
 }
 
@@ -101,6 +116,9 @@ table {
 ::ng-deep .mat-mdc-paginator-outer-container {
   background: linear-gradient(to top, rgb(109, 0, 0), rgb(26, 0, 0));
   color: white;
+  @include small-screens {
+    padding-top: 10px;
+  }
 }
 
 ::ng-deep .mat-mdc-paginator .mat-mdc-select-value {
