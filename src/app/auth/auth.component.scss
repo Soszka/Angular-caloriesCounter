@@ -24,6 +24,9 @@
     @include small-screens {
       font-size: $content-font-size * 1.1;
     }
+    @include tiny-screens {
+      font-size: $content-font-size * 1;
+    }
   }
 }
 
