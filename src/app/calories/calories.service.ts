@@ -70,4 +70,15 @@ export class CaloriesService  {
       this.calculateTotalNutrients();
     }
   }
+
+  clearTable() {
+    this.addedElementsSubject.next([]);
+    this.totalNutrientsSubject.next({
+      totalProtein: 0,
+      totalFat: 0,
+      totalCarbohydrates: 0,
+      totalCalories: 0
+    });
+    this.diagramDataSubject.next(null);
+  }
 }

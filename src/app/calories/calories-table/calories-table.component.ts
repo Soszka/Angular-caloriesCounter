@@ -45,5 +45,12 @@ export class CaloriesTableComponent implements AfterViewInit {
   onOkClick() {
     this.showMessage = false;
   }
+
+  onClear() {
+    const confirmation = confirm(`Czy na pewno chcesz wyczyściś tabalę dziennego spożycia ?`);
+      if (confirmation) {
+        this.caloriesService.clearTable();
+      }
+  }
 }
 
