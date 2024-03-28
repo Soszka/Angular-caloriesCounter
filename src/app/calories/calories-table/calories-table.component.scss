@@ -2,6 +2,7 @@
 
 .mat-elevation-z8 {
   margin-top: 60px;
+  overflow-x: auto;
 }
 
 table {
@@ -54,11 +55,20 @@ table {
   }
 }
 
-// PAGINATOR
+.btn-clear {
+  @include button(rgb(216, 0, 0), rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
+  font-size: $content-font-size * 1.6;
+  display: block;
+  width: 40%;
+  margin: 30px auto 50px;
 
-mat-paginator {
-  margin-bottom: 50px;
+  @include medium-screens {
+    font-size: $content-font-size * 1.3;
+    width: 90%;
+  }
 }
+
+// PAGINATOR
 
 ::ng-deep .mat-mdc-paginator-outer-container {
   background: linear-gradient(to top, rgb(22, 109, 0),rgb(0, 26, 1));
