@@ -17,7 +17,7 @@ export class MealsTableComponent implements  AfterViewInit {
   displayedColumns: string[] = ['name', 'calories', 'carbohydrates', 'protein', 'fats', 'remove', 'edit', 'add'];
   dataSource = new MatTableDataSource<MealElement>([]);
   showMessage: boolean = false;
-  messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce KALORIE"
+  messageInfo!: string;
   loading: boolean = false;
   isLoggedIn: boolean = false;
   shouldNavigate: boolean = false;
@@ -106,6 +106,7 @@ export class MealsTableComponent implements  AfterViewInit {
       element.carbohydrates
     );
     this.caloriesService.addElement(addedMeal);
+    this.messageInfo = "Pomyślnie dodano produkt ! Możesz go teraz zobaczyć w zakładce KALORIE";
     this.showMessage = true;
   }
 

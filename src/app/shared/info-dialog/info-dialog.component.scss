@@ -43,7 +43,7 @@
       font-size: $content-font-size;
     }
     @include small-screens {
-      font-size: $content-font-size * 0.9;
+      font-size: $content-font-size * 0.95;
     }
   }
 
@@ -53,5 +53,8 @@
     padding: 5px 10px;
     font-size: $content-font-size * 1.2;
     margin-bottom: 15px;
+    @include small-screens {
+      font-size: $content-font-size * 1.05;
+    }
   }
 }

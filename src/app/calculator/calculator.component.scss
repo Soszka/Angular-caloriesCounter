@@ -6,6 +6,10 @@ mat-button-toggle-group {
   display: flex;
   justify-content: center;
   border: none;
+  @include medium-screens{
+    flex-direction: column;
+    align-items: center;
+  }
   
   mat-button-toggle  {
     @include button($text-secondary-color, rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
@@ -15,6 +19,12 @@ mat-button-toggle-group {
     width: 300px;
     background-color: inherit;
     cursor: pointer;
+
+    @include medium-screens{
+      margin: 15px 0;
+      width: 85%;
+      font-size: 24px;
+    }
     
     &:hover {
       border: 3px solid rgb(119, 0, 0);
@@ -63,12 +73,26 @@ mat-button-toggle-group {
   margin: 40px auto;
   display: flex;
   justify-content: space-between;
+  
+  @include large-screens {
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto 0;
+  }
 
   .data-option {
     width: 30%;
     display: flex;
     position: relative;
     flex-direction: row-reverse;
+    
+    @include large-screens {
+      width: 80%;
+      margin: 20px 0;
+    }
+    @include small-screens {
+      width: 90%;
+    }
   }
 
   fa-icon {
@@ -79,6 +103,10 @@ mat-button-toggle-group {
 
   input {
     @include input(100%);
+
+    @include small-screens {
+      font-size: $content-font-size* 1.25;
+    }
   }
 }
 
@@ -94,15 +122,31 @@ input[type="number"]::-webkit-outer-spin-button {
 .exercise-data {
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-width: 1000px;
   margin: 60px auto 20px;
 
+  @include large-screens {
+    margin: 20px auto;
+  }
+
   select {
     @include select(100%);
+
+    @include large-screens {
+      width: 80%;
+    }
+    @include small-screens {
+      width: 90%;
+      font-size: $content-font-size* 1.25;
+    }
   }
 
   option {
     @include option;
+    @include small-screens {
+      font-size: $content-font-size* 1.25;
+    }
   }
 }
 
@@ -111,10 +155,28 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .buttons-container {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  @include medium-screens {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  @include medium-screens{
+    margin-bottom: 20px;
+  }
 
   button {
     margin: 0 30px 30px;
     width: 250px;
+
+    @include medium-screens{
+      width: 85%;
+      margin: 0px 0 20px;
+      font-size: 20px;
+    }
   }
 
   .cancel {

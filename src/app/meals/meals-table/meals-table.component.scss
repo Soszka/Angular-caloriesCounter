@@ -3,7 +3,12 @@
 .table-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 60px;
+  margin: 20px 0 40px;
+  @include large-screens {
+    margin-top: 20px;
+    flex-direction: column-reverse;
+    align-items: center
+  }
 
   .btn-add-meal {
     @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
@@ -11,16 +16,32 @@
     float: left;
     margin: 0 0px 20px 30px;
     width: 30%;
+    @include large-screens {
+      width: 90%;
+      float: none;
+      margin: 0 0 15px;
+      padding: 10px;
+    }
+    @include small-screens {
+      font-size: $content-font-size * 1.4;
+      width: 90%;
+    }
   }
 
   input {
     @include input(62.5%);
     margin-right: 40px;
+    @include large-screens {
+      width: 90%;
+      margin: 0 0 15px;
+      font-size: 24px;
+    }
   }
 }
 
 .mat-elevation-z8 {
   margin-top: 10px;
+  overflow-x: auto;
 }
 
 table {
@@ -33,6 +54,9 @@ table {
     font-size: 24px;
     text-align: center;
     font-weight: bold;
+    @include medium-screens {
+      font-size: 21px;
+    }
   }
 
   tr.mat-row {
@@ -45,6 +69,9 @@ table {
     border-bottom: 2px solid;
     font-size: 22px;
     border-spacing: 1px;
+    @include medium-screens {
+      font-size: 18px;
+    }
   }
 
   .mat-mdc-row.mdc-data-table__row.cdk-row:hover {
@@ -61,29 +88,37 @@ table {
   .btn-add {
     @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
     font-size: $content-font-size * 0.9;
+    @include medium-screens {
+      font-size: $content-font-size * 0.75;
+    }
   }
 
   .btn-edit {
     @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
     font-size: $content-font-size * 0.9;
+    @include medium-screens {
+      font-size: $content-font-size * 0.75;
+    }
   }
 
   .btn-remove {
     @include button(rgb(216, 0, 0), rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
     font-size: $content-font-size * 0.9;
+    @include medium-screens {
+      font-size: $content-font-size * 0.75;
+    }
   }
 }
 
 
 // PAGINATOR
 
-mat-paginator {
-  margin-bottom: 50px;
-}
-
 ::ng-deep .mat-mdc-paginator-outer-container {
   background: linear-gradient(to top, rgb(109, 0, 0), rgb(26, 0, 0));
   color: white;
+  @include small-screens {
+    padding-top: 10px;
+  }
 }
 
 ::ng-deep .mat-mdc-paginator .mat-mdc-select-value {

@@ -1,7 +1,3 @@
-<div class="table-actions" *ngIf="!loading" >
-  <button class="btn-add-meal" (click)="onAddMeal()">Dodaj nowy posiłek</button>
-  <input type="text" id="filter" (keyup)="applyFilter($event)" maxlength="30" placeholder="Wyszukaj produkt po nazwie">
-</div>
 <div class="mat-elevation-z8" [ngStyle]="{ 'display': loading ? 'none' : 'block' }">
   <table *ngIf="!loading" mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="name">
@@ -58,6 +54,10 @@
      showFirstLastButtons
      aria-label="Select page of periodic elements">
   </mat-paginator>
+</div>
+<div class="table-actions" *ngIf="!loading" >
+  <button class="btn-add-meal" (click)="onAddMeal()">Dodaj nowy posiłek</button>
+  <input type="text" id="filter" (keyup)="applyFilter($event)" maxlength="30" placeholder="Wpisz nazwę produktu">
 </div>
 <app-info-dialog 
   [showMessage]="showMessage"
