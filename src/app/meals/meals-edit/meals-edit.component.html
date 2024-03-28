@@ -8,7 +8,7 @@
       <div class="data-option" (click)="onNameClick()">
         <label for="name">Nazwa</label>
         <fa-icon [icon]="faUtensils"></fa-icon>
-        <input type="text" autocomplete="off" id="name" formControlName="name" maxlength="25" placeholder="Wprowadź nazwę">
+        <input type="text" autocomplete="off" id="name" formControlName="name" maxlength="35" placeholder="Wprowadź nazwę">
       </div>
       <div class="data-option" (click)="onCaloriesClick()">
         <label for="calories">Liczba kalorii ( kcal )</label>
@@ -16,16 +16,13 @@
         <input type="number" id="calories" formControlName="calories" placeholder="Ilość kcal" readonly>
       </div>
     </div>
-    <div class="row">
+    <div class="row select-row">
       <div class="data-option">
         <label for="kind">Rodzaj</label>
         <fa-icon [icon]="faCubesStacked"></fa-icon>
         <select id="kind" formControlName="kind" required>
           <option value="" disabled selected hidden>Wybierz rodzaj</option>
-          <option value="snacks">Przekąska</option>
-          <option value="dinners">Obiad</option>
-          <option value="breakfasts">Śniadanie</option>
-          <option value="fruits-vegetables">Owoc/Warzywo</option>
+          <option *ngFor="let kind of kinds" [value]="kind.value">{{ kind.display }}</option>
         </select>
       </div>
       <div class="data-option">
@@ -33,8 +30,7 @@
         <fa-icon [icon]="faUtensils"></fa-icon>
         <select id="taste" formControlName="taste" required>
           <option value="" disabled selected hidden>Wybierz smak</option>
-          <option value="sweet">Na słodko</option>
-          <option value="salty">Na słono</option>
+          <option *ngFor="let taste of tastes" [value]="taste.value">{{ taste.display }}</option>
         </select>
       </div>
     </div>

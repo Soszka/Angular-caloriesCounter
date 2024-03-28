@@ -3,18 +3,38 @@
 .home {
   display: flex;
   justify-content: space-between;
-  max-width: 1300px;
-  margin: 50px auto;
+  max-width: 1200px;
+  margin: 30px auto;
+  @include extra-large-screens {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    display: none;
+    text-align: center;
+    word-spacing: 3px;
+    font-family: monospace;
+    font-size: 42px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    color: white !important;
+    
+    span {
+      color: rgb(145, 3, 3);
+    }
+
+    @include extra-large-screens {
+      display: block;
+    }
+  }
 
   .image {
     width: 30%;
     text-align: center;
 
     @include extra-large-screens {
-      margin-top: 30px;
-    }
-
-    @include large-screens {
       display: none;
     }
 
@@ -25,14 +45,15 @@
   }
 
   .description {
-    margin-top: 10px;
+    margin-top: 20px;
     width: 65%;
     text-align: center;
+    
 
-    @include large-screens {
+    @include extra-large-screens {
       width: 100%;
       margin: 0;
-      padding: 10px 30px;
+      padding: 0px 30px 10px;
     }
 
     @include small-screens {
@@ -46,13 +67,13 @@
     font-size: 32px;
 
     @include small-screens {
-      padding: 5px 20px;
-      margin: 10px 10px 20px;
+      padding: 5px 15px;
+      margin: 10px 10px 30px;
+      font-size: 26px;
     }
 
     @include tiny-screens {
-      padding: 0;
-      font-size: $content-font-size * 1.5;
+      margin: 10px 20px 20px;
     }
 
     &:hover {

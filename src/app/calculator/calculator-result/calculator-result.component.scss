@@ -8,10 +8,19 @@
 .result {
   display: flex;
   justify-content: space-between;
-  
+  @include extra-large-screens {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
+// DATA
+
 .result-data {
+
+  @include extra-large-screens {
+    width: 90%;
+  }
   
   .data-item {
     border-bottom: 3px dashed $text-secondary-color;
@@ -20,6 +29,9 @@
     h2 {
       margin-bottom: 20px;
       max-width: 600px;
+      @include medium-screens {
+        font-size: 26px;
+      }
     }
     
     .calories-amount {
@@ -30,6 +42,15 @@
         font-size: 56px;
         margin-right: 35px;
         margin-top: 3px;
+        @include medium-screens {
+          font-size: 48px;
+        }
+        @include small-screens {
+          margin-top: 25px;
+        }
+        @include tiny-screens {
+          margin-top: 17.5px;
+        }
       }
   
       h2 {
@@ -38,11 +59,21 @@
         background: linear-gradient(to bottom right, rgb(196, 1, 1), rgb(80, 0, 0));
         padding: 15px 30px;
         border-radius: 15px;
+        @include extra-large-screens {
+          width: 90%;
+        }
+        @include medium-screens {
+          text-align: center;
+          font-size: 30px;
+          width: 100%;
+        }
+        @include tiny-screens {
+          padding: 5px;
+        }
       }
     }
   }
 }
-
 
 // DIAGRAMS
 
@@ -50,15 +81,32 @@
 
   text-align: center;
   width: 40%;
+  @include extra-large-screens {
+    width: 65%;
+  }
+  @include medium-screens {
+    width: 80%;
+  }
 
   h3 {
     font-size: 32px;
     margin: 45px 0 20px;
+    @include extra-large-screens {
+      margin-top: 60px;
+    }
+    @include small-screens {
+      margin: 30px 0 10px;
+    }
   }
 
   .diagram {
     display: flex;
     justify-content: space-around;
+    @include small-screens {
+      flex-direction: column;
+      align-items: center;
+      flex-direction: column-reverse;
+    }
 
     .diagram-circle h4 {
       padding: 40px;
@@ -66,6 +114,10 @@
       border-radius: 50%;
       font-size: 32px;
       margin: 30px 10px 30px 0px;
+
+      @include small-screens {
+        margin: 15px 10px;
+      }
     }
 
     &.carbohydrates .diagram-circle h4 {
@@ -86,11 +138,17 @@
     .diagram-description {
       text-align: center;
       width: 60%;
+      @include small-screens {
+        width: 100%;
+      }
 
       h3 {
         display: inline-block;
         font-size: 28px;
         margin-bottom: 0;
+        @include small-screens {
+          font-size: 24px;
+        }
       }
 
       h3::after {
@@ -104,9 +162,12 @@
 
       p {
         color: rgb(0, 146, 24); 
-        font-size: 24px;
+        font-size: 20px;
         margin-top: 10px;
         font-weight: bold;
+        @include small-screens {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -129,26 +190,41 @@
 }
 
 
-
 // BUTTONS
-
 
 .buttons-container {
   margin-top: 60px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  @include medium-screens {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
   button {
     margin: 0 30px 30px;
     width: 350px;
+    @include small-screens {
+      width: 90%;
+      margin: 0 0px 25px;
+    }
   }
 
   .recalculate {
     @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
     font-size: $content-font-size * 1.6;
+    @include small-screens {
+      font-size: $content-font-size * 1.4;
+    }
   }
 
   .save {
     @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
     font-size: $content-font-size * 1.6;
+    @include small-screens {
+      font-size: $content-font-size * 1.4;
+    }
   }
 }

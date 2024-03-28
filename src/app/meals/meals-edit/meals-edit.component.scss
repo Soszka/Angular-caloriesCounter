@@ -9,11 +9,19 @@
   display: flex;
   margin: 70px auto 100px;
   justify-content: space-between;
+  @include large-screens {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 20px;
+  }
 
   .data-option {
     text-align: center;
     display: flex;
     position: relative;
+    @include large-screens {
+      margin-top: 50px;
+    }
   }
 
   label {
@@ -34,10 +42,16 @@
     @include input(100%);
     text-align: left;
     margin-right: 20px;
+    @include small-screens {
+      font-size: $content-font-size* 1.25;
+    }
   }
 
   select {
     @include select(100%);
+    @include small-screens {
+      font-size: $content-font-size* 1.25;
+    }
   }
 
   option {
@@ -45,34 +59,55 @@
   }
 }
 
+.select-row {
+  @include large-screens {
+    margin-bottom: 0;
+  }
+}
+
 .buttons-container {
   text-align: center;
+  margin-top: 50px;
 
   button {
     margin: 0 30px 30px;
     width: 400px;
-  }
-
-  .add {
-    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
-    font-size: $content-font-size * 1.3;
+    @include large-screens {
+      width: 80%;
+      margin: 0 0 30px;
+    }
+    @include small-screens {
+      width: 90%;
+    }
   }
 
   .cancel {
     @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
     font-size: $content-font-size * 1.3;
+    @include small-screens {
+      font-size: $content-font-size * 1.2;
+    }
   }
 
   .save {
     @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
     font-size: $content-font-size * 1.3;
+    @include small-screens {
+      font-size: $content-font-size * 1.2;
+    }
   }
 }
 
 
 .row:nth-child(1) .data-option,
-.row:nth-child(2) .data-option {
+.row:nth-child(2) .data-option,
+.row:nth-child(3) .data-option,
+.row:nth-child(4) .data-option,
+.row:nth-child(5) .data-option {
   width: 48%;
+  @include large-screens {
+    width: 90%;
+  }
 }
 
 

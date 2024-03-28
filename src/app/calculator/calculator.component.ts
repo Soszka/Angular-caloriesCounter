@@ -98,7 +98,7 @@ export class CalculatorComponent {
       this.calculatorService.calculateCaloricNeeds(weight, height, age, gender, activityLevel, dietGoal);
       this.dietGoalMessage = this.getDietGoalMessage(this.form.value.dietGoal);
       this.calculatorService.dietGoalMessage = this.dietGoalMessage;
-      this.router.navigate(['result']).then(() => {
+      this.router.navigate(['/calculator/result']).then(() => {
         window.scrollTo(0, 0);
       });
     } else {
