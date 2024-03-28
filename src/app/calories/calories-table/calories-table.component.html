@@ -40,6 +40,11 @@
                  aria-label="Select page of periodic elements">
   </mat-paginator>
 </div>
+<button 
+  class="btn-clear" 
+  *ngIf="dataSource.data.length > 0" 
+  (click)="onClear()">Wyczyść tabelę
+</button>
 <app-info-dialog 
   [showMessage]="showMessage"
   [messageInfo]="messageInfo"

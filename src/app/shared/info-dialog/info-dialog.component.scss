@@ -33,7 +33,9 @@
   z-index: 1;
   width: 60%;
   @include large-screens {
-    width: 80%;
+    width: 95%;
+    height: auto;
+    padding: 10px;
   }
 
   p {
@@ -41,9 +43,6 @@
     margin-bottom: 20px;
     @include medium-screens {
       font-size: $content-font-size;
-    }
-    @include small-screens {
-      font-size: $content-font-size * 0.95;
     }
   }
 
