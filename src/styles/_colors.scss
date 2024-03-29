@@ -1,0 +1,40 @@
+// MAIN COLORS
+
+$dark-color: rgb(0, 0, 0);
+$text-color: rgb(255, 255, 255);
+$text-secondary-color: rgb(151, 1, 1);
+$third-color: rgb(87, 87, 87);
+
+
+// BUTTONS
+
+$btn-save-text-color: rgb(0, 179, 0);
+$btn-save-hover-color-one: rgb(1, 199, 1);
+$btn-save-hover-color-two: rgb(0, 48, 0);
+
+$btn-cancel-text-color: rgb(195, 209, 0); 
+$btn-cancel-hover-color-one: rgb(216, 231, 0); 
+$btn-cancel-hover-color-two: rgb(48, 43, 0);
+
+$btn-delete-color: rgb(182, 0, 0); 
+$btn-delete-hover-bg-color: rgb(182, 0, 0); 
+$btn-delete-hover-border-color: rgb(31, 0, 0);
+
+
+// MACRO
+
+$fats-color: rgb(231, 235, 0);
+$protein-color: rgb(7, 23, 163);
+$carbohydrates-color: rgb(0, 146, 24);
+
+
+// INPUTS & SELECTS
+
+$input-color: $text-color;
+$input-border-color: $text-secondary-color;
+$input-active-color: rgb(211, 0, 0);
+$input-active-icon-color: rgb(211, 0, 0);
+$input-icon-color: rgb(182, 181, 181);
+$select-color: $text-color;
+$option-background: rgb(0, 0, 0);
+$option-color: $text-secondary-color;

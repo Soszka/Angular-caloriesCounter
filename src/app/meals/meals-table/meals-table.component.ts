@@ -14,7 +14,7 @@ import { AuthService } from '../../auth/auth.service';
   styleUrl: './meals-table.component.scss'
 })
 export class MealsTableComponent implements  AfterViewInit {
-  displayedColumns: string[] = ['name', 'calories', 'carbohydrates', 'protein', 'fats', 'remove', 'edit', 'add'];
+  displayedColumns: string[] = ['name', 'calories', 'add', 'carbohydrates', 'protein', 'fats', 'remove', 'edit'];
   dataSource = new MatTableDataSource<MealElement>([]);
   showMessage: boolean = false;
   messageInfo!: string;

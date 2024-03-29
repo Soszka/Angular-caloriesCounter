@@ -122,17 +122,17 @@
 
     &.carbohydrates .diagram-circle h4 {
       background: radial-gradient(#000000, #000000) padding-box,
-      linear-gradient(to left, rgb(0, 146, 24) 50%, rgb(214, 214, 214) 50%) border-box;
+      linear-gradient(to left, $carbohydrates-color 50%, rgb(214, 214, 214) 50%) border-box;
     }
     
     &.protein .diagram-circle h4 {
       background: linear-gradient(#000000, #000000) padding-box,
-        linear-gradient(to left, rgb(7, 23, 163) 25%, rgb(214, 214, 214) 25%, rgb(214, 214, 214) 100%) border-box;
+        linear-gradient(to left, $protein-color  25%, rgb(214, 214, 214) 25%, rgb(214, 214, 214) 100%) border-box;
     }
     
     &.fats .diagram-circle h4 {
       background: linear-gradient(#000000, #000000) padding-box,
-        linear-gradient(to left, rgb(231, 235, 0) 25%, rgb(214, 214, 214) 25%, rgb(214, 214, 214) 100%) border-box;
+        linear-gradient(to left, $fats-color 25%, rgb(214, 214, 214) 25%, rgb(214, 214, 214) 100%) border-box;
     }
 
     .diagram-description {
@@ -156,12 +156,12 @@
         display: block;
         width: 100%;
         height: 3px; 
-        background-color: rgb(0, 146, 24); 
+        background-color: $carbohydrates-color;; 
         margin-top: 5px;
       }
 
       p {
-        color: rgb(0, 146, 24); 
+        color: $carbohydrates-color;
         font-size: 20px;
         margin-top: 10px;
         font-weight: bold;
@@ -172,19 +172,19 @@
     }
 
     &.protein .diagram-description h3::after {
-      background-color: rgb(7, 23, 163); 
+      background-color: $protein-color; 
     }
 
     &.fats .diagram-description h3::after {
-      background-color: rgb(231, 235, 0); 
+      background-color: $fats-color; 
     }
     
     &.protein .diagram-description p {
-      color: rgb(7, 23, 163); 
+      color: $protein-color; 
     }
 
     &.fats .diagram-description p {
-      color: rgb(231, 235, 0); 
+      color: $fats-color; 
     }  
   }
 }
@@ -213,18 +213,10 @@
   }
 
   .recalculate {
-    @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
-    font-size: $content-font-size * 1.6;
-    @include small-screens {
-      font-size: $content-font-size * 1.4;
-    }
+    @include cancel-button($form-btn-font-size, $form-btn-font-size-sm)
   }
 
   .save {
-    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
-    font-size: $content-font-size * 1.6;
-    @include small-screens {
-      font-size: $content-font-size * 1.4;
-    }
+    @include save-button($form-btn-font-size, $form-btn-font-size-sm)
   }
 }
