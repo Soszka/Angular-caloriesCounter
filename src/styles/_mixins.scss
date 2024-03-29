@@ -1,0 +1,102 @@
+@mixin button($button-text-color, $hover-bg-color-one, $hover-bg-color-two) {
+  color: $button-text-color;
+  text-decoration: none;
+  border: 3px solid $button-text-color;
+  background: inherit;
+  cursor: pointer;
+  padding: 10px 30px;
+  border-radius: 50px;
+  display: inline-block;
+  transition: all 0.25s;
+  font-weight: bold;
+  &:hover {
+    background: linear-gradient(to bottom right, $hover-bg-color-one, $hover-bg-color-two);
+    border: 3px solid $hover-bg-color-one;
+    box-shadow: 0px 0px 5px $hover-bg-color-one;
+    color: $text-color;
+  }
+}
+
+@mixin save-button($font-size, $font-size-sm) {
+  @include button ($btn-save-text-color, $btn-save-hover-color-one, $btn-save-hover-color-two);
+  font-size: $font-size;
+  @include small-screens {
+    font-size: $font-size-sm;
+  }
+}
+
+@mixin cancel-button($font-size, $font-size-sm) {
+  @include button($btn-cancel-text-color, $btn-cancel-hover-color-one, $btn-cancel-hover-color-two);
+  font-size: $font-size;
+  @include small-screens {
+    font-size: $font-size-sm;
+  }
+}
+
+@mixin delete-button($font-size, $font-size-sm) {
+  @include button($btn-delete-color, $btn-delete-hover-bg-color, $btn-delete-hover-border-color);
+  font-size: $font-size;
+  @include small-screens {
+    font-size: $font-size-sm;
+  }
+}
+
+@mixin input($width) {
+  border: none;
+  border-bottom: 5px solid $input-border-color;
+  height: 60px;
+  width: $width;
+  background: inherit;
+  color: $input-color;
+  font-size: $input-font-size;
+  --webkit-appearance: none;
+  outline: none;
+  position: relative;
+
+  &::placeholder {
+    color: $input-color;
+  }
+  &:focus {
+    border-bottom-color: $input-active-color; 
+    + fa-icon {
+      color: $input-active-icon-color; 
+    }
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+
+  @include small-screens {
+    font-size: $input-font-size-sm; 
+  }
+  @include tiny-screens {
+    font-size: $input-font-size-sm * 0.9; 
+  }
+}
+
+@mixin select($width) {
+  border: none;
+  border-bottom: 5px solid $input-border-color;
+  height: 60px;
+  width: $width;
+  margin-bottom: 40px;
+  background: inherit;
+  color: $select-color;
+  font-size: $select-font-size;
+  --webkit-appearance: none;
+  outline: none;
+  position: relative;
+
+  @include small-screens {
+    font-size: $select-font-size-sm; 
+  }
+  @include tiny-screens {
+    font-size: $select-font-size-sm * 0.9; 
+  }
+}
+
+@mixin option() {
+  background: $option-background;
+  color: $option-color;
+  outline: none;
+}

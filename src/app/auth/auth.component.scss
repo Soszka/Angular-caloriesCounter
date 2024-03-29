@@ -21,12 +21,6 @@
 
   input {
     @include input(100%);
-    @include small-screens {
-      font-size: $content-font-size * 1.1;
-    }
-    @include tiny-screens {
-      font-size: $content-font-size * 1;
-    }
   }
 }
 
@@ -35,12 +29,8 @@
   margin: 10px auto 20px;
 
   .login-button {
-    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color); 
-    font-size: $content-font-size * 1.6;
+    @include save-button($main-btn-font-size, $main-btn-font-size-sm);
     width: 100%;
-    @include small-screens {
-      font-size: $content-font-size * 1.4;
-    }
   }
 }
 
@@ -56,8 +46,7 @@
   }
 
   button {
-    @include button(rgb(175, 0, 0), rgb(175, 0, 0), rgb(31, 0, 0), $text-color);
-    font-size: $content-font-size * 1.6;
+    @include delete-button($main-btn-font-size, $main-btn-font-size-sm);
   }
 }
 

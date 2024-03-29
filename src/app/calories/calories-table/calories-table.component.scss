@@ -1,7 +1,6 @@
 @import '../../../styles.scss';
 
 .mat-elevation-z8 {
-  margin-top: 60px;
   overflow-x: auto;
 }
 
@@ -47,17 +46,12 @@ table {
   }
 
   .btn-remove {
-    @include button(rgb(216, 0, 0), rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
-    font-size: $content-font-size * 0.9;
-    @include medium-screens {
-      font-size: $content-font-size * 0.75;
-    }
+    @include delete-button($table-btn-font-size, $table-btn-font-size-sm)
   }
 }
 
 .btn-clear {
-  @include button(rgb(216, 0, 0), rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
-  font-size: $content-font-size * 1.6;
+  @include delete-button($main-btn-font-size, $main-btn-font-size-sm);
   display: block;
   width: 40%;
   margin: 30px auto 50px;

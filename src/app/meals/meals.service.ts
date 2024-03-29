@@ -29,10 +29,8 @@ export class MealsService {
   loadingSubject = new Subject<boolean>();
   loading$ = this.loadingSubject.asObservable();
   private currentFilterOptions: any = null;
-
-  constructor(private http: HttpClient) {
-    this.fetchMeals();
-  }
+  private mealsUrl = 'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/.json'; 
+  constructor(private http: HttpClient) {}
 
   setEditMode(mode: 'edit' | 'add') {
     this.editModeSubject.next(mode);
@@ -42,14 +40,13 @@ export class MealsService {
     this.selectedElementSubject.next(element);
   }
 
-  fetchMeals() {
-    const url = 'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/.json';
-    this.http.get<MealElement[]>(url).subscribe({
-      next: (data) => {
-        const meals = data || [];
-        this.originalElementDataSubject.next(meals); 
-        this.elementDataSubject.next(meals);
-    }});
+  fetchMeals(): Observable<MealElement[]> { 
+    return this.http.get<MealElement[]>(this.mealsUrl).pipe( 
+      tap((data: MealElement[]) => {
+        this.originalElementDataSubject.next(data || []); 
+        this.elementDataSubject.next(data || []);
+      })
+    );
   }
 
   removeMeal(meal: MealElement): Observable<any> {

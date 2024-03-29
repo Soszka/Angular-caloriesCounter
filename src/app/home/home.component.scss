@@ -49,7 +49,6 @@
     width: 65%;
     text-align: center;
     
-
     @include extra-large-screens {
       width: 100%;
       margin: 0;
@@ -63,19 +62,17 @@
   }
 
   .btn {
-    @include button($text-secondary-color, rgb(34, 0, 0), rgb(151, 0, 0), $text-color);
+    @include delete-button($main-btn-font-size, $main-btn-font-size);
+    padding: 10px 30px;
     font-size: 32px;
-
     @include small-screens {
       padding: 5px 15px;
       margin: 10px 10px 30px;
       font-size: 26px;
     }
-
     @include tiny-screens {
       margin: 10px 20px 20px;
     }
-
     &:hover {
       border: 3px solid rgb(119, 0, 0); 
     }

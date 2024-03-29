@@ -20,7 +20,7 @@ const addedElements: addedElement[] = [];
   styleUrl: './calories-table.component.scss'
 })
 export class CaloriesTableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['name', 'calories', 'carbohydrates', 'protein', 'fats', 'remove'];
+  displayedColumns: string[] = ['name', 'calories', 'remove', 'carbohydrates', 'protein', 'fats'];
   dataSource = new MatTableDataSource<addedElement>(addedElements);
   showMessage: boolean = false;
   messageInfo = "Usunięto wybrany produkt !"

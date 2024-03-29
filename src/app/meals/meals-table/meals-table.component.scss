@@ -11,7 +11,7 @@
   }
 
   .btn-add-meal {
-    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
+    @include save-button($main-btn-font-size, $main-btn-font-size-sm);
     font-size: $content-font-size * 1.5;
     float: left;
     margin: 0 0px 20px 30px;
@@ -21,10 +21,6 @@
       float: none;
       margin: 0 0 15px;
       padding: 10px;
-    }
-    @include small-screens {
-      font-size: $content-font-size * 1.4;
-      width: 90%;
     }
   }
 
@@ -51,11 +47,11 @@ table {
   th {
     background: linear-gradient(to top, rgb(192, 1, 1), rgb(66, 0, 0));
     color: white;
-    font-size: 24px;
+    font-size: $table-th-font-size;
     text-align: center;
     font-weight: bold;
     @include medium-screens {
-      font-size: 21px;
+      font-size: $table-th-font-size-sm;
     }
   }
 
@@ -67,10 +63,10 @@ table {
     background-color: black;
     color: white;
     border-bottom: 2px solid;
-    font-size: 22px;
+    font-size: $table-td-font-size;
     border-spacing: 1px;
     @include medium-screens {
-      font-size: 18px;
+      font-size: $table-td-font-size-sm;
     }
   }
 
@@ -86,27 +82,15 @@ table {
   }
 
   .btn-add {
-    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
-    font-size: $content-font-size * 0.9;
-    @include medium-screens {
-      font-size: $content-font-size * 0.75;
-    }
+    @include save-button($table-btn-font-size, $table-btn-font-size-sm);
   }
 
   .btn-edit {
-    @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
-    font-size: $content-font-size * 0.9;
-    @include medium-screens {
-      font-size: $content-font-size * 0.75;
-    }
+    @include cancel-button($table-btn-font-size, $table-btn-font-size-sm);
   }
 
   .btn-remove {
-    @include button(rgb(216, 0, 0), rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
-    font-size: $content-font-size * 0.9;
-    @include medium-screens {
-      font-size: $content-font-size * 0.75;
-    }
+    @include delete-button($table-btn-font-size, $table-btn-font-size-sm);
   }
 }
 

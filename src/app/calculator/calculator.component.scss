@@ -12,7 +12,7 @@ mat-button-toggle-group {
   }
   
   mat-button-toggle  {
-    @include button($text-secondary-color, rgb(243, 0, 0), rgb(31, 0, 0), $text-color);
+    @include button($text-secondary-color, rgb(243, 0, 0), rgb(31, 0, 0));
     font-size: 26px;
     padding: 5px 20px;
     margin: 10px 20px;
@@ -96,17 +96,13 @@ mat-button-toggle-group {
   }
 
   fa-icon {
-    font-size: 36px;
+    font-size: $input-icon-size;
     margin: 4px 30px 0 0;
-    color: $text-secondary-color;
+    color: $input-icon-color
   }
 
   input {
     @include input(100%);
-
-    @include small-screens {
-      font-size: $content-font-size* 1.25;
-    }
   }
 }
 
@@ -138,19 +134,11 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     @include small-screens {
       width: 90%;
-      font-size: $content-font-size* 1.15;
-    }
-    @include tiny-screens {
-      width: 90%;
-      font-size: $content-font-size* 1.075;
     }
   }
 
   option {
     @include option;
-    @include small-screens {
-      font-size: $content-font-size* 1.25;
-    }
   }
 }
 
@@ -184,18 +172,10 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   .cancel {
-    @include button(rgb(195, 209, 0), rgb(216, 231, 0), rgb(48, 43, 0), $text-color);
-    font-size: $content-font-size * 1.6;
-    @include small-screens {
-      font-size: $content-font-size * 1.3;
-    }
+    @include cancel-button($form-btn-font-size, $form-btn-font-size-sm);
   }
 
   .submit {
-    @include button(rgb(0, 179, 0), rgb(1, 199, 1), rgb(0, 48, 0), $text-color);
-    font-size: $content-font-size * 1.6;
-    @include small-screens {
-      font-size: $content-font-size * 1.3;
-    }
+    @include save-button($form-btn-font-size, $form-btn-font-size-sm);
   }
 }
