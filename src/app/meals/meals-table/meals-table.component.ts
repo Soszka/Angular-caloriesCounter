@@ -6,6 +6,7 @@ import { MealsService, MealElement } from '../meals.service';
 import { AddedMeal } from '../meal.model';
 import { CaloriesService } from '../../calories/calories.service';
 import { AuthService } from '../../auth/auth.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class MealsTableComponent implements  AfterViewInit {
   loading: boolean = false;
   isLoggedIn: boolean = false;
   shouldNavigate: boolean = false;
-  
+  private subscriptions: Subscription[] = [];
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -31,19 +32,21 @@ export class MealsTableComponent implements  AfterViewInit {
      private authService: AuthService) {}
 
   ngAfterViewInit() {
-    this.mealsService.fetchMeals().subscribe();
-    this.mealsService.loading$.subscribe(loading => {
+    const sub1 = this.mealsService.fetchMeals().subscribe();
+    const sub2 = this.mealsService.loading$.subscribe(loading => {
       this.loading = loading;
     });
-    this.mealsService.elementData$.subscribe(data => {
+    const sub3 = this.mealsService.elementData$.subscribe(data => {
       this.dataSource.data = data;
       if (this.paginator) {
         this.dataSource.paginator = this.paginator;
       }
     });
-    this.authService.isLoggedIn$.subscribe(status => {
+    const sub4 = this.authService.isLoggedIn$.subscribe(status => {
       this.isLoggedIn = status;
     });
+
+    this.subscriptions.push(sub1, sub2, sub3, sub4);
   }
 
   applyFilter(event: Event) {
@@ -113,6 +116,10 @@ export class MealsTableComponent implements  AfterViewInit {
     if (this.shouldNavigate) {
       this.router.navigate(['/auth']);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 }
 
