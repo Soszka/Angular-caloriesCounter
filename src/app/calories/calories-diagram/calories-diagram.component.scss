@@ -2,7 +2,7 @@
 
 .calories-diagram {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
 
   h2 {
     text-align: center;
@@ -30,15 +30,15 @@
     }
 
     .protein {
-      background-color: rgb(1, 19, 187);
+      background-color: $protein-color;
     }
 
     .fats {
-      background-color: rgb(206, 209, 1);
+      background-color: $fats-color;
     }
 
     .carbohydrates {
-      background-color: rgb(6, 173, 0);
+      background-color: $carbohydrates-color;
     }
   }
 
@@ -66,7 +66,7 @@
   .item-color {
     width: 50px;
     height: 50px;
-    background: linear-gradient(to bottom right, rgb(1, 24, 230), rgb(0, 4, 31));
+    background: linear-gradient(to bottom right, rgb(0, 25, 250), rgb(0, 11, 85));
     border-radius: 10px;
     margin: 45px 40px 0 0;
     @include medium-screens {
@@ -75,7 +75,7 @@
   }
 
   .fats .item-color {
-    background: linear-gradient(to bottom right, rgb(197, 201, 0), rgb(35, 36, 0));
+    background: linear-gradient(to bottom right, rgb(239, 243, 0), rgb(35, 36, 0));
   }
   .carbohydrates .item-color {
     background: linear-gradient(to bottom right, rgb(1, 219, 37), rgb(0, 43, 7));
@@ -92,29 +92,29 @@
     display: block;
     width: 100%;
     height: 3px; 
-    background-color: rgb(0, 146, 24); 
+    background-color: $carbohydrates-color; 
   }
 
   .protein h4::after {
-    background-color: rgb(7, 23, 163); 
+    background-color: $protein-color; 
   }
   .fats h4::after {
-    background-color: rgb(231, 235, 0); 
+    background-color: $fats-color; 
   }
 
 
 
   p {
     text-align: center;
-    color: rgb(1, 24, 230);
+    color: $protein-color;
     margin-top: 0;
   }
 
   .fats p {
-    color: rgb(197, 201, 0);
+    color: $fats-color;
   }
   .carbohydrates p {
-    color: rgb(1, 180, 31);
+    color: $carbohydrates-color;
   }
 }
 
