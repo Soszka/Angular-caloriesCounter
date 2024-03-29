@@ -31,17 +31,15 @@ export class MealsTableComponent implements  AfterViewInit {
      private authService: AuthService) {}
 
   ngAfterViewInit() {
-    this.mealsService.loading$.subscribe((loading) => {
+    this.mealsService.fetchMeals().subscribe();
+    this.mealsService.loading$.subscribe(loading => {
       this.loading = loading;
-      if (!loading) {
-        this.dataSource.filter = this.dataSource.filter;
-      }
     });
     this.mealsService.elementData$.subscribe(data => {
-      setTimeout(() => {
-        this.dataSource.data = data;
+      this.dataSource.data = data;
+      if (this.paginator) {
         this.dataSource.paginator = this.paginator;
-      });
+      }
     });
     this.authService.isLoggedIn$.subscribe(status => {
       this.isLoggedIn = status;
