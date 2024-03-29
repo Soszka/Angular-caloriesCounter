@@ -54,12 +54,10 @@
 
 
   .filter {
-    @include button(rgb(175, 0, 0), rgb(175, 0, 0), rgb(31, 0, 0), $text-color);
-    font-size: $content-font-size * 1.8;
+    @include delete-button($main-btn-font-size, $main-btn-font-size-sm);
     letter-spacing: 1px;
     width: 400px;
     @include small-screens {
-      font-size: $content-font-size * 1.4;
       width: 90%;
     }
   }

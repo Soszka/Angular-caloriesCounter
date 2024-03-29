@@ -1,0 +1,32 @@
+// FONTS 
+
+$header-font: 'Roboto', sans-serif;
+$content-font: 'Lato', sans-serif;
+$label-font: 'Open Sans', sans-serif;
+$button-font: 'Montserrat', sans-serif;
+
+// FONTS SIZES
+
+$header-font-size: 48px;
+$header-font-size-sm: $header-font-size * 0.9;
+
+$content-font-size: 20px;
+$content-font-size-sm: $content-font-size* 0.9;
+
+$form-btn-font-size: 30px;
+$form-btn-font-size-sm: $form-btn-font-size * 0.9;
+$table-btn-font-size: 20px;
+$table-btn-font-size-sm: $table-btn-font-size * 0.95;
+$main-btn-font-size: 36px;
+$main-btn-font-size-sm: 28px;
+
+$table-th-font-size: 24px;
+$table-th-font-size-sm: 21px;
+$table-td-font-size: 22px;
+$table-td-font-size-sm: 19px;
+
+$input-font-size: 28px;
+$input-font-size-sm: 24px;
+$select-font-size: $input-font-size;
+$select-font-size-sm: 22px;
+$input-icon-size: 36px;
