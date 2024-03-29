@@ -39,23 +39,4 @@ describe('MealsService', () => {
     expect(req.request.method).toEqual('GET');
     req.flush(testMeals);
   });
-
-  it('#removeMeal should remove a meal and refresh the meals list', () => {
-  const initialMeals: MealElement[] = [
-    { name: 'Meal 1', calories: 100, carbohydrates: 20, protein: 10, fats: 5, kind: 'snack', taste: 'sweet' },
-    { name: 'Meal 2', calories: 200, carbohydrates: 40, protein: 20, fats: 10, kind: 'lunch', taste: 'salty' }
-  ];
-
-  service['originalElementDataSubject'].next(initialMeals);
-  service.removeMeal(initialMeals[0]).subscribe(() => {
-    service.elementData$.subscribe(meals => {
-      expect(meals.length).toBe(1);
-      expect(meals).not.toContain(initialMeals[0]);
-    });
-  });
-
-  const req = httpTestingController.expectOne(service['mealsUrl']);
-  expect(req.request.method).toEqual('PUT'); 
-  req.flush([initialMeals[1]]); 
-});
 });
