@@ -11,7 +11,7 @@
   }
 
   .btn-add-meal {
-    @include save-button($main-btn-font-size, $main-btn-font-size-sm);
+    @include delete-button($main-btn-font-size, $main-btn-font-size-sm);
     font-size: $content-font-size * 1.5;
     float: left;
     margin: 0 0px 20px 30px;
