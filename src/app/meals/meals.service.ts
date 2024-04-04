@@ -26,10 +26,11 @@ export class MealsService {
   selectedElement$ = this.selectedElementSubject.asObservable();
   private editModeSubject = new BehaviorSubject<'edit' | 'add'>('add');
   editMode$ = this.editModeSubject.asObservable();
-  loadingSubject = new Subject<boolean>();
+  private loadingSubject = new Subject<boolean>();
   loading$ = this.loadingSubject.asObservable();
   private currentFilterOptions: any = null;
-  private mealsUrl = 'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/.json'; 
+  private mealsUrl = 'https://calories-counter-e6ab6-default-rtdb.europe-west1.firebasedatabase.app/.json';
+
   constructor(private http: HttpClient) {}
 
   setEditMode(mode: 'edit' | 'add') {
