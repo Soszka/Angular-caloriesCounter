@@ -19,8 +19,8 @@ import { Router } from '@angular/router';
   styleUrl: './calculator.component.scss'
 })
 export class CalculatorComponent {
-  sectionName = "KALKULATOR";
-  sectionDescription = "Wprowadź swoje dane i oblicz zapotrzebowanie kaloryczne";
+  sectionName = "KALKULATORA";
+  sectionDescription = "Skorzystaj z ...";
   faMars = faMars;
   faVenus = faVenus;
   faCalendarDays = faCalendarDays;

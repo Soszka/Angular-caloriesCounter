@@ -204,8 +204,10 @@
   }
 
   button {
-    margin: 0 30px 30px;
-    width: 350px;
+    margin: 0 20px 30px;
+    height: 70px;
+    width: 390px;
+    border: none;
     @include small-screens {
       width: 90%;
       margin: 0 0px 25px;
@@ -213,10 +215,10 @@
   }
 
   .recalculate {
-    @include cancel-button($form-btn-font-size, $form-btn-font-size-sm)
+    @include delete-button($form-btn-font-size, $form-btn-font-size-sm)
   }
 
   .save {
-    @include save-button($form-btn-font-size, $form-btn-font-size-sm)
+    @include delete-button($form-btn-font-size, $form-btn-font-size-sm)
   }
 }

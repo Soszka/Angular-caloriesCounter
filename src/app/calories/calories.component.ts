@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class CaloriesComponent {
   sectionName = "KALORIE";
-  sectionDescription = "Zweryfikuj swoje dzienne spożycie kaloryczne !";
+  sectionDescription = "Sprawdź swoje dzienne ...";
 }
