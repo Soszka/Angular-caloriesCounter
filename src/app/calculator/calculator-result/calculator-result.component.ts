@@ -11,7 +11,7 @@ import { CaloriesService  } from '../../calories/calories.service';
 })
 export class CalculatorResultComponent {
   sectionName = "REZULTAT";
-  sectionDescription = "Sprawdź swój rezultat i zapisz swoje zapotrzebowanie kaloryczne";
+  sectionDescription = "Sprawdź swój ...";
   faAppleWhole = faAppleWhole;
   faPersonRunning = faPersonRunning;
   faDumbbell = faDumbbell;
@@ -51,11 +51,6 @@ export class CalculatorResultComponent {
 
     this.resultData = [
       { 
-        title: 'Twój wskaźnik BMR to :',
-        icon: this.faAppleWhole, 
-        calories: this.bmr
-      },
-      { 
         title: 'Twoje zapotrzebowanie kaloryczne to :',
         icon: this.faPersonRunning, 
         calories: this.caloricNeeds 
@@ -64,6 +59,11 @@ export class CalculatorResultComponent {
         title: this.dietGoalMessage, 
         icon: this.faDumbbell, 
         calories: this.caloriesGoal 
+      },
+      { 
+        title: 'Twój wskaźnik BMR to :',
+        icon: this.faAppleWhole, 
+        calories: this.bmr
       }
     ];
     this.resultDiagrams = [

@@ -30,15 +30,15 @@
     }
 
     .protein {
-      background-color: $protein-color;
+      background-color: rgb(214, 0, 0);
     }
 
     .fats {
-      background-color: $fats-color;
+      background-color: rgb(155, 0, 0);
     }
 
     .carbohydrates {
-      background-color: $carbohydrates-color;
+      background-color: rgb(85, 0, 0);
     }
   }
 
@@ -66,7 +66,7 @@
   .item-color {
     width: 50px;
     height: 50px;
-    background: linear-gradient(to bottom right, rgb(0, 25, 250), rgb(0, 11, 85));
+    background: linear-gradient(to bottom right, rgb(250, 0, 0), rgb(110, 0, 0));
     border-radius: 10px;
     margin: 45px 40px 0 0;
     @include medium-screens {
@@ -75,10 +75,10 @@
   }
 
   .fats .item-color {
-    background: linear-gradient(to bottom right, rgb(239, 243, 0), rgb(35, 36, 0));
+    background: linear-gradient(to bottom right, rgb(170, 0, 0), rgb(97, 1, 1));
   }
   .carbohydrates .item-color {
-    background: linear-gradient(to bottom right, rgb(1, 219, 37), rgb(0, 43, 7));
+    background: linear-gradient(to bottom right, rgb(110, 0, 0), rgb(36, 0, 0));
   }
 
   h4 {
@@ -92,29 +92,22 @@
     display: block;
     width: 100%;
     height: 3px; 
-    background-color: $carbohydrates-color; 
+    background-color: rgb(109, 0, 0); 
   }
 
   .protein h4::after {
-    background-color: $protein-color; 
+    background-color: rgb(255, 0, 0); 
   }
   .fats h4::after {
-    background-color: $fats-color; 
+    background-color: rgb(180, 1, 1); 
   }
 
 
 
   p {
     text-align: center;
-    color: $protein-color;
+    color: white;
     margin-top: 0;
-  }
-
-  .fats p {
-    color: $fats-color;
-  }
-  .carbohydrates p {
-    color: $carbohydrates-color;
   }
 }
 

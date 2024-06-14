@@ -10,7 +10,7 @@
     width: 100%;
     height: 100%;
     display: block;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
   }
 
   &.active body {
@@ -27,14 +27,20 @@
   background-color: black;
   padding: 20px;
   text-align: center;
-  border: 3px solid rgb(187, 187, 187);
-  box-shadow: 0px 0px 8px rgb(187, 187, 187);
+  border: 2px solid $text-secondary-color;
+  box-shadow: 0px 0px 8px $text-secondary-color;
   border-radius: 10px;
   z-index: 1;
   width: 60%;
   @include large-screens {
-    width: 95%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   p {
@@ -48,7 +54,7 @@
   }
 
   button {
-    @include save-button($form-btn-font-size, $form-btn-font-size-sm);
+    @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
     width: 150px;
     padding: 5px 10px;
     margin-bottom: 40px;

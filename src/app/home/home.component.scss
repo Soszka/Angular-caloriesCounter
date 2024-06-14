@@ -19,10 +19,20 @@
     margin-bottom: 0px;
     margin-top: 0px;
     padding-top: 0px;
-    color: white !important;
+    color: white;
+    @include medium-screens {
+      color: rgb(158, 0, 0);
+      font-weight: 550;
+      word-spacing: 0px;
+      text-transform: uppercase;
+      padding: 0 5px;
+    }
     
     span {
       color: rgb(145, 3, 3);
+      @include medium-screens {
+        display: none;
+      }
     }
 
     @include extra-large-screens {
@@ -45,7 +55,7 @@
   }
 
   .description {
-    margin-top: 20px;
+    margin: 10px 0 30px;
     width: 65%;
     text-align: center;
     
@@ -72,9 +82,6 @@
     }
     @include tiny-screens {
       margin: 10px 20px 20px;
-    }
-    &:hover {
-      border: 3px solid rgb(119, 0, 0); 
     }
   }
 }

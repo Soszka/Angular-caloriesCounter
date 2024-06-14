@@ -9,8 +9,8 @@ import { AuthService } from './auth.service';
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent {
-  sectionName = "LOGOWANIE";
-  sectionDescription = "Zaloguj się, żeby dokonywać zmiany w tabeli produktów dostępnych w zakładce ŻYWNOŚĆ";
+  sectionName = "ZALOGOWANIA";
+  sectionDescription = "Zacznij od ...";
   loginForm: FormGroup;
   isLoading = false;
   isLoggedIn = false;

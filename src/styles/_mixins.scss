@@ -1,19 +1,24 @@
 @mixin button($button-text-color, $hover-bg-color-one, $hover-bg-color-two) {
-  color: $button-text-color;
+  color: white;
   text-decoration: none;
-  border: 3px solid $button-text-color;
-  background: inherit;
+  background: linear-gradient(to bottom right, $hover-bg-color-one, $hover-bg-color-two);
   cursor: pointer;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border-radius: 50px;
   display: inline-block;
   transition: all 0.25s;
-  font-weight: bold;
+  font-weight: 500;
+  border: none;
   &:hover {
-    background: linear-gradient(to bottom right, $hover-bg-color-one, $hover-bg-color-two);
-    border: 3px solid $hover-bg-color-one;
-    box-shadow: 0px 0px 5px $hover-bg-color-one;
-    color: $text-color;
+    animation: pulseAnimation 1s infinite; 
+  }
+}
+@keyframes pulseAnimation {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
   }
 }
 

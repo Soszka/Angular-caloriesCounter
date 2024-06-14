@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class MealsComponent {
   sectionName = "ŻYWNOŚĆ";
-  sectionDescription = "Przefiltruj wybrane posiłki i dodaj je do swojej dziennej listy spożytych produktów";
+  sectionDescription = "Przefiltruj swoją ...";
 }
 
 
