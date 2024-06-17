@@ -53,15 +53,16 @@ table {
 .btn-clear {
   @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
   display: block;
-  width: 35%;
+  width: 370px;
   margin: 30px auto 50px;
 
-  @include extra-large-screens {
-    width: 45%;
-  }
-  @include medium-screens {
+  @include small-screens {
     font-size: $content-font-size * 1.3;
-    width: 90%;
+    width: 330px;
+  }
+  @include tiny-screens {
+    font-size: $content-font-size * 1.2;
+    width: 270px;
   }
 }
 

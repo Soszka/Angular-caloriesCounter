@@ -25,6 +25,14 @@
       <button type="submit" class="login-button">ZALOGUJ</button>
     </div>
   </form>
+  <div class="info-card" *ngIf="!isLoading && !isLoggedIn">
+    <p>
+      Aplikacja nie posiada możliwości założenia konta. Istnieje jednak możliwość
+      przetestowania aplikacji logując się jako użytkownik o nazwie : <span>bartek&#64;bartek.com</span>
+      , a także wprowadzając hasło : <span>Bartek123!</span>.
+      Dane które wprowadzisz po zalogowaniu będą zapisywane na serwerze, ale po pewnym czasie zostaną usunięte.
+    </p>
+  </div>
   <app-info-dialog 
     [showMessage]="showMessage"
     [messageInfo]="messageInfo"

@@ -70,8 +70,8 @@ export class MealsEditComponent {
   }
   
   setupFormForEdit(element: MealElement) {
-    this.sectionName = "EDYCJA";
-    this.sectionDescription = "Edytuj wybrany produkt i zapisz w liście wszystkich produktów!";
+    this.sectionName = "PRODUKT";
+    this.sectionDescription = "Edytuj wybrany ...";
     this.editMode = true;
     this.mealForm.patchValue({
       name: element.name,
@@ -85,8 +85,8 @@ export class MealsEditComponent {
   }
 
   setupFormForAdd() {
-    this.sectionName = "DODAWANIE PRODUKTU";
-    this.sectionDescription = "Dodaj nowy produkt do listy wszystkich produktów!";
+    this.sectionName = "PRODUKT";
+    this.sectionDescription = "Dodaj nowy ...";
     this.editMode = false;
   }
 
