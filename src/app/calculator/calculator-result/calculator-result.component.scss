@@ -205,11 +205,14 @@
 
   button {
     margin: 0 20px 30px;
-    height: 70px;
     width: 390px;
     border: none;
     @include small-screens {
       width: 90%;
+      margin: 0 0px 25px;
+    }
+    @include tiny-screens {
+      width: 95%;
       margin: 0 0px 25px;
     }
   }

@@ -4,7 +4,8 @@
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
-  margin: 30px auto;
+  position: relative;
+  margin: 0px auto;
   @include extra-large-screens {
     flex-direction: column;
     align-items: center;
@@ -13,19 +14,26 @@
   h1 {
     display: none;
     text-align: center;
+    position: relative;
     word-spacing: 3px;
     font-family: monospace;
     font-size: 42px;
     margin-bottom: 0px;
-    margin-top: 0px;
+    margin-top: 40px;
     padding-top: 0px;
     color: white;
+    line-height: 1.4;
+    z-index: 1;
     @include medium-screens {
-      color: rgb(158, 0, 0);
+      background: url('../../assets/HomeFoto2.jpg') no-repeat center center;
+      background-size: cover;
+      width: 100%;
+      font-style: italic;
+      font-size: 48px;
       font-weight: 550;
-      word-spacing: 0px;
+      word-spacing: 2px;
       text-transform: uppercase;
-      padding: 0 5px;
+      padding: 10px 0px;
     }
     
     span {
@@ -37,6 +45,19 @@
 
     @include extra-large-screens {
       display: block;
+    }
+  }
+
+  h1:before {
+    @include medium-screens {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(105, 1, 1, 0.8),rgba(36, 0, 0, 0.8)); 
+      z-index: -1; 
     }
   }
 
@@ -75,13 +96,13 @@
     @include delete-button($main-btn-font-size, $main-btn-font-size);
     padding: 10px 30px;
     font-size: 32px;
-    @include small-screens {
-      padding: 5px 15px;
+    @include extra-large-screens {
+      padding: 10px 15px;
       margin: 10px 10px 30px;
-      font-size: 26px;
+      font-size: 28px;
     }
     @include tiny-screens {
-      margin: 10px 20px 20px;
+      width: 95%;
     }
   }
 }
