@@ -5,11 +5,13 @@
   justify-content: space-between;
   max-width: 1200px;
   position: relative;
-  margin: 0px auto;
+  margin: 40px auto 30px;
   @include extra-large-screens {
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
   }
+
 
   h1 {
     display: none;
