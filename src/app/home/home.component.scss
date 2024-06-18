@@ -25,13 +25,12 @@
     line-height: 1.4;
     z-index: 1;
     @include medium-screens {
-      background: url('../../assets/HomeFoto2.jpg') no-repeat center center;
-      background-size: cover;
       width: 100%;
       font-style: italic;
       font-size: 48px;
-      font-weight: 550;
-      word-spacing: 2px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      font-family: Arial, Helvetica, sans-serif;
       text-transform: uppercase;
       padding: 10px 0px;
     }
@@ -56,7 +55,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(to top, rgba(105, 1, 1, 0.8),rgba(36, 0, 0, 0.8)); 
+      background: linear-gradient(to top, rgba(185, 0, 0, 0.8),rgba(65, 0, 0, 0.8)); 
       z-index: -1; 
     }
   }
