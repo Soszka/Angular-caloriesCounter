@@ -3,22 +3,28 @@
 .container {
   max-width: 1200px;
   margin: 60px auto 45px;
-  @include medium-screens {
+  padding: 0 20px;
+  @include large-screens {
     margin-top: 40px;
+  }
+  @include medium-screens {
+    margin: 0 auto 15px;
+    padding: 0;
   }
 }
 
 .subtitle {
   font-size: $content-font-size * 1.5;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 10px 0 0;
   font-family: 'Roboto', sans-serif;
   font-style: italic;
   font-weight: 600;
   color: $text-secondary-color;
+  @include large-screens {
+    font-size: $content-font-size * 1.3;
+  }
   @include medium-screens {
     text-align: center;
-    margin-left: 0;
   }
 }
 
@@ -32,25 +38,28 @@
     align-items: center;
   }
 
- .title {
+  .title {
     line-height: 1.2;
     color: white;
-    font-size: $header-font-size * 0.9; 
+    font-size: $header-font-size * 0.9;
     text-transform: uppercase;
     font-weight: 550;
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
     margin: 0;
+    @include large-screens {
+      font-size: $header-font-size * 0.8;
+    }
     @include medium-screens {
       margin-bottom: 10px;
       margin-left: 0;
-      font-size: $header-font-size* 0.75; 
+      font-size: $header-font-size * 0.75;
     }
   }
 
   .title-bar {
     width: 100%;
-    height: 3.5px; 
+    height: 3.5px;
     margin: 30px 0px 0 40px;
     background-color: $text-secondary-color;
     @include medium-screens {

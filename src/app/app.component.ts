@@ -7,21 +7,21 @@ import 'aos/dist/aos.css';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
   title = 'Licznik Kalorii';
   isLargeScreen!: boolean;
   faBars = faBars;
   faX = faX;
-  @ViewChild('drawer') sidenav!: MatSidenav
+  @ViewChild('drawer') sidenav!: MatSidenav;
 
   links = [
     { path: '/', name: 'WSTĘP', exact: true },
     { path: '/meals', name: 'ŻYWNOŚĆ', exact: false },
     { path: '/calories', name: 'KALORIE', exact: false },
     { path: '/auth', name: 'LOGOWANIE', exact: false },
-    { path: '/calculator', name: 'KALKULATOR', exact: false }
+    { path: '/calculator', name: 'KALKULATOR', exact: false },
   ];
 
   constructor() {
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     AOS.init({
       once: true,
-      duration: 1500
+      duration: 1500,
     });
     localStorage.removeItem('authToken');
   }
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.checkScreenSize();
-      if (!this.isLargeScreen) {
+    if (!this.isLargeScreen) {
       this.sidenav.close();
     }
   }
@@ -49,6 +49,6 @@ export class AppComponent implements OnInit {
   }
 
   private checkScreenSize() {
-    this.isLargeScreen = window.innerWidth > 1200;
+    this.isLargeScreen = window.innerWidth > 768;
   }
 }

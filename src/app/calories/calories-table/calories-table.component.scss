@@ -9,7 +9,8 @@ table {
   text-align: center;
 
   th {
-    background: linear-gradient(to top, rgb(192, 1, 1), rgb(66, 0, 0));
+    background: linear-gradient(to top, rgb(109, 1, 1), rgb(27, 0, 0));
+    padding: 20px 10px;
     color: white;
     font-size: $table-th-font-size;
     text-align: center;
@@ -35,11 +36,10 @@ table {
   }
 
   .mat-mdc-row.mdc-data-table__row.cdk-row:hover {
-    background: linear-gradient(to top, rgb(94, 1, 1),rgb(27, 0, 0));
+    background: linear-gradient(to top, rgb(94, 1, 1), rgb(27, 0, 0));
   }
 
-  
-  .mat-mdc-cell.mdc-data-table__cell.cdk-cell{
+  .mat-mdc-cell.mdc-data-table__cell.cdk-cell {
     border-bottom: 2px solid $text-secondary-color;
     text-align: center;
     padding: 15px 0;
@@ -53,7 +53,7 @@ table {
 .btn-clear {
   @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
   display: block;
-  width: 370px;
+  width: 300px;
   margin: 30px auto 50px;
 
   @include small-screens {
@@ -82,28 +82,58 @@ table {
 
 ::ng-deep .mat-mdc-select-arrow svg {
   color: white;
-} 
+}
 
-::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__leading,
-::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__trailing {
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline
+  .mdc-notched-outline__leading,
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline
+  .mdc-notched-outline__trailing {
   border: 2px solid white !important;
 }
 
-::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__leading,
-::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__trailing {
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+    .mdc-text-field--focused
+  ):hover
+  .mdc-notched-outline
+  .mdc-notched-outline__leading,
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+    .mdc-text-field--focused
+  ):hover
+  .mdc-notched-outline
+  .mdc-notched-outline__trailing {
   border: none !important;
 }
 
-::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading,
-::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
+::ng-deep
+  .mdc-text-field--outlined:not(
+    .mdc-text-field--disabled
+  ).mdc-text-field--focused
+  .mdc-notched-outline__leading,
+::ng-deep
+  .mdc-text-field--outlined:not(
+    .mdc-text-field--disabled
+  ).mdc-text-field--focused
+  .mdc-notched-outline__trailing {
   border: 2px solid $text-secondary-color !important;
 }
 
-::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__leading {
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline
+  .mdc-notched-outline__leading {
   border-right: none !important;
 }
 
-::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline .mdc-notched-outline__trailing {
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline
+  .mdc-notched-outline__trailing {
   border-left: none !important;
 }
 
@@ -115,4 +145,3 @@ table {
 ::ng-deep .mat-mdc-icon-button .mat-mdc-paginator-icon {
   fill: rgb(255, 255, 255) !important;
 }
-

@@ -62,27 +62,20 @@
 .buttons-container {
   text-align: center;
   margin: 0 0 40px;
-  @include large-screens {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 
   button {
-    margin: 0 30px 30px;
-    width: 230px;
+    margin: 0 7.5px 10px;
+    width: 150px;
   }
 
   .cancel {
-    @include delete-button($form-btn-font-size, $form-btn-font-size-sm)
+    @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
   }
 
   .save {
-    @include delete-button($form-btn-font-size, $form-btn-font-size-sm)
+    @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
   }
 }
-
 
 .row:nth-child(1) .data-option,
 .row:nth-child(2) .data-option,
@@ -95,8 +88,8 @@
   }
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }

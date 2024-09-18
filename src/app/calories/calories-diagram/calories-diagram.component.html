@@ -1,7 +1,10 @@
 <div class="calories-diagram">
   <h2>
     Spożyto dziś {{ totalCalories || 0 }}
-    <ng-container *ngIf="diagramData"> / {{ diagramData.caloriesGoal}}</ng-container> kalorii.
+    <ng-container *ngIf="diagramData">
+      / {{ diagramData.caloriesGoal }}</ng-container
+    >
+    kalorii.
     <span> {{ caloriesMessage }}</span>
   </h2>
   <div class="diagram-container">
@@ -16,7 +19,9 @@
         <h4>BIAŁKO</h4>
         <p>
           {{ totalProtein || 0 }}g
-          <ng-container *ngIf="diagramData"> / {{ diagramData.protein }}g</ng-container>
+          <ng-container *ngIf="diagramData">
+            / {{ diagramData.protein }}g</ng-container
+          >
         </p>
       </div>
     </div>
@@ -26,7 +31,9 @@
         <h4>TŁUSZCZE</h4>
         <p>
           {{ totalFat || 0 }}g
-          <ng-container *ngIf="diagramData"> / {{ diagramData.fats }}g</ng-container>
+          <ng-container *ngIf="diagramData">
+            / {{ diagramData.fats }}g</ng-container
+          >
         </p>
       </div>
     </div>
@@ -36,7 +43,9 @@
         <h4>WĘGLOWODANY</h4>
         <p>
           {{ totalCarbohydrates || 0 }}g
-          <ng-container *ngIf="diagramData"> / {{ diagramData.carbohydrates }}g</ng-container>
+          <ng-container *ngIf="diagramData">
+            / {{ diagramData.carbohydrates }}g</ng-container
+          >
         </p>
       </div>
     </div>

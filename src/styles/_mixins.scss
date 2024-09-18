@@ -1,7 +1,11 @@
 @mixin button($button-text-color, $hover-bg-color-one, $hover-bg-color-two) {
   color: white;
   text-decoration: none;
-  background: linear-gradient(to bottom right, $hover-bg-color-one, $hover-bg-color-two);
+  background: linear-gradient(
+    to bottom right,
+    $hover-bg-color-one,
+    $hover-bg-color-two
+  );
   cursor: pointer;
   padding: 12px 20px;
   border-radius: 50px;
@@ -11,20 +15,30 @@
   font-weight: 500;
   border: none;
   &:hover {
-    animation: pulseAnimation 1s infinite; 
+    animation: pulseAnimation 1s infinite;
+  }
+  @include small-screens {
+    &:hover {
+      animation: none !important;
+    }
   }
 }
 @keyframes pulseAnimation {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.15);
+    transform: scale(1.1);
   }
 }
 
 @mixin save-button($font-size, $font-size-sm) {
-  @include button ($btn-save-text-color, $btn-save-hover-color-one, $btn-save-hover-color-two);
+  @include button(
+    $btn-save-text-color,
+    $btn-save-hover-color-one,
+    $btn-save-hover-color-two
+  );
   font-size: $font-size;
   @include small-screens {
     font-size: $font-size-sm;
@@ -32,7 +46,11 @@
 }
 
 @mixin cancel-button($font-size, $font-size-sm) {
-  @include button($btn-cancel-text-color, $btn-cancel-hover-color-one, $btn-cancel-hover-color-two);
+  @include button(
+    $btn-cancel-text-color,
+    $btn-cancel-hover-color-one,
+    $btn-cancel-hover-color-two
+  );
   font-size: $font-size;
   @include small-screens {
     font-size: $font-size-sm;
@@ -40,7 +58,11 @@
 }
 
 @mixin delete-button($font-size, $font-size-sm) {
-  @include button($btn-delete-color, $btn-delete-hover-bg-color, $btn-delete-hover-border-color);
+  @include button(
+    $btn-delete-color,
+    $btn-delete-hover-bg-color,
+    $btn-delete-hover-border-color
+  );
   font-size: $font-size;
   @include small-screens {
     font-size: $font-size-sm;
@@ -63,9 +85,9 @@
     color: $input-color;
   }
   &:focus {
-    border-bottom-color: $input-active-color; 
+    border-bottom-color: $input-active-color;
     + fa-icon {
-      color: $input-active-icon-color; 
+      color: $input-active-icon-color;
     }
     &::placeholder {
       color: $text-color;
@@ -73,10 +95,10 @@
   }
 
   @include small-screens {
-    font-size: $input-font-size-sm; 
+    font-size: $input-font-size-sm;
   }
   @include tiny-screens {
-    font-size: $input-font-size-sm * 0.9; 
+    font-size: $input-font-size-sm * 0.9;
   }
 }
 
@@ -94,10 +116,10 @@
   position: relative;
 
   @include small-screens {
-    font-size: $select-font-size-sm; 
+    font-size: $select-font-size-sm;
   }
   @include tiny-screens {
-    font-size: $select-font-size-sm * 0.9; 
+    font-size: $select-font-size-sm * 0.9;
   }
 }
 

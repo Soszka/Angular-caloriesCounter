@@ -1,12 +1,11 @@
-import { Injectable, } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { AddedMeal } from '../meals/meal.model';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class CaloriesService  {
+export class CaloriesService {
   private addedElementsSubject = new BehaviorSubject<AddedMeal[]>([]);
   addedElements$ = this.addedElementsSubject.asObservable();
   private diagramDataSubject = new BehaviorSubject<any>(null);
@@ -15,13 +14,12 @@ export class CaloriesService  {
     totalProtein: 0,
     totalFat: 0,
     totalCarbohydrates: 0,
-    totalCalories: 0
+    totalCalories: 0,
   });
   totalNutrients$ = this.totalNutrientsSubject.asObservable();
   private updateCaloriesMessageSubject = new Subject<void>();
   updateCaloriesMessage$ = this.updateCaloriesMessageSubject.asObservable();
 
-  
   constructor() {}
 
   addElement(element: AddedMeal) {
@@ -41,7 +39,7 @@ export class CaloriesService  {
     let totalCarbohydrates = 0;
     let totalCalories = 0;
 
-    this.addedElementsSubject.value.forEach(element => {
+    this.addedElementsSubject.value.forEach((element) => {
       totalProtein += element.protein;
       totalFat += element.fats;
       totalCarbohydrates += element.carbohydrates;
@@ -52,7 +50,7 @@ export class CaloriesService  {
       totalProtein,
       totalFat,
       totalCarbohydrates,
-      totalCalories
+      totalCalories,
     });
   }
 
@@ -77,7 +75,7 @@ export class CaloriesService  {
       totalProtein: 0,
       totalFat: 0,
       totalCarbohydrates: 0,
-      totalCalories: 0
+      totalCalories: 0,
     });
     this.diagramDataSubject.next(null);
   }

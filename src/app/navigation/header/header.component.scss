@@ -1,10 +1,7 @@
 @import '../../../styles.scss';
 
 .container {
-  background: linear-gradient(to top, rgb(66, 0, 0),rgb(0, 0, 0));
-  @include extra-large-screens {
-    display: none;
-  }
+  background: linear-gradient(to top, rgb(105, 0, 0), rgb(0, 0, 0));
 }
 
 h1 {
@@ -12,13 +9,16 @@ h1 {
   word-spacing: 5px;
   font-family: monospace;
   font-size: 46px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-top: 0;
   padding-top: 30px;
   color: white !important;
-  
+
   span {
     color: rgb(145, 3, 3);
+    @include extra-large-screens {
+      display: none;
+    }
   }
 }
 
@@ -28,6 +28,7 @@ h1 {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 10px;
 
   a {
     text-decoration: none;
@@ -38,17 +39,18 @@ h1 {
     margin: 10px 0 0;
     padding: 15px;
     font-size: 28px;
-    background: linear-gradient(to top, rgb(119, 0, 0), rgb(34, 0, 0));
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transition: all 0.25s;
-    border: 3px solid rgb(145, 3, 3);
     border-bottom: none;
-    
+    @include large-screens {
+      width: 210px;
+      margin: 0 5px;
+      font-size: 22px;
+    }
+
     &:hover {
-      background: linear-gradient(to top, rgb(235, 2, 2), rgb(71, 0, 0));
-      border: 3px solid rgb(206, 1, 1);
-      border-bottom: none;
+      background: rgba(0, 0, 0, 0.25);
     }
   }
 
@@ -56,14 +58,10 @@ h1 {
     color: $text-secondary-color;
     background: rgb(0, 0, 0);
     font-weight: bold;
-    border: 3px solid rgb(145, 3, 3);
-    border-bottom: none;
 
     &:hover {
       color: $text-secondary-color;
       background: rgb(0, 0, 0);
-      border: 3px solid rgb(145, 3, 3);
-      border-bottom: none;
     }
   }
 }
