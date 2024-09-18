@@ -1,6 +1,6 @@
 @import '../styles.scss';
 
-.app-container { 
+.app-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8,12 +8,13 @@
 }
 
 .sidenav-container {
-  
   mat-sidenav-content {
-    
     .btn-toggle-container {
-      background: linear-gradient(to top, rgb(173, 1, 1), rgb(36, 0, 0));
-      height: 65px;
+      button {
+        margin: 5px 0 0 5px;
+        border-radius: 50px;
+        padding: 30px 0;
+      }
 
       fa-icon {
         color: white;
@@ -22,7 +23,7 @@
   }
 
   mat-sidenav {
-    width: 350px; 
+    width: 350px;
     background: linear-gradient(to left, rgb(145, 0, 0), rgb(44, 0, 0));
 
     @include small-screens {
@@ -40,10 +41,10 @@
 
     a {
       text-align: center;
-      color: white; 
-      display: block; 
+      color: white;
+      display: block;
       font-size: 24px;
-      padding: 15px 10px; 
+      padding: 15px 10px;
       text-decoration: none;
 
       &:hover {
@@ -70,6 +71,7 @@
   background-color: black;
 }
 
-::ng-deep .mat-drawer-container.mat-sidenav-container.sidenav-container.mat-drawer-transition {
+::ng-deep
+  .mat-drawer-container.mat-sidenav-container.sidenav-container.mat-drawer-transition {
   background-color: black !important;
 }

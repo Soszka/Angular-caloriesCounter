@@ -9,24 +9,29 @@
   @include extra-large-screens {
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
+  }
+  @include medium-screens {
     margin-top: 10px;
   }
 
-
   h1 {
-    display: none;
+    display: none !important;
     text-align: center;
     position: relative;
     word-spacing: 3px;
     font-family: monospace;
     font-size: 42px;
     margin-bottom: 0px;
-    margin-top: 40px;
+    margin-top: 10px;
     padding-top: 0px;
     color: white;
     line-height: 1.4;
     z-index: 1;
     @include medium-screens {
+      display: block !important;
+    }
+    @include small-screens {
       width: 100%;
       font-style: italic;
       font-size: 48px;
@@ -36,10 +41,10 @@
       text-transform: uppercase;
       padding: 10px 0px;
     }
-    
+
     span {
       color: rgb(145, 3, 3);
-      @include medium-screens {
+      @include small-screens {
         display: none;
       }
     }
@@ -50,15 +55,19 @@
   }
 
   h1:before {
-    @include medium-screens {
-      content: "";
+    @include small-screens {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(to top, rgba(185, 0, 0, 0.8),rgba(65, 0, 0, 0.8)); 
-      z-index: -1; 
+      background: linear-gradient(
+        to top,
+        rgba(185, 0, 0, 0.8),
+        rgba(65, 0, 0, 0.8)
+      );
+      z-index: -1;
     }
   }
 
@@ -80,7 +89,7 @@
     margin: 10px 0 30px;
     width: 65%;
     text-align: center;
-    
+
     @include extra-large-screens {
       width: 100%;
       margin: 0;
@@ -99,7 +108,7 @@
     font-size: 32px;
     @include extra-large-screens {
       padding: 10px 15px;
-      margin: 10px 10px 30px;
+      margin: 10px;
       font-size: 28px;
     }
     @include tiny-screens {

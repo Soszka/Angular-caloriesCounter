@@ -6,48 +6,53 @@ mat-button-toggle-group {
   display: flex;
   justify-content: center;
   border: none;
-  @include medium-screens{
+  @include medium-screens {
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
   }
-  
-  mat-button-toggle  {
+
+  mat-button-toggle {
     @include button($text-secondary-color, rgb(243, 0, 0), rgb(173, 4, 4));
-    font-size: 26px;
-    padding: 5px 20px;
+    width: 290px;
+    font-size: 24px;
+    padding: 5px 0;
     margin: 10px 20px;
-    width: 300px;
     background: inherit;
     cursor: pointer;
     border: 3px solid rgb(151, 0, 0);
     color: $text-secondary-color;
     font-weight: 700;
 
-    @include medium-screens{
+    @include medium-screens {
       margin: 15px 0;
-      width: 85%;
-      font-size: 24px;
+      width: 270px;
+      font-size: 22px;
     }
 
     span {
       padding: 0 0px 0 15px;
       border-left: solid 3px $text-secondary-color;
     }
-  
+
     fa-icon {
       padding: 0 15px 0 0;
       font-size: 36px;
       color: $text-secondary-color;
     }
-  
+
     &.mat-button-toggle-checked {
-      background: linear-gradient(to bottom right, rgb(34, 0, 0), rgb(151, 0, 0));
+      background: linear-gradient(
+        to bottom right,
+        rgb(34, 0, 0),
+        rgb(151, 0, 0)
+      );
       border: 3px solid rgb(34, 0, 0);
       box-shadow: 0px 0px 20px rgb(34, 0, 0);
       color: $text-color;
       border: 3px solid rgb(151, 0, 0);
       font-weight: 400;
-  
+
       span {
         border-left: 3px solid white;
       }
@@ -60,11 +65,10 @@ mat-button-toggle-group {
 }
 
 .mat-button-toggle-group-appearance-standard
-.mat-button-toggle-appearance-standard+.mat-button-toggle-appearance-standard {
-  border-left: 3px solid $text-secondary-color; 
+  .mat-button-toggle-appearance-standard
+  + .mat-button-toggle-appearance-standard {
+  border-left: 3px solid $text-secondary-color;
 }
-
-
 
 // Body Data Inputs
 
@@ -73,7 +77,7 @@ mat-button-toggle-group {
   margin: 40px auto;
   display: flex;
   justify-content: space-between;
-  
+
   @include large-screens {
     flex-direction: column;
     align-items: center;
@@ -85,7 +89,7 @@ mat-button-toggle-group {
     display: flex;
     position: relative;
     flex-direction: row-reverse;
-    
+
     @include large-screens {
       width: 80%;
       margin: 20px 0;
@@ -98,7 +102,7 @@ mat-button-toggle-group {
   fa-icon {
     font-size: $input-icon-size;
     margin: 4px 30px 0 0;
-    color: $input-icon-color
+    color: $input-icon-color;
   }
 
   input {
@@ -106,12 +110,11 @@ mat-button-toggle-group {
   }
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 
 // Exrcise Inputs
 
@@ -142,7 +145,6 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-
 // Buttons
 
 .buttons-container {
@@ -152,22 +154,18 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-bottom: 30px;
 
   @include medium-screens {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  @include medium-screens{
     margin-bottom: 20px;
   }
 
   button {
     margin: 0 15px 30px;
-    width: 210px;
+    width: 150px;
     border: none;
 
-    @include medium-screens{
-      margin: 0px 0 20px;
+    @include medium-screens {
+      margin: 0px 7.5px 20px;
       font-size: 20px;
+      width: 130px;
     }
   }
 

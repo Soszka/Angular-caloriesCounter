@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild  } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { CaloriesService } from '../calories.service';
@@ -17,13 +17,20 @@ const addedElements: addedElement[] = [];
 @Component({
   selector: 'app-calories-table',
   templateUrl: './calories-table.component.html',
-  styleUrl: './calories-table.component.scss'
+  styleUrl: './calories-table.component.scss',
 })
 export class CaloriesTableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['name', 'calories', 'remove', 'carbohydrates', 'protein', 'fats'];
+  displayedColumns: string[] = [
+    'name',
+    'calories',
+    'remove',
+    'carbohydrates',
+    'protein',
+    'fats',
+  ];
   dataSource = new MatTableDataSource<addedElement>(addedElements);
   showMessage: boolean = false;
-  messageInfo = "Usunięto wybrany produkt !"
+  messageInfo = 'Usunięto wybrany produkt !';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -31,7 +38,7 @@ export class CaloriesTableComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-    this.caloriesService.addedElements$.subscribe(elements => {
+    this.caloriesService.addedElements$.subscribe((elements) => {
       this.dataSource.data = elements;
     });
   }
@@ -47,10 +54,11 @@ export class CaloriesTableComponent implements AfterViewInit {
   }
 
   onClear() {
-    const confirmation = confirm(`Czy na pewno chcesz wyczyściś tabalę dziennego spożycia ?`);
-      if (confirmation) {
-        this.caloriesService.clearTable();
-      }
+    const confirmation = confirm(
+      `Czy na pewno chcesz wyczyściś tabalę dziennego spożycia ?`
+    );
+    if (confirmation) {
+      this.caloriesService.clearTable();
+    }
   }
 }
-

@@ -2,18 +2,19 @@
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer mode="over" class="sidenav">
       <fa-icon [icon]="faX" (click)="onClose()"></fa-icon>
-      <a 
+      <a
         *ngFor="let link of links"
         [routerLink]="link.path"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: link.exact }"
-        (click)="onClose()">{{link.name}}
+        (click)="onClose()"
+        >{{ link.name }}
       </a>
     </mat-sidenav>
     <mat-sidenav-content>
       <app-header *ngIf="isLargeScreen"></app-header>
       <div *ngIf="!isLargeScreen" class="btn-toggle-container">
-        <button mat-icon-button (click)="drawer.toggle()">
+        <button mat-button (click)="drawer.toggle()">
           <fa-icon [icon]="faBars"></fa-icon>
         </button>
       </div>

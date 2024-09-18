@@ -1,13 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CaloriesService } from '../calories.service';
 
 @Component({
   selector: 'app-calories-diagram',
   templateUrl: './calories-diagram.component.html',
-  styleUrl: './calories-diagram.component.scss'
+  styleUrl: './calories-diagram.component.scss',
 })
 export class CaloriesDiagramComponent implements OnInit, OnDestroy {
+  caloriesService = inject(CaloriesService);
   diagramData: any;
   totalProtein: number = 0;
   totalFat: number = 0;
@@ -15,27 +16,28 @@ export class CaloriesDiagramComponent implements OnInit, OnDestroy {
   totalCalories: number = 0;
   remainingCalories: number = 0;
   exceededCalories: number = 0;
-  caloriesMessage: string = ""
+  caloriesMessage: string = '';
   proteinPercentage: number = 0;
   fatPercentage: number = 0;
   carbohydratesPercentage: number = 0;
   private diagramDataSubscription!: Subscription;
   private totalNutrientsSubscription!: Subscription;
 
-  constructor(private caloriesService: CaloriesService) {}
-
   ngOnInit() {
-    this.diagramDataSubscription = this.caloriesService.diagramData$.subscribe(data => {
-      this.diagramData = data;
-    });
+    this.diagramDataSubscription = this.caloriesService.diagramData$.subscribe(
+      (data) => {
+        this.diagramData = data;
+      }
+    );
 
-    this.totalNutrientsSubscription = this.caloriesService.totalNutrients$.subscribe(nutrients => {
-      this.totalProtein = nutrients.totalProtein;
-      this.totalFat = nutrients.totalFat;
-      this.totalCarbohydrates = nutrients.totalCarbohydrates;
-      this.totalCalories = nutrients.totalCalories;
-      this.calculateNutrientPercentages();
-    });
+    this.totalNutrientsSubscription =
+      this.caloriesService.totalNutrients$.subscribe((nutrients) => {
+        this.totalProtein = nutrients.totalProtein;
+        this.totalFat = nutrients.totalFat;
+        this.totalCarbohydrates = nutrients.totalCarbohydrates;
+        this.totalCalories = nutrients.totalCalories;
+        this.calculateNutrientPercentages();
+      });
 
     this.caloriesService.updateCaloriesMessage$.subscribe(() => {
       this.calculateRemainingCalories();
@@ -66,11 +68,13 @@ export class CaloriesDiagramComponent implements OnInit, OnDestroy {
   }
 
   calculateNutrientPercentages() {
-    const totalNutrients = this.totalProtein + this.totalFat + this.totalCarbohydrates;
+    const totalNutrients =
+      this.totalProtein + this.totalFat + this.totalCarbohydrates;
     if (totalNutrients > 0) {
       this.proteinPercentage = (this.totalProtein / totalNutrients) * 100;
       this.fatPercentage = (this.totalFat / totalNutrients) * 100;
-      this.carbohydratesPercentage = (this.totalCarbohydrates / totalNutrients) * 100;
+      this.carbohydratesPercentage =
+        (this.totalCarbohydrates / totalNutrients) * 100;
     } else {
       this.proteinPercentage = 0;
       this.fatPercentage = 0;
