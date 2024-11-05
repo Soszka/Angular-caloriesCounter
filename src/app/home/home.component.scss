@@ -88,7 +88,7 @@
   .description {
     margin: 10px 0 30px;
     width: 65%;
-    text-align: center;
+    text-align: left;
 
     @include extra-large-screens {
       width: 100%;
@@ -97,7 +97,7 @@
     }
 
     @include small-screens {
-      padding: 5px;
+      padding: 20px;
       font-size: $content-font-size * 0.9;
     }
   }
