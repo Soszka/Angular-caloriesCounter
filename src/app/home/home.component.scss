@@ -102,17 +102,19 @@
     }
   }
 
+  .container {
+    @include extra-large-screens {
+      text-align: center;
+    }
+  }
+
   .btn {
     @include delete-button($main-btn-font-size, $main-btn-font-size);
-    padding: 10px 30px;
-    font-size: 32px;
+    padding: 10px 20px;
+    font-size: 26px;
     @include extra-large-screens {
-      padding: 10px 15px;
-      margin: 10px;
-      font-size: 28px;
-    }
-    @include tiny-screens {
-      width: 95%;
+      margin: 10px 10px 0;
+      font-size: 24px;
     }
   }
 }

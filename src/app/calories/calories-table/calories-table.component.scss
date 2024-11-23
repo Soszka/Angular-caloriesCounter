@@ -2,15 +2,15 @@
 
 .mat-elevation-z8 {
   overflow-x: auto;
+  box-shadow: 0px 0px 25px rgba(255, 0, 0, 0.5);
 }
 
 table {
-  color: $text-secondary-color;
   text-align: center;
-
   th {
-    background: linear-gradient(to top, rgb(109, 1, 1), rgb(27, 0, 0));
-    padding: 20px 10px;
+    background-color: black;
+    border-bottom: 2px solid rgb(94, 1, 1);
+    padding: 25px;
     color: white;
     font-size: $table-th-font-size;
     text-align: center;
@@ -27,7 +27,6 @@ table {
   .mat-mdc-row.mdc-data-table__row.cdk-row {
     background-color: black;
     color: white;
-    border-bottom: 2px solid;
     font-size: $table-td-font-size;
     border-spacing: 1px;
     @include medium-screens {
@@ -40,9 +39,9 @@ table {
   }
 
   .mat-mdc-cell.mdc-data-table__cell.cdk-cell {
-    border-bottom: 2px solid $text-secondary-color;
+    border-bottom: 2px solid rgb(94, 1, 1);
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
   }
 
   .btn-remove {
@@ -54,7 +53,7 @@ table {
   @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
   display: block;
   width: 300px;
-  margin: 30px auto 50px;
+  margin: 40px auto 50px;
 
   @include small-screens {
     font-size: $content-font-size * 1.3;
@@ -69,8 +68,10 @@ table {
 // PAGINATOR
 
 ::ng-deep .mat-mdc-paginator-outer-container {
-  background: linear-gradient(to top, rgb(109, 0, 0), rgb(26, 0, 0));
+  background: black;
+  overflow: visible;
   color: white;
+  padding: 5px;
   @include small-screens {
     padding-top: 10px;
   }
