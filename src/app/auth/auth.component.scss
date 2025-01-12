@@ -1,73 +1,78 @@
 @import '../../styles.scss';
 
-.login-form {
-  max-width: 600px;
-  margin: 60px auto 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-.login-input {
-  margin-bottom: 60px;
-  position: relative;
-
-  label {
-    position: absolute;
-    top: -45%;
-    left: 0;
-    color: $text-secondary-color;
-    font-family: cursive;
+.auth {
+  &__login-form {
+    max-width: 600px;
+    margin: 60px auto 20px;
+    padding: 20px;
+    text-align: center;
   }
 
-  input {
-    @include input(100%);
-  }
-}
+  &__login-input {
+    margin-bottom: 60px;
+    position: relative;
 
-.button-container {
-  max-width: 400px;
-  margin: 0 auto 10px;
+    label {
+      position: absolute;
+      top: -45%;
+      left: 0;
+      color: $text-secondary-color;
+      font-family: cursive;
+    }
 
-  .login-button {
-    @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
-    width: 170px;
-  }
-}
-
-.logout-container {
-  max-width: 1200px;
-  text-align: center;
-  margin: 80px auto;
-
-  p {
-    font-size: $content-font-size * 1.5;
-    margin-bottom: 15px;
-  }
-
-  button {
-    @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
-    width: 230px;
-    @include tiny-screens {
-      font-size: $content-font-size * 1.3;
-      width: 250px;
+    input {
+      @include input(100%);
     }
   }
-}
 
-.info-card {
-  max-width: 800px;
-  margin: 10px auto 60px;
-  text-align: left;
-  padding: 20px 30px;
-  box-shadow: 0px 0px 20px $text-secondary-color;
-  border-radius: 15px;
-  @include small-screens {
-    padding: 20px;
+  &__button-container {
+    max-width: 400px;
+    margin: 0 auto 10px;
+
+    .auth__button {
+      @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
+      width: 170px;
+    }
   }
 
-  span {
+  &__logout-container {
+    max-width: 1200px;
+    text-align: center;
+    margin: 80px auto;
+
+    p {
+      font-size: $content-font-size * 1.5;
+      margin-bottom: 15px;
+    }
+
+    button {
+      @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
+      width: 230px;
+      @include tiny-screens {
+        font-size: $content-font-size * 1.3;
+        width: 250px;
+      }
+    }
+  }
+
+  &__info-card {
+    max-width: 550px;
+    margin: 10px auto 60px;
+    text-align: center;
+    padding: 20px 30px;
+    box-shadow: 0px 0px 20px $text-secondary-color;
+    border-radius: 15px;
+    @include small-screens {
+      padding: 20px;
+    }
+  }
+
+  &__test-link {
     color: $text-secondary-color;
-    font-weight: 550;
+    cursor: pointer;
+    &:hover {
+      color: rgb(89, 1, 1);
+    }
   }
 }
 
@@ -80,4 +85,16 @@ mat-spinner {
   .mat-mdc-progress-spinner
   .mdc-circular-progress__indeterminate-circle-graphic {
   stroke: $text-secondary-color !important;
+}
+
+::ng-deep .mat-mdc-snack-bar-label.mdc-snackbar__label {
+  color: #fff !important;
+  background-color: #000 !important;
+  box-shadow: 0px 0px 20px $text-secondary-color;
+  border-radius: 5px;
+  font-size: 18px !important;
+}
+
+::ng-deep .mdc-snackbar__surface {
+  padding-right: 0 !important;
 }

@@ -1,41 +1,59 @@
 <div class="auth">
   <app-title
-    [sectionTitle]="sectionName" 
-    [sectionDescription]="sectionDescription">
+    [sectionTitle]="sectionName"
+    [sectionDescription]="sectionDescription"
+  >
   </app-title>
-  <mat-spinner
-    *ngIf="isLoading"
-    [diameter]="150"
-    [strokeWidth]="15">
+  <mat-spinner *ngIf="isLoading" [diameter]="150" [strokeWidth]="15">
   </mat-spinner>
-  <div class="logout-container" *ngIf="isLoggedIn">
+
+  <div class="auth__logout-container" *ngIf="isLoggedIn">
     <p>Jesteś obecnie zalogowany.</p>
     <button (click)="onLogoutClick()">WYLOGUJ SIĘ</button>
   </div>
-  <form [formGroup]="loginForm" *ngIf="!isLoading && !isLoggedIn" (ngSubmit)="onLogin()" class="login-form">
-    <div class="login-input">
+
+  <form
+    class="auth__login-form"
+    [formGroup]="loginForm"
+    *ngIf="!isLoading && !isLoggedIn"
+    (ngSubmit)="onLogin()"
+  >
+    <div class="auth__login-input">
       <label for="email">Użytkownik</label>
-      <input type="email" autocomplete="off" id="email" formControlName="email" placeholder="Wprowadź nazwę użytkownika">
+      <input
+        type="email"
+        autocomplete="off"
+        id="email"
+        formControlName="email"
+        placeholder="Wprowadź nazwę użytkownika"
+      />
     </div>
-    <div class="login-input">
+    <div class="auth__login-input">
       <label for="password">Hasło</label>
-      <input type="password" id="password" formControlName="password" placeholder="Wprowadź hasło">
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Wprowadź hasło"
+      />
     </div>
-    <div class="button-container">
-      <button type="submit" class="login-button">ZALOGUJ</button>
+    <div class="auth__button-container">
+      <button type="submit" class="auth__button">ZALOGUJ</button>
     </div>
   </form>
-  <div class="info-card" *ngIf="!isLoading && !isLoggedIn">
+
+  <div class="auth__info-card" *ngIf="!isLoading && !isLoggedIn">
     <p>
-      Aplikacja nie posiada możliwości założenia konta. Istnieje jednak możliwość
-      przetestowania aplikacji logując się jako użytkownik o nazwie : <span>bartek&#64;bartek.com</span>
-      , a także wprowadzając hasło : <span>Bartek123!</span>.
-      Dane które wprowadzisz po zalogowaniu będą zapisywane na serwerze, ale po pewnym czasie zostaną usunięte.
+      Kliknij
+      <span class="auth__test-link" (click)="onTestClick()">TUTAJ</span> żeby
+      przetestować aplikację.
     </p>
   </div>
-  <app-info-dialog 
+
+  <app-info-dialog
     [showMessage]="showMessage"
     [messageInfo]="messageInfo"
-    (okClick)="onOkClick()">
+    (okClick)="onOkClick()"
+  >
   </app-info-dialog>
 </div>
