@@ -1,8 +1,14 @@
-<div class="meals">
-  <app-title
-    [sectionTitle]="sectionName" 
-    [sectionDescription]="sectionDescription">
-  </app-title>
-  <app-meals-form></app-meals-form>
-  <app-meals-table></app-meals-table>
-</div>
+<section class="meals-page">
+  <div class="meals-page__glow meals-page__glow--top"></div>
+  <div class="meals-page__glow meals-page__glow--bottom"></div>
+
+  <div class="meals-page__content">
+    <app-title
+      [sectionTitle]="sectionName"
+      [sectionDescription]="sectionDescription"
+    ></app-title>
+
+    <app-meals-form></app-meals-form>
+    <app-meals-table></app-meals-table>
+  </div>
+</section>

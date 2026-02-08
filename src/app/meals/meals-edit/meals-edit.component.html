@@ -1,22 +1,29 @@
-<div class="meals-edit" data-aos="zoom-in">
-  <app-title 
-    [sectionTitle]="sectionName" 
-    [sectionDescription]="sectionDescription">
-  </app-title>
-  <form [formGroup]="mealForm">
-    <div class="row">
+<section class="meals-edit" data-aos="zoom-in">
+  <app-title [sectionTitle]="sectionName" [sectionDescription]="sectionDescription"></app-title>
+
+  <form [formGroup]="mealForm" class="edit-card">
+    <div class="row row--two-columns">
       <div class="data-option" (click)="onNameClick()">
         <label for="name">Nazwa</label>
         <fa-icon [icon]="faUtensils"></fa-icon>
-        <input type="text" autocomplete="off" id="name" formControlName="name" maxlength="35" placeholder="Wprowadź nazwę">
+        <input
+          type="text"
+          autocomplete="off"
+          id="name"
+          formControlName="name"
+          maxlength="35"
+          placeholder="Wprowadź nazwę"
+        />
       </div>
+
       <div class="data-option" (click)="onCaloriesClick()">
-        <label for="calories">Liczba kalorii ( kcal )</label>
+        <label for="calories">Liczba kalorii (kcal)</label>
         <fa-icon [icon]="faFire"></fa-icon>
-        <input type="number" id="calories" formControlName="calories" placeholder="Ilość kcal" readonly>
+        <input type="number" id="calories" formControlName="calories" placeholder="Ilość kcal" readonly />
       </div>
     </div>
-    <div class="row select-row">
+
+    <div class="row row--two-columns">
       <div class="data-option">
         <label for="kind">Rodzaj</label>
         <fa-icon [icon]="faCubesStacked"></fa-icon>
@@ -25,6 +32,7 @@
           <option *ngFor="let kind of kinds" [value]="kind.value">{{ kind.display }}</option>
         </select>
       </div>
+
       <div class="data-option">
         <label for="taste">Smak</label>
         <fa-icon [icon]="faUtensils"></fa-icon>
@@ -34,7 +42,8 @@
         </select>
       </div>
     </div>
-    <div class="row">
+
+    <div class="row row--macro-grid">
       <div *ngFor="let option of dataMacroOptions" class="data-option">
         <label [for]="option.formControlName">{{ option.label }}</label>
         <fa-icon [icon]="option.icon"></fa-icon>
@@ -44,17 +53,15 @@
           [formControlName]="option.formControlName"
           [placeholder]="option.name"
           (input)="validateInput(option.formControlName); updateCalories()"
-        >
+        />
       </div>
     </div>
+
     <div class="buttons-container">
-      <button class="cancel" (click)="onCancelCLick()">ANULUJ</button>
-      <button class="save" (click)="onSaveClick()">ZAPISZ</button>
+      <button type="button" class="cancel" (click)="onCancelCLick()">ANULUJ</button>
+      <button type="button" class="save" (click)="onSaveClick()">ZAPISZ</button>
     </div>
   </form>
-</div>
-<app-info-dialog 
-  [showMessage]="showMessage"
-  [messageInfo]="messageInfo"
-  (okClick)="onOkClick()">
-</app-info-dialog>
+</section>
+
+<app-info-dialog [showMessage]="showMessage" [messageInfo]="messageInfo" (okClick)="onOkClick()"></app-info-dialog>

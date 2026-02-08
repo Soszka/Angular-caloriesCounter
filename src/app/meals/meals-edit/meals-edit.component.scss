@@ -1,47 +1,88 @@
 @import '../../../styles.scss';
 
 .meals-edit {
-  max-width: 1000px;
-  margin: 10px auto;
+  max-width: 1080px;
+  margin: 10px auto 30px;
+}
+
+.edit-card {
+  margin-top: 20px;
+  padding: 28px;
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(18, 18, 18, 0.97), rgba(42, 0, 0, 0.92));
+  border: 1px solid rgba(190, 33, 33, 0.42);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.45);
+
+  @include medium-screens {
+    width: calc(100% - 36px);
+    margin: 12px auto 0;
+    padding: 22px 14px;
+  }
 }
 
 .row {
-  display: flex;
-  margin: 70px auto;
-  justify-content: space-between;
-  @include large-screens {
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto 50px;
+  display: grid;
+  gap: 18px;
+  margin-bottom: 26px;
+
+  &--two-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    @include large-screens {
+      grid-template-columns: 1fr;
+    }
   }
 
-  .data-option {
-    text-align: center;
-    display: flex;
-    position: relative;
+  &--macro-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     @include large-screens {
-      margin-top: 50px;
+      grid-template-columns: 1fr;
     }
+  }
+}
+
+.data-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:focus-within {
+    border-color: rgba(255, 26, 26, 0.7);
+    transform: translateY(-2px);
   }
 
   label {
     position: absolute;
-    top: -50%;
-    left: 70px;
-    color: $text-secondary-color;
-    font-family: cursive;
+    top: -12px;
+    left: 16px;
+    padding: 0 8px;
+    color: rgba(255, 255, 255, 0.82);
+    background: rgba(24, 0, 0, 0.86);
+    font-size: 0.88rem;
+    border-radius: 10px;
+    letter-spacing: 0.02em;
   }
 
   fa-icon {
-    font-size: 42px;
-    margin: 0px 30px 0 0px;
+    font-size: 28px;
     color: $input-icon-color;
+  }
+
+  input,
+  select {
+    margin: 0;
+    height: 50px;
+    border-bottom-width: 3px;
   }
 
   input {
     @include input(100%);
     text-align: left;
-    margin-right: 20px;
   }
 
   select {
@@ -53,38 +94,22 @@
   }
 }
 
-.select-row {
-  @include large-screens {
-    margin-bottom: 0;
-  }
-}
-
 .buttons-container {
   text-align: center;
-  margin: 0 0 40px;
+  margin: 10px 0 6px;
 
   button {
-    margin: 0 7.5px 10px;
-    width: 150px;
+    margin: 0 8px 10px;
+    width: 170px;
+    padding: 13px 18px;
   }
 
   .cancel {
-    @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
+    @include cancel-button($form-btn-font-size, $form-btn-font-size-sm);
   }
 
   .save {
-    @include delete-button($form-btn-font-size, $form-btn-font-size-sm);
-  }
-}
-
-.row:nth-child(1) .data-option,
-.row:nth-child(2) .data-option,
-.row:nth-child(3) .data-option,
-.row:nth-child(4) .data-option,
-.row:nth-child(5) .data-option {
-  width: 48%;
-  @include large-screens {
-    width: 90%;
+    @include save-button($form-btn-font-size, $form-btn-font-size-sm);
   }
 }
 
